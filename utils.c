@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_extra.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/05 08:25:30 by tonyd            ###   ########.fr       */
+/*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
+/*   Updated: 2021/06/05 11:13:45 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		get_nb(const char *str)
+int		my_atoi(const char *str, int *mynb)
 {
-	int		nb;
-	int		i;
+	int			sign;
+	long long	nb;
 
-	if (str[0] == '-' || str[0] == '+')
-		i = 1;
-	else
-		i = 0;
-	while (str[i])
+	nb = 0;
+	sign = 1;
+	if (*str == '+' || *str == '-')
 	{
-		if (!ft_isdigit(str[i]))
-			ft_error();
-		i++;
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-	nb = ft_atoi(str);
-	return (nb);
-}
-
-void	swap_one(const char *av[])
-{
-	int		nb;
-
-	nb = get_nb(av[1]);
-	printf("nb = %d\n", nb);
-	ft_putendl_fd("sa", 1);
-	ft_exit();
+	while (*str && ft_isdigit(*str))
+	{
+		nb = nb * 10 + *str - '0';
+		if (nb < 0 && sign == -1)
+			return (0);
+		if (nb < 0 && sign == 1)
+			return (-1);
+		str++;
+	}
+	nb *= sign;
+	if (nb > INT_MAX || nb < INT_MIN)
+		ft_error(mynb);
+	return ((int)nb);
 }

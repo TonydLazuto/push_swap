@@ -15,7 +15,9 @@ LIB_DIR		= libft
 OBJ_DIR		= obj
 
 SRCS		= push_swap.c \
-			  swap_extra.c \
+			  check_args.c \
+			  extras.c \
+			  utils.c \
 			  errors.c
 
 OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))

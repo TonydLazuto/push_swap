@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   extras.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/05 09:38:37 by tonyd            ###   ########.fr       */
+/*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
+/*   Updated: 2021/06/05 11:18:28 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_exit(int *nb)
+void	swap_two(int *nb)
 {
-	if (nb)
-		free(nb);
-	exit(0);
+	if (nb[0] > nb[1])
+		ft_putendl_fd("sa", 1);
+	if (nb[0] == nb[1])
+		ft_error(nb);
 }
 
-void	ft_error(int *nb)
+void	swap_three(int *nb)
 {
-	ft_putendl_fd("Error", 1);
-	ft_exit(nb);
+	if (nb[0] == nb[1] || nb[1] == nb[2] || nb[2] == nb[0])
+		ft_error(nb);
 }

@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/05 08:05:35 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/05 11:25:17 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,35 +26,32 @@
 ** rrr = rra + rrb
 */
 
-/*
-int 		check_doublons()
+void		check_extras(int ac, int *nb)
 {
+	if (ac == 2)	
+		swap_two(nb);
+	if (ac == 3)	
+		swap_three(nb);
+	//if (ac == 5)
+		//swap_five(nb);
+	ft_exit(nb);
 }
-*/
-int			check_args(int ac, const char *av[])
-{
-	if (ac == 2)
-		swap_one(av);
-	/*if (ac == 3)	
-		swap_two(av);
-	if (ac == 4)	
-		swap_three(av);
-	if (ac == 6)
-		swap_five(av);*/
-	return (0);
-}
-/*
-int			push_swap(int ac, char *av[])
-{
 
+int			push_swap(int ac, const char *av[])
+{
+	int *nb;
+
+	nb = NULL;
+	nb = check_args(ac, av, nb);
+	check_extras(ac, nb);
 	return (0);
 }
-*/
+
 int			main(int ac, const char *av[])
 {
 	if (ac == 1)
 		return (0);
-	check_args(ac, av);
-	//push_swap(ac, av);
+	ac -= 1;
+	push_swap(ac, av);
 	return (0);
 }
