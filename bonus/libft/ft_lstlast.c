@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
+/*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 13:57:47 by tonyd            ###   ########.fr       */
+/*   Created: 2020/05/02 12:16:48 by aderose           #+#    #+#             */
+/*   Updated: 2020/05/02 12:16:51 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		ft_exit(int *nb)
+t_list		*ft_lstlast(t_list *lst)
 {
-	if (nb)
-		free(nb);
-	exit(0);
-}
-
-void	ft_error(int *nb)
-{
-	ft_putendl_fd("Error", 1);
-	ft_exit(nb);
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

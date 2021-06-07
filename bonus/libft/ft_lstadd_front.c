@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
+/*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 13:57:47 by tonyd            ###   ########.fr       */
+/*   Created: 2020/05/02 12:15:39 by aderose           #+#    #+#             */
+/*   Updated: 2020/05/08 15:23:10 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		ft_exit(int *nb)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if (nb)
-		free(nb);
-	exit(0);
-}
+	t_list *lst;
 
-void	ft_error(int *nb)
-{
-	ft_putendl_fd("Error", 1);
-	ft_exit(nb);
+	if (new == NULL)
+		return ;
+	if (*alst == NULL)
+		new->next = NULL;
+	else
+	{
+		lst = *alst;
+		new->next = lst;
+	}
+	*alst = new;
 }

@@ -6,11 +6,11 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 12:41:44 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/07 13:31:00 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int		my_atoi(char *str, int *mynb)
 {

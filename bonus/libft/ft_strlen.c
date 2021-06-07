@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
+/*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 13:57:47 by tonyd            ###   ########.fr       */
+/*   Created: 2020/05/02 12:31:44 by aderose           #+#    #+#             */
+/*   Updated: 2020/05/02 18:35:32 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		ft_exit(int *nb)
+size_t	ft_strlen(const char *str)
 {
-	if (nb)
-		free(nb);
-	exit(0);
-}
+	size_t i;
 
-void	ft_error(int *nb)
-{
-	ft_putendl_fd("Error", 1);
-	ft_exit(nb);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

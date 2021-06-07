@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
+/*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 13:57:47 by tonyd            ###   ########.fr       */
+/*   Created: 2020/05/02 12:35:30 by aderose           #+#    #+#             */
+/*   Updated: 2020/05/02 18:51:20 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int		ft_exit(int *nb)
+int		ft_tolower(int c)
 {
-	if (nb)
-		free(nb);
-	exit(0);
-}
-
-void	ft_error(int *nb)
-{
-	ft_putendl_fd("Error", 1);
-	ft_exit(nb);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

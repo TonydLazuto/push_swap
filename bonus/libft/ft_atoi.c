@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
+/*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 12:41:44 by tonyd            ###   ########.fr       */
+/*   Created: 2020/05/02 12:10:10 by aderose           #+#    #+#             */
+/*   Updated: 2020/05/02 14:37:56 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		my_atoi(char *str, int *mynb)
+static const char	*skip_space(const char *str)
+{
+	while (*str == '\t' || *str == '\n' || *str == '\v'
+			|| *str == '\f' || *str == '\r' || *str == ' ')
+		str++;
+	return (str);
+}
+
+int					ft_atoi(const char *str)
 {
 	int			sign;
 	long long	nb;
 
 	nb = 0;
 	sign = 1;
+	str = skip_space(str);
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
@@ -35,7 +44,5 @@ int		my_atoi(char *str, int *mynb)
 		str++;
 	}
 	nb *= sign;
-	if (nb > INT32_MAX || nb < INT32_MIN)
-		ft_error(mynb);
 	return ((int)nb);
 }

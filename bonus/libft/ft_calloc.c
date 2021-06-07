@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
+/*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 13:57:47 by tonyd            ###   ########.fr       */
+/*   Created: 2020/05/02 12:10:56 by aderose           #+#    #+#             */
+/*   Updated: 2020/05/15 10:01:07 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
+#include "libft.h"
 
-int		ft_exit(int *nb)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (nb)
-		free(nb);
-	exit(0);
-}
+	int		*ptr;
 
-void	ft_error(int *nb)
-{
-	ft_putendl_fd("Error", 1);
-	ft_exit(nb);
+	if (!(ptr = malloc(size * count)))
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return ((void*)ptr);
 }
