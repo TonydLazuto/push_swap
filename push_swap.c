@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/05 11:25:17 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/07 10:36:21 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,46 @@
 ** rrr = rra + rrb
 */
 
+int			*check_args(int ac, char *av[], int *nb)
+{
+	int		i;
+	int 	j;
+
+	nb = malloc(sizeof(int) * ac);
+	if (!nb)
+		ft_error(nb);
+	i = 1;
+	while (av[i])
+	{
+		if (av[i][0] == '-' || av[i][0] == '+')
+			j = 1;
+		else
+			j = 0;
+		while (av[i][j])
+		{
+			if (!ft_isdigit(av[i][j]))
+				ft_error(nb);
+			j++;
+		}
+		nb[i - 1] = my_atoi(av[i], nb);
+		printf("nb_%d = %d\n", i-1,nb[i-1]);
+		i++;
+	}
+	return (nb);
+}
+
 void		check_extras(int ac, int *nb)
 {
 	if (ac == 2)	
 		swap_two(nb);
 	if (ac == 3)	
 		swap_three(nb);
-	//if (ac == 5)
-		//swap_five(nb);
+	if (ac == 5)
+		swap_five(nb);
 	ft_exit(nb);
 }
 
-int			push_swap(int ac, const char *av[])
+int			push_swap(int ac, char *av[])
 {
 	int *nb;
 
@@ -47,7 +75,7 @@ int			push_swap(int ac, const char *av[])
 	return (0);
 }
 
-int			main(int ac, const char *av[])
+int			main(int ac, char *av[])
 {
 	if (ac == 1)
 		return (0);

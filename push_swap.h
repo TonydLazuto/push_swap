@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/05 11:14:08 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/07 09:41:48 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@
 
 int		ft_exit(int *nb);
 void	ft_error(int *nb);
-int		my_atoi(const char *str, int *mynb);
-int		*check_args(int ac, const char *av[], int *nb);
+void	instructions_exit(char *str, int *nb);
+int		my_atoi(char *str, int *mynb);
+int		*check_args(int ac, char *av[], int *nb);
 //void	check_duplicate(int ac, int *nb);
 void	swap_two(int *nb);
 void	swap_three(int *nb);
+void	swap_five(int *nb);
 
 #endif

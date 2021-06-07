@@ -6,13 +6,13 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/05 11:13:45 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/06 08:39:12 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		my_atoi(const char *str, int *mynb)
+int		my_atoi(char *str, int *mynb)
 {
 	int			sign;
 	long long	nb;
