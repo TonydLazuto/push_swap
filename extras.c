@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 09:48:51 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/07 10:56:13 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	swap_two(int *nb)
 		ft_error(nb);
 }
 
-void	swap_three(int *nb)
+void	swap_three(int *nb, int ac)
 {
 	if (nb[0] == nb[1] || nb[1] == nb[2] || nb[2] == nb[0])
 		ft_error(nb);
@@ -44,7 +44,7 @@ void	swap_three(int *nb)
 		ft_exit(nb);
 }
 
-void	swap_five(int *nb)
+void	swap_five(int *nb, int ac)
 {
 	;
 }

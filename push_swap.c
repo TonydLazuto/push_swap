@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 10:36:21 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/07 11:16:24 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ int			*check_args(int ac, char *av[], int *nb)
 
 void		check_extras(int ac, int *nb)
 {
-	if (ac == 2)	
+	if (ac == 2)
 		swap_two(nb);
-	if (ac == 3)	
-		swap_three(nb);
+	if (ac == 3)
+		swap_three(nb, ac);
 	if (ac == 5)
-		swap_five(nb);
+		swap_five(nb, ac);
 	ft_exit(nb);
 }
 
