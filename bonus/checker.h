@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 13:26:58 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 14:12:57 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/09 10:58:35 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,22 @@
 # include <fcntl.h>
 # include <sys/stat.h>
 # include "./libft/libft.h"
-# define INSTRUCTS "sa sb ss pa pb ra rb rr rra rrb rrr"
 
-int		ft_exit(int *nb);
-void	ft_error(int *nb);
+typedef struct		s_ins
+{
+	char			*str;
+	struct s_ins	*next;
+}					t_ins;
+
+typedef struct		s_num
+{
+	int				val;
+	struct s_num	*next;
+}					t_num;
+
+//int		ft_exit(int *nb);
+void	ft_error_ins(t_ins *ins);
+void	ft_error_nb(int *nb);
 int		my_atoi(char *str, int *mynb);
 
 #endif

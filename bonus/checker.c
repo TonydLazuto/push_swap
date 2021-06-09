@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:52:41 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 14:24:26 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/09 10:58:33 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			*check_args(int ac, char *av[], int *nb)
 
 	nb = malloc(sizeof(int) * ac);
 	if (!nb)
-		ft_error(nb);
+		ft_error_nb(nb);
 	i = 1;
 	while (av[i])
 	{
@@ -44,14 +44,29 @@ int			*check_args(int ac, char *av[], int *nb)
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
-				ft_error(nb);
+				ft_error_nb(nb);
 			j++;
 		}
 		nb[i - 1] = my_atoi(av[i], nb);
-		printf("nb_%d = %d\n", i-1,nb[i-1]);
 		i++;
 	}
 	return (nb);
+}
+
+t_ins		*fill_stack_ins(t_ins *ins, char *buf)
+{
+	t_ins	*cur;
+
+	cur = NULL;
+	if (strncmp(buf, "sa", 2) && strncmp(buf, "sb", 2) && strncmp(buf, "ss", 2) &&
+		strncmp(buf, "pa", 2) && strncmp(buf, "pb", 2) && strncmp(buf, "ra", 2) &&
+		strncmp(buf, "rb", 2) && strncmp(buf, "rr", 2) && strncmp(buf, "rra", 3) &&
+		strncmp(buf, "rrb", 3) && strncmp(buf, "rrr", 3))
+		ft_error_ins(ins);
+	cur = new_ins(buf);
+	ins = push_back_ins(cur);
+	free(cur);
+	return (ins);
 }
 
 void		read_instructions()
@@ -59,14 +74,23 @@ void		read_instructions()
 	int		fd;
 	char	buf[3];
 	ssize_t	ret;
+	t_ins	*ins;
 
-	ret = read(1, buf, 3);
-	buf[ret] = '\0';
+	ret = 1;
+	ins = NULL;
 	while (ret)
 	{
 		ret = read(1, buf, 3);
 		buf[ret] = '\0';
+		ins = fill_stack_ins(ins, buf);
 	}
+	/*
+	while (ins)
+	{
+		printf("%s\n", ins.str);
+		ins = ins->next;
+	}
+	*/
 }
 
 int			checker(int ac, char *av[])

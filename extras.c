@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 10:56:13 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/09 09:19:00 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	swap_two(int *nb)
 {
 	if (nb[0] > nb[1])
-		instructions_exit("sa", nb);
-	if (nb[0] == nb[1])
+		ft_putendl_fd("sa", 1);
+	else if (nb[0] == nb[1])
 		ft_error(nb);
 }
 
