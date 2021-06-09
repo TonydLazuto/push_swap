@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 13:26:58 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/09 10:58:35 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/09 19:36:37 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <fcntl.h>
 # include <sys/stat.h>
 # include "./libft/libft.h"
+# include "./get_next_line.h"
 
 typedef struct		s_ins
 {
@@ -35,8 +36,13 @@ typedef struct		s_num
 }					t_num;
 
 //int		ft_exit(int *nb);
-void	ft_error_ins(t_ins *ins);
+void	ft_error_ins(t_ins **ins);
 void	ft_error_nb(int *nb);
 int		my_atoi(char *str, int *mynb);
+int		*check_args(int ac, char *av[], int *nb);
+int		check_instructions(char *buf);
+t_ins	*new_ins(char *str);
+t_ins	*last_ins(t_ins *ins);
+void	push_back(t_ins **list, t_ins *elet);
 
 #endif

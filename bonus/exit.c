@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/09 10:55:53 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/09 19:49:38 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,21 @@ int		ft_exit(int *nb)
 	exit(0);
 }
 */
-void	ft_error_ins(t_ins *ins)
+void	ft_error_ins(t_ins **ins)
 {
+	t_ins *next;
+
+	next = NULL;
 	ft_putendl_fd("Error", 1);
-/*
- * * while (ins)
- * * {
- * * 	free(ins->str);
- * * 	ins = ins->next;
- * * }
- * * */
-	if (ins)
-		free(ins);
+	if (*ins)
+	{
+		while (*ins)
+		{
+			next = (*ins)->next;
+			free(*ins);
+			*ins = next;
+   		}
+	}
 	exit(0);
 }
 

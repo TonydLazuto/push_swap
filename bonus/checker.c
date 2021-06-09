@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:52:41 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/09 10:58:33 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/09 19:41:54 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,71 +26,54 @@
 ** rrr = rra + rrb
 */
 
-int			*check_args(int ac, char *av[], int *nb)
+void		print_ins(t_ins *ins)
 {
-	int		i;
-	int 	j;
+	t_ins	*cpy;
 
-	nb = malloc(sizeof(int) * ac);
-	if (!nb)
-		ft_error_nb(nb);
-	i = 1;
-	while (av[i])
+	cpy = ins;
+	while (cpy)
 	{
-		if (av[i][0] == '-' || av[i][0] == '+')
-			j = 1;
-		else
-			j = 0;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-				ft_error_nb(nb);
-			j++;
-		}
-		nb[i - 1] = my_atoi(av[i], nb);
-		i++;
+		printf("|%s|\n", cpy->str);
+		cpy = cpy->next;
 	}
-	return (nb);
 }
 
-t_ins		*fill_stack_ins(t_ins *ins, char *buf)
+t_ins		*fill_stack_ins(t_ins *ins, char *line)
 {
-	t_ins	*cur;
+	int 	valid;
+	t_ins	*elet;
 
-	cur = NULL;
-	if (strncmp(buf, "sa", 2) && strncmp(buf, "sb", 2) && strncmp(buf, "ss", 2) &&
-		strncmp(buf, "pa", 2) && strncmp(buf, "pb", 2) && strncmp(buf, "ra", 2) &&
-		strncmp(buf, "rb", 2) && strncmp(buf, "rr", 2) && strncmp(buf, "rra", 3) &&
-		strncmp(buf, "rrb", 3) && strncmp(buf, "rrr", 3))
-		ft_error_ins(ins);
-	cur = new_ins(buf);
-	ins = push_back_ins(cur);
-	free(cur);
+	elet = NULL;
+	valid = check_instructions(line);
+	if (!valid)
+		ft_error_ins(&ins);
+	elet = new_ins(line);
+	if (!elet)
+		ft_error_ins(&ins);
+	push_back(&ins, elet);
+	if (!ins)
+		ft_error_ins(&ins);	
 	return (ins);
 }
 
 void		read_instructions()
 {
 	int		fd;
-	char	buf[3];
-	ssize_t	ret;
+	char	*line;
 	t_ins	*ins;
+	int		res;
 
-	ret = 1;
+	line = NULL;
 	ins = NULL;
-	while (ret)
+	res = 1;
+	while (res > 0) // voir si fuite memoire si direct si while(gnl())
 	{
-		ret = read(1, buf, 3);
-		buf[ret] = '\0';
-		ins = fill_stack_ins(ins, buf);
+		res = get_next_line(1, &line);
+		if (res > 0)
+			ins = fill_stack_ins(ins, line);
+		free(line);
 	}
-	/*
-	while (ins)
-	{
-		printf("%s\n", ins.str);
-		ins = ins->next;
-	}
-	*/
+	print_ins(ins);	
 }
 
 int			checker(int ac, char *av[])
@@ -100,7 +83,6 @@ int			checker(int ac, char *av[])
 	nb = NULL;
 	nb = check_args(ac, av, nb);
 	read_instructions();
-	printf("%s\n", INSTRUCTS);
 	return (0);
 }
 
