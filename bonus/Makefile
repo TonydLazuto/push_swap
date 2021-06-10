@@ -10,7 +10,7 @@ RM			= /bin/rm -f
 
 INC			= checker.h
 
-LIB_DIR		= libft
+LIB_DIR		= ./../libft
 
 OBJ_DIR		= obj
 
@@ -35,7 +35,7 @@ $(OBJ_DIR)/%.o:	%.c
 				$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-				@ make clean -C libft
+				@ make clean -C $(LIB_DIR)
 				rm -rf $(OBJ_DIR)
 
 fclean:			clean

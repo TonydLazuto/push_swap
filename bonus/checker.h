@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 13:26:58 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/10 09:05:07 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/10 09:46:54 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <sys/uio.h>
 # include <fcntl.h>
 # include <sys/stat.h>
-# include "./libft/libft.h"
+# include "./../libft/libft.h"
 # include "./get_next_line.h"
 
 typedef struct		s_ins
