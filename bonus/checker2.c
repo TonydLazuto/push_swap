@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   checker2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/09 13:27:42 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/10 09:03:46 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int		my_atoi(char *str, int *mynb)
+int		my_atoi(char *str, t_num *mynb)
 {
 	int			sign;
 	long long	nb;
@@ -36,18 +36,29 @@ int		my_atoi(char *str, int *mynb)
 	}
 	nb *= sign;
 	if (nb > INT32_MAX || nb < INT32_MIN)
-		ft_error_nb(mynb);
+		ft_error_nb(&mynb);
 	return ((int)nb);
 }
 
-int			*check_args(int ac, char *av[], int *nb)
+t_num		*fill_stack_nb(t_num *nb, int val)
+{
+	t_num	*elet;
+
+	elet = new_nb(val);
+	if (!elet)
+		ft_error_nb(&nb);
+	push_back(&nb, elet);
+	if (!nb)
+		ft_error_nb(&nb);
+	return (nb);
+}
+
+t_num		*check_args(int ac, char *av[], t_num *nb)
 {
 	int		i;
 	int 	j;
+	int		val;
 
-	nb = malloc(sizeof(int) * ac);
-	if (!nb)
-		ft_error_nb(nb);
 	i = 1;
 	while (av[i])
 	{
@@ -58,29 +69,13 @@ int			*check_args(int ac, char *av[], int *nb)
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
-				ft_error_nb(nb);
+				ft_error_nb(&nb);
 			j++;
 		}
-		nb[i - 1] = my_atoi(av[i], nb);
+		val = my_atoi(av[i], nb);
+		nb = fill_stack_nb(nb, val);
 		i++;
 	}
 	return (nb);
 }
 
-int		check_instructions(char *buf)
-{
-	if (ft_strlen(buf) == 3)
-	{
-		if (ft_strncmp(buf, "rra", 3) == 0 || ft_strncmp(buf, "rrb", 3) == 0
-				|| ft_strncmp(buf, "rrr", 3) == 0)
-			return (1);
-	}
-	if (ft_strlen(buf) == 2)
-	{
-		if (!ft_strncmp(buf, "sa", 2) || !ft_strncmp(buf, "sb", 2) || !ft_strncmp(buf, "ss", 2)
-	 		|| !ft_strncmp(buf, "pa", 2) || !ft_strncmp(buf, "pb", 2)
-	 		|| !ft_strncmp(buf, "ra", 2) || !ft_strncmp(buf, "rb", 2) || !ft_strncmp(buf, "rr", 2))
-	 	return (1);
-	}
-	return (0);
-}

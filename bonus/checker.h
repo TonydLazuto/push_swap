@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 13:26:58 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/09 19:36:37 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/10 09:05:07 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,16 @@ typedef struct		s_num
 }					t_num;
 
 //int		ft_exit(int *nb);
-void	ft_error_ins(t_ins **ins);
-void	ft_error_nb(int *nb);
-int		my_atoi(char *str, int *mynb);
-int		*check_args(int ac, char *av[], int *nb);
-int		check_instructions(char *buf);
+void	ft_error_ins(t_ins **ins, t_num **nb);
+void	ft_error_nb(t_num **nb);
+int		check_instructions(char *line);
 t_ins	*new_ins(char *str);
 t_ins	*last_ins(t_ins *ins);
-void	push_back(t_ins **list, t_ins *elet);
+void	push_back_ins(t_ins **list, t_ins *elet);
+int		my_atoi(char *str, t_num *mynb);
+t_num	*check_args(int ac, char *av[], t_num *nb);
+t_num	*new_nb(int val);
+t_num	*last_num(t_num *nb);
+void	push_back(t_num **list, t_num *elet);
 
 #endif
