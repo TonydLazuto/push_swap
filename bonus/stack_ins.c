@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:29:27 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/11 08:35:05 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/11 08:50:14 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int		check_instructions(char *line)
 {
 	if (ft_strlen(line) == 3)
 	{
-		if (ft_strncmp(line, "rra", 3) == 0 || ft_strncmp(line, "rrb", 3) == 0
-				|| ft_strncmp(line, "rrr", 3) == 0)
+		if (!ft_strncmp(line, "rra", 3) || !ft_strncmp(line, "rrb", 3)
+				|| !ft_strncmp(line, "rrr", 3))
 			return (1);
 	}
 	if (ft_strlen(line) == 2)
