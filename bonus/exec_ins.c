@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:31:49 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/11 09:49:31 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/11 12:23:09 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,51 @@
 void		go_switch(t_num **stack_a, t_num **stack_b, t_ins *ins)
 {
 	if (!ft_strncmp(ins, "sa", 2))
-		switch_nb(stack_a);
+		*stack_a = switch_nb(*stack_a, *stack_b, ins);
 	if (!ft_strncmp(ins, "sb", 2))
-		switch_nb(stack_b);
+		*stack_b = switch_nb(*stack_b, *stack_a, ins);
 	if(!ft_strncmp(ins, "ss", 2))
 	{
-		switch_nb(stack_a);
-		switch_nb(stack_b);
+		*stack_a = switch_nb(*stack_a, *stack_b, ins);
+		*stack_b = switch_nb(*stack_b, *stack_a, ins);
 	}
 }
 
 void		go_push(t_num **stack_a, t_num **stack_b, t_ins *ins)
 {
-
+	if (!ft_strncmp(ins, "pa", 2))
+		push_nb(stack_a, stack_b, ins);
+	if (!ft_strncmp(ins, "pb", 2))
+		push_nb(stack_b, stack_a, ins);
 }
+
+void		go_roll(t_num **stack_a, t_num **stack_b, t_ins *ins)
+{
+	if (!ft_strncmp(ins, "ra", 2))
+		roll_stack(stack_a, stack_b, ins);
+	if (!ft_strncmp(ins, "rb", 2))
+		roll_stack(stack_b, stack_a, ins);
+	if (!ft_strncmp(ins, "rr", 2))
+	{
+		roll_stack(stack_a, stack_b, ins);
+		roll_stack(stack_b, stack_a, ins);
+	}
+}
+
+void		go_reverse_roll(t_num **stack_a, t_num **stack_b, t_ins *ins)
+{
+	if (!ft_strncmp(ins, "ra", 2))
+		reverse_roll_stack(stack_a, stack_b, ins);
+	if (!ft_strncmp(ins, "rb", 2))
+		reverse_roll_stack(stack_b, stack_a, ins);
+	if (!ft_strncmp(ins, "rr", 2))
+	{
+		reverse_roll_stack(stack_a, stack_b, ins);
+		reverse_roll_stack(stack_b, stack_a, ins);
+	}
+}
+
+
 t_num		*exec_instructions(t_num *nb, t_ins *ins)
 {
 	t_ins	*next;
