@@ -1,6 +1,6 @@
 .PHONY		= all clean fclean re bonus
 
-NAME		= bonus_push_swap
+NAME		= checker
 
 CC			= gcc
 
@@ -14,10 +14,11 @@ LIB_DIR		= ./../libft
 
 OBJ_DIR		= obj
 
-SRCS		= checker.c \
-			  checker2.c \
-			  ins_lst.c \
-			  nb_lst.c \
+SRCS		= main.c \
+			  stack_ins.c \
+			  stack_nb.c \
+			  lst_ins.c \
+			  lst_nb.c \
 			  get_next_line.c \
 			  get_next_line_utils.c \
 			  exit.c
