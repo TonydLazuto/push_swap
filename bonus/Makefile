@@ -19,9 +19,13 @@ SRCS		= main.c \
 			  stack_nb.c \
 			  lst_ins.c \
 			  lst_nb.c \
+			  lst_nb2.c \
 			  get_next_line.c \
 			  get_next_line_utils.c \
-			  exit.c
+			  exit.c \
+			  exec_ins.c \
+			  exec_ins2.c \
+			  ft_ko.c
 
 OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
 

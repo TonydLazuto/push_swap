@@ -6,56 +6,57 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:31:49 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/11 12:23:09 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 11:37:44 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void		go_switch(t_num **stack_a, t_num **stack_b, t_ins *ins)
+static void		go_switch(t_num **stack_a, t_num **stack_b, t_ins *ins)
 {
-	if (!ft_strncmp(ins, "sa", 2))
+	if (!ft_strncmp(ins->str, "sa", 2))
 		*stack_a = switch_nb(*stack_a, *stack_b, ins);
-	if (!ft_strncmp(ins, "sb", 2))
+	if (!ft_strncmp(ins->str, "sb", 2))
 		*stack_b = switch_nb(*stack_b, *stack_a, ins);
-	if(!ft_strncmp(ins, "ss", 2))
+	if(!ft_strncmp(ins->str, "ss", 2))
 	{
 		*stack_a = switch_nb(*stack_a, *stack_b, ins);
 		*stack_b = switch_nb(*stack_b, *stack_a, ins);
 	}
 }
 
-void		go_push(t_num **stack_a, t_num **stack_b, t_ins *ins)
+static void		go_push(t_num **stack_a, t_num **stack_b, t_ins *ins)
 {
-	if (!ft_strncmp(ins, "pa", 2))
+
+	if (!ft_strncmp(ins->str, "pa", 2))
 		push_nb(stack_a, stack_b, ins);
-	if (!ft_strncmp(ins, "pb", 2))
+	if (!ft_strncmp(ins->str, "pb", 2))
 		push_nb(stack_b, stack_a, ins);
 }
 
-void		go_roll(t_num **stack_a, t_num **stack_b, t_ins *ins)
+static void		go_roll(t_num **stack_a, t_num **stack_b, t_ins *ins)
 {
-	if (!ft_strncmp(ins, "ra", 2))
-		roll_stack(stack_a, stack_b, ins);
-	if (!ft_strncmp(ins, "rb", 2))
-		roll_stack(stack_b, stack_a, ins);
-	if (!ft_strncmp(ins, "rr", 2))
+	if (!ft_strncmp(ins->str, "ra", 2))
+		*stack_a = roll_stack(*stack_a, *stack_b, ins);
+	if (!ft_strncmp(ins->str, "rb", 2))
+		*stack_b = roll_stack(*stack_b, *stack_a, ins);
+	if (!ft_strncmp(ins->str, "rr", 2))
 	{
-		roll_stack(stack_a, stack_b, ins);
-		roll_stack(stack_b, stack_a, ins);
+		*stack_a = roll_stack(*stack_a, *stack_b, ins);
+		*stack_b = roll_stack(*stack_b, *stack_a, ins);
 	}
 }
 
-void		go_reverse_roll(t_num **stack_a, t_num **stack_b, t_ins *ins)
+static void		go_reverse_roll(t_num **stack_a, t_num **stack_b, t_ins *ins)
 {
-	if (!ft_strncmp(ins, "ra", 2))
-		reverse_roll_stack(stack_a, stack_b, ins);
-	if (!ft_strncmp(ins, "rb", 2))
-		reverse_roll_stack(stack_b, stack_a, ins);
-	if (!ft_strncmp(ins, "rr", 2))
+	if (!ft_strncmp(ins->str, "rra", 2))
+		*stack_a = reverse_roll_stack(*stack_a, *stack_b, ins);
+	if (!ft_strncmp(ins->str, "rrb", 2))
+		*stack_b = reverse_roll_stack(*stack_b, *stack_a, ins);
+	if (!ft_strncmp(ins->str, "rrr", 2))
 	{
-		reverse_roll_stack(stack_a, stack_b, ins);
-		reverse_roll_stack(stack_b, stack_a, ins);
+		*stack_a = reverse_roll_stack(*stack_a, *stack_b, ins);
+		*stack_b = reverse_roll_stack(*stack_b, *stack_a, ins);
 	}
 }
 
@@ -73,17 +74,24 @@ t_num		*exec_instructions(t_num *nb, t_ins *ins)
 	while (ins)
 	{
 		next = ins->next;
-		if (!ft_strncmp(ins, "sa", 2) || !ft_strncmp(ins, "sb", 2) || !ft_strncmp(ins, "ss", 2))
+		if (!ft_strncmp(ins->str, "sa", 2) || !ft_strncmp(ins->str, "sb", 2) || !ft_strncmp(ins->str, "ss", 2))
 			go_switch(&stack_a, &stack_b, ins);
-		if (!ft_strncmp(ins, "pa", 2) || !ft_strncmp(ins, "pb", 2))
+		if (!ft_strncmp(ins->str, "pa", 2) || !ft_strncmp(ins->str, "pb", 2))
 			go_push(&stack_a, &stack_b, ins);
-	 	if (!ft_strncmp(ins, "ra", 2) || !ft_strncmp(ins, "rb", 2) || !ft_strncmp(ins, "rr", 2))
+	 	if (!ft_strncmp(ins->str, "ra", 2) || !ft_strncmp(ins->str, "rb", 2) || !ft_strncmp(ins->str, "rr", 2))
 			go_roll(&stack_a, &stack_b, ins);
-		if (!ft_strncmp(ins, "rra", 3) || !ft_strncmp(ins, "rrb", 3)
-				|| !ft_strncmp(ins, "rrr", 3))
-			go_reverse_roll(&stack_a, &stack_b, ins);
+		if (!ft_strncmp(ins->str, "rra", 3) || !ft_strncmp(ins->str, "rrb", 3)
+				|| !ft_strncmp(ins->str, "rrr", 3))
+			go_reverse_roll(&stack_a, &stack_b, ins);	
+		
+		printf("|--%s--|\nStack A :\n", ins->str);
+		print_nb(stack_a);
+		printf("\nStack B :\n");
+		print_nb(stack_b);
+	
 		free(ins);
 		ins = next;
+
 	}
 	return (nb);
 }

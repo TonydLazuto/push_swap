@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:29:27 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/11 08:50:14 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 10:00:33 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		check_instructions(char *line)
 	return (0);
 }
 
-t_ins		*fill_stack_ins(t_ins *ins, char *line, t_num *nb)
+t_ins		*fill_stack_ins(t_ins *ins, char *line, t_num **nb)
 {
 	int 	valid;
 	t_ins	*elet;
@@ -38,25 +38,20 @@ t_ins		*fill_stack_ins(t_ins *ins, char *line, t_num *nb)
 	elet = NULL;
 	valid = check_instructions(line);
 	if (!valid)
-		ft_error_ins(&ins, &nb);
-	elet = new_ins(line);
-	if (!elet)
-		ft_error_ins(&ins, &nb);
-	push_back_ins(&ins, elet);
+		ft_error_ins(&ins, nb);
+	ins = push_back_ins(ins, line);
 	if (!ins)
-		ft_error_ins(&ins, &nb);
+		ft_error_ins(&ins, nb);
 	return (ins);
 }
 
-void		read_instructions(t_num *nb)
+t_ins		*read_instructions(t_num **nb, t_ins *ins)
 {
 	int		fd;
 	char	*line;
-	t_ins	*ins;
 	int		res;
 
 	line = NULL;
-	ins = NULL;
 	res = 1;
 	while (res > 0) // voir si fuite memoire si direct si while(gnl())
 	{
@@ -65,5 +60,5 @@ void		read_instructions(t_num *nb)
 			ins = fill_stack_ins(ins, line, nb);
 		free(line);
 	}
-	//nb = exec_instructions(nb, ins);
+	return (ins);
 }

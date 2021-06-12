@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:52:41 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 08:56:28 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 10:17:04 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,15 @@ void		print_nb(t_num *nb)
 int			main(int ac, char *av[])
 {
 	t_num	*nb;
+	t_ins	*ins;
 
 	nb = NULL;
+	ins = NULL;
 	if (ac == 1)
 		return (0);
 	ac -= 1;
 	nb = check_args(ac, av, nb);
-	print_nb(nb);
-	read_instructions(nb);
-
+	ins = read_instructions(&nb, ins);
+	nb = exec_instructions(nb, ins);
 	return (0);
 }

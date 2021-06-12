@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 08:27:14 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 08:39:17 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 10:33:37 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_num	*pop_back(t_num *list)
 	before = list;
 	if (!list)
 		return (list);
-	if (list->next == NULL)
+	if (!list->next)
 	{
 		free(list);
 		list = NULL;
@@ -38,7 +38,7 @@ t_num	*pop_back(t_num *list)
 	return (list);
 }
 
-t_num	*pop_back(t_num *list)
+t_num	*pop_front(t_num *list)
 {
 	t_num	*elet;
 

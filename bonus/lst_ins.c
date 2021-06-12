@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ins_lst.c                                          :+:      :+:    :+:   */
+/*   lst_ins.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 10:55:17 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/10 08:27:44 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 09:56:14 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_ins		*new_ins(char *str)
 {
 	t_ins *ins;
 
-	if (!(ins = malloc(sizeof(ins))))
+	ins = malloc(sizeof(ins));
+	if (!ins)
 		return (NULL);
 	if (!(ins->str = ft_strdup(str)))
 		return (NULL);
@@ -26,25 +27,26 @@ t_ins		*new_ins(char *str)
 
 t_ins		*last_ins(t_ins *ins)
 {
-	if (ins == NULL)
+	if (!ins)
 		return (NULL);
-	while (ins->next != NULL)
+	while (ins->next)
 		ins = ins->next;
 	return (ins);
 }
 
-void		push_back_ins(t_ins **list, t_ins *elet)
+t_ins		*push_back_ins(t_ins *list, char *line)
 {
 	t_ins	*tmp;
+	t_ins	*elet;
 
-	tmp = *list;
+
+	tmp = list;
+	elet = new_ins(line);
 	if (!elet)
-		return ;
-	if (!*list)
-	{
-		*list = elet;
-		return ;
-	}
+		return (NULL);
+	if (!list)
+		return (elet);
 	tmp = last_ins(tmp);
 	tmp->next = elet;
+	return (list);
 }

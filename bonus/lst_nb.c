@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 08:54:10 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 09:56:07 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ t_num		*push_back(t_num *list, int val)
 	tmp = list;
 	if (!elet)
 		return (NULL);
-	elet->next = NULL;
 	if (!list)
 		return (elet);
 	tmp = last_num(tmp);

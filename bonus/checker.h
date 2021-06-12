@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 13:26:58 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 08:51:32 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 10:46:54 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,18 @@ typedef struct		s_num
 }					t_num;
 
 void	print_ins(t_ins *ins);
+void	print_nb(t_num *nb);
 
 int		ft_exit(t_num **stack_1, t_num **stack_2, t_ins *ins);
+void	ft_ko(t_num **stack_1, t_num **stack_2, t_ins *ins);
 void	ft_error_ins(t_ins **ins, t_num **nb);
 void	ft_error_nb(t_num **nb);
 int		check_instructions(char *line);
 t_ins	*new_ins(char *str);
-t_ins	*fill_stack_ins(t_ins *ins, char *line, t_num *nb);
-void	read_instructions(t_num *nb);
+t_ins	*fill_stack_ins(t_ins *ins, char *line, t_num **nb);
+t_ins	*read_instructions(t_num **nb, t_ins *ins);
 t_ins	*last_ins(t_ins *ins);
-void	push_back_ins(t_ins **list, t_ins *elet);
+t_ins	*push_back_ins(t_ins *list, char *line);
 int		my_atoi(char *str, t_num *mynb);
 t_num	*check_args(int ac, char *av[], t_num *nb);
 t_num	*new_nb(int val);
@@ -53,6 +55,11 @@ t_num	*last_num(t_num *nb);
 t_num	*push_back(t_num *list, int val);
 t_num	*push_front(t_num *list, int val);
 t_num	*pop_back(t_num *list);
-t_num	*pop_back(t_num *list);
+t_num	*pop_front(t_num *list);
+t_num	*exec_instructions(t_num *nb, t_ins *ins);
+t_num	*switch_nb(t_num *cur, t_num *other_stack, t_ins *ins);
+void	push_nb(t_num **cur, t_num **other_stack, t_ins *ins);
+t_num	*roll_stack(t_num *cur, t_num *other_stack, t_ins *ins);
+t_num	*reverse_roll_stack(t_num *cur, t_num *other_stack, t_ins *ins);
 
 #endif
