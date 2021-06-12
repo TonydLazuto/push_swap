@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 10:35:37 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/11 09:25:33 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 08:55:04 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_exit(t_num **stack_1, t_num **stack_2, t_ins *ins)
 {
 	empty_nb(stack_1);
 	empty_nb(stack_2);
-	empty_ins(ins);
+	empty_ins(&ins);
 	exit(0);
 }
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nb_list.c                                          :+:      :+:    :+:   */
+/*   lst_nb.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/10 08:21:10 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 08:54:10 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,52 @@
 
 t_num		*new_nb(int val)
 {
-	t_num *nb;
+	t_num *elet;
 
-	if (!(nb = malloc(sizeof(*nb))))
+	elet = malloc(sizeof(*elet));
+	if (!elet)
 		return (NULL);
-	nb->val = val;
-	nb->next = NULL;
-	return (nb);
+	elet->val = val;
+	elet->next = NULL;
+	return (elet);
 }
 
-t_num		*last_num(t_num *nb)
+t_num		*last_num(t_num *elet)
 {
-	if (nb == NULL)
+	if (!elet)
 		return (NULL);
-	while (nb->next != NULL)
-		nb = nb->next;
-	return (nb);
+	while (elet->next)
+		elet = elet->next;
+	return (elet);
 }
 
-void		push_back(t_num **list, t_num *elet)
+t_num		*push_back(t_num *list, int val)
 {
+	t_num	*elet;
 	t_num	*tmp;
 
-	tmp = *list;
+	elet = new_nb(val);
+	tmp = list;
 	if (!elet)
-		return ;
-	if (!*list)
-	{
-		*list = elet;
-		return ;
-	}
+		return (NULL);
+	elet->next = NULL;
+	if (!list)
+		return (elet);
 	tmp = last_num(tmp);
 	tmp->next = elet;
+	return (list);
+}
+
+t_num		*push_front(t_num *list, int val)
+{
+	t_num	*elet;
+
+	elet = new_nb(val);
+	if (!elet)
+		return (NULL);
+	if (!list)
+		elet->next = NULL;
+	else
+		elet->next = list;
+	return (elet);
 }

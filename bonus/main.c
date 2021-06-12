@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:52:41 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/11 08:31:12 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 08:56:28 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,17 @@ void		print_ins(t_ins *ins)
 		cpy = cpy->next;
 	}
 }
+void		print_nb(t_num *nb)
+{
+	t_num	*cpy;
 
+	cpy = nb;
+	while (cpy)
+	{
+		printf("|%d|\n", cpy->val);
+		cpy = cpy->next;
+	}
+}
 int			main(int ac, char *av[])
 {
 	t_num	*nb;
@@ -47,6 +57,8 @@ int			main(int ac, char *av[])
 		return (0);
 	ac -= 1;
 	nb = check_args(ac, av, nb);
+	print_nb(nb);
 	read_instructions(nb);
+
 	return (0);
 }

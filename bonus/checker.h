@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 13:26:58 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/11 09:50:54 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/12 08:51:32 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ int		my_atoi(char *str, t_num *mynb);
 t_num	*check_args(int ac, char *av[], t_num *nb);
 t_num	*new_nb(int val);
 t_num	*last_num(t_num *nb);
-void	push_back(t_num **list, t_num *elet);
+t_num	*push_back(t_num *list, int val);
+t_num	*push_front(t_num *list, int val);
+t_num	*pop_back(t_num *list);
+t_num	*pop_back(t_num *list);
 
 #endif
