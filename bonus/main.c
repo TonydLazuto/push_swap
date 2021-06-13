@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:52:41 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 10:17:04 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/13 02:00:01 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void		print_ins(t_ins *ins)
 		cpy = cpy->next;
 	}
 }
+
 void		print_nb(t_num *nb)
 {
 	t_num	*cpy;
@@ -48,6 +49,30 @@ void		print_nb(t_num *nb)
 		cpy = cpy->next;
 	}
 }
+
+void		check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins)
+{
+	t_num	*elet;
+
+	elet = stack_a;
+	if (stack_b)
+	{
+		printf("hey\n%d\n", stack_b->val);
+		ft_ko(&stack_a, &stack_b, ins);
+	}
+	while (elet)
+	{
+		if (elet->next)
+		{
+			if (elet > elet->next)
+				ft_ko(&stack_a, &stack_b, ins);
+		}
+		elet = elet->next;
+	}
+	ft_putendl_fd("OK", 1);
+	ft_exit(&stack_a, &stack_b, ins);
+}
+
 int			main(int ac, char *av[])
 {
 	t_num	*nb;

@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 13:26:58 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 10:46:54 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/13 00:45:55 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,12 @@ void	print_nb(t_num *nb);
 
 int		ft_exit(t_num **stack_1, t_num **stack_2, t_ins *ins);
 void	ft_ko(t_num **stack_1, t_num **stack_2, t_ins *ins);
+void	empty_nb(t_num **nb);
+void	empty_ins(t_ins **ins);
 void	ft_error_ins(t_ins **ins, t_num **nb);
 void	ft_error_nb(t_num **nb);
+void	ft_error(t_num **stack_1, t_num **stack_2, t_ins *ins);
+
 int		check_instructions(char *line);
 t_ins	*new_ins(char *str);
 t_ins	*fill_stack_ins(t_ins *ins, char *line, t_num **nb);
@@ -61,5 +65,6 @@ t_num	*switch_nb(t_num *cur, t_num *other_stack, t_ins *ins);
 void	push_nb(t_num **cur, t_num **other_stack, t_ins *ins);
 t_num	*roll_stack(t_num *cur, t_num *other_stack, t_ins *ins);
 t_num	*reverse_roll_stack(t_num *cur, t_num *other_stack, t_ins *ins);
+void	check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins);
 
 #endif

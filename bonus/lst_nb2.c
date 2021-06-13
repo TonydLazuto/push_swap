@@ -6,11 +6,41 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 08:27:14 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 10:33:37 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/13 01:56:23 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+t_num		*push_back(t_num *list, int val)
+{
+	t_num	*elet;
+	t_num	*tmp;
+
+	elet = new_nb(val);
+	tmp = list;
+	if (!elet)
+		return (NULL);
+	if (!list)
+		return (elet);
+	tmp = last_num(tmp);
+	tmp->next = elet;
+	return (list);
+}
+
+t_num		*push_front(t_num *list, int val)
+{
+	t_num	*elet;
+
+	elet = new_nb(val);
+	if (!elet)
+		return (NULL);
+	if (!list)
+		elet->next = NULL;
+	else
+		elet->next = list;
+	return (elet);
+}
 
 t_num	*pop_back(t_num *list)
 {
@@ -40,15 +70,13 @@ t_num	*pop_back(t_num *list)
 
 t_num	*pop_front(t_num *list)
 {
-	t_num	*elet;
+	t_num	*first;
 
-	elet = malloc(sizeof(*elet));
-	if (!elet)
-		return (NULL);
+	first = list;
 	if (!list)
-		return (list);
-	elet = list->next;
-	free(list);
-	list = NULL;
-	return (elet);
+		return (NULL);
+	list = list->next;
+	free(first);
+	first = NULL;
+	return (list);
 }

@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 09:56:07 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/13 01:03:56 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,5 @@ t_num		*last_num(t_num *elet)
 		return (NULL);
 	while (elet->next)
 		elet = elet->next;
-	return (elet);
-}
-
-t_num		*push_back(t_num *list, int val)
-{
-	t_num	*elet;
-	t_num	*tmp;
-
-	elet = new_nb(val);
-	tmp = list;
-	if (!elet)
-		return (NULL);
-	if (!list)
-		return (elet);
-	tmp = last_num(tmp);
-	tmp->next = elet;
-	return (list);
-}
-
-t_num		*push_front(t_num *list, int val)
-{
-	t_num	*elet;
-
-	elet = new_nb(val);
-	if (!elet)
-		return (NULL);
-	if (!list)
-		elet->next = NULL;
-	else
-		elet->next = list;
 	return (elet);
 }
