@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:52:41 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/13 02:00:01 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/17 15:46:56 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,15 @@ void		check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins)
 	elet = stack_a;
 	if (stack_b)
 	{
-		printf("hey\n%d\n", stack_b->val);
+		//printf("hey\n%d\n", stack_b->val);
 		ft_ko(&stack_a, &stack_b, ins);
 	}
 	while (elet)
 	{
 		if (elet->next)
 		{
-			if (elet > elet->next)
+			//printf("elet : %d\nelet->next : %d\n", elet->val, elet->next->val);
+			if (elet->val > elet->next->val)
 				ft_ko(&stack_a, &stack_b, ins);
 		}
 		elet = elet->next;

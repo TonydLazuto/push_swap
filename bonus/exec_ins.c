@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:31:49 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/13 01:31:50 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/17 15:36:28 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,28 @@ static void		go_push(t_num **stack_a, t_num **stack_b,
 static void		go_roll(t_num **stack_a, t_num **stack_b,
 							t_ins *elet, t_ins *ins)
 {
-	if (!ft_strncmp(elet->str, "ra", 2))
-		*stack_a = roll_stack(*stack_a, *stack_b, ins);
-	if (!ft_strncmp(elet->str, "rb", 2))
-		*stack_b = roll_stack(*stack_b, *stack_a, ins);
-	if (!ft_strncmp(elet->str, "rr", 2))
+	if (ft_strlen(elet->str) == 2)
 	{
-		*stack_a = roll_stack(*stack_a, *stack_b, ins);
-		*stack_b = roll_stack(*stack_b, *stack_a, ins);
+		if (!ft_strncmp(elet->str, "ra", 2))
+			*stack_a = roll_stack(*stack_a, *stack_b, ins);
+		if (!ft_strncmp(elet->str, "rb", 2))
+			*stack_b = roll_stack(*stack_b, *stack_a, ins);
+		if (!ft_strncmp(elet->str, "rr", 2))
+		{
+			*stack_a = roll_stack(*stack_a, *stack_b, ins);
+			*stack_b = roll_stack(*stack_b, *stack_a, ins);
+		}
 	}
 }
 
 static void		go_reverse_roll(t_num **stack_a, t_num **stack_b,
 									t_ins *elet, t_ins *ins)
 {
-	if (!ft_strncmp(elet->str, "rra", 2))
+	if (!ft_strncmp(elet->str, "rra", 3))
 		*stack_a = reverse_roll_stack(*stack_a, *stack_b, ins);
-	if (!ft_strncmp(elet->str, "rrb", 2))
+	if (!ft_strncmp(elet->str, "rrb", 3))
 		*stack_b = reverse_roll_stack(*stack_b, *stack_a, ins);
-	if (!ft_strncmp(elet->str, "rrr", 2))
+	if (!ft_strncmp(elet->str, "rrr", 3))
 	{
 		*stack_a = reverse_roll_stack(*stack_a, *stack_b, ins);
 		*stack_b = reverse_roll_stack(*stack_b, *stack_a, ins);
@@ -85,7 +88,7 @@ t_num		*exec_instructions(t_num *nb, t_ins *ins)
 		if (!ft_strncmp(elet->str, "rra", 3) || !ft_strncmp(elet->str, "rrb", 3)
 				|| !ft_strncmp(elet->str, "rrr", 3))
 			go_reverse_roll(&stack_a, &stack_b, elet, ins);
-	
+
 		printf("|--%s--|\nStack A :\n", elet->str);
 		print_nb(stack_a);
 		printf("\nStack B :\n");
