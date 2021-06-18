@@ -6,11 +6,11 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/18 11:13:50 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/18 08:22:42 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 t_num		*new_nb(int val)
 {

@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/07 11:16:24 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/18 12:16:07 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,53 +25,48 @@
 ** rra = reverse rotate a - Last element is now 1st.
 ** rrr = rra + rrb
 */
-
-int			*check_args(int ac, char *av[], int *nb)
+int			*fill_nb(t_num *lst)
 {
+	int		*nb;
+	int		size;
 	int		i;
-	int 	j;
 
-	nb = malloc(sizeof(int) * ac);
+	i = 0;
+	nb = NULL;
+	size = list_lenght(lst);
+	nb = malloc(sizeof(int) * size);
 	if (!nb)
-		ft_error(nb);
-	i = 1;
-	while (av[i])
+		ft_error(&lst, nb);
+	while (lst)
 	{
-		if (av[i][0] == '-' || av[i][0] == '+')
-			j = 1;
-		else
-			j = 0;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-				ft_error(nb);
-			j++;
-		}
-		nb[i - 1] = my_atoi(av[i], nb);
-		printf("nb_%d = %d\n", i-1,nb[i-1]);
-		i++;
+		nb[i++] = lst->val;
+		lst = lst->next;
 	}
 	return (nb);
 }
 
-void		check_extras(int ac, int *nb)
+void		check_extras(int ac, t_num *lst)
 {
+	int	*nb;
+
+	nb = fill_nb(lst);
 	if (ac == 2)
 		swap_two(nb);
 	if (ac == 3)
 		swap_three(nb, ac);
 	if (ac == 5)
 		swap_five(nb, ac);
-	ft_exit(nb);
+	printf("HOO\n");
+	ft_exit(&lst, nb);
 }
 
 int			push_swap(int ac, char *av[])
 {
-	int *nb;
+	t_num	*lst;
 
-	nb = NULL;
-	nb = check_args(ac, av, nb);
-	check_extras(ac, nb);
+	lst = NULL;
+	lst = check_args(ac, av, lst);
+	check_extras(ac, lst);
 	return (0);
 }
 
