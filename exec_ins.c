@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:31:49 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/19 10:10:51 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/20 09:55:44 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ void			exec_instructions(t_num **stack_a, t_num **stack_b,
 			|| !ft_strncmp(ins, "rrr", 3))
 		go_reverse_roll(stack_a, stack_b, ins);
 	
-	printf("|--%s--|\nStack A :\n", ins);
+	printf("Stack A :\n");
 	print_nb(*stack_a);
-	printf("\nStack B :\n");
+	printf("Stack B :\n\n");
 	print_nb(*stack_b);
 }

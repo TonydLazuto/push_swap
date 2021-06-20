@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 09:01:35 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/20 09:53:23 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,42 +26,18 @@
 ** rrr = rra + rrb
 */
 
-int			*fill_nb(t_num *lst)
-{
-	int		*nb;
-	int		size;
-	int		i;
-
-	i = 0;
-	nb = NULL;
-	size = list_lenght(lst);
-	nb = malloc(sizeof(int) * size);
-	if (!nb)
-		return (NULL);
-	while (lst)
-	{
-		nb[i++] = lst->val;
-		lst = lst->next;
-	}
-	return (nb);
-}
-
 void		check_extras(int ac, t_num *stack_a)
 {
-	int		*nb;
 	t_num	*stack_b;
 
 	stack_b = NULL;
-	nb = fill_nb(stack_a);
-	if (!nb)
-		ft_exit(&stack_a, &stack_b,  nb);
 	if (ac == 2)
-		swap_two(nb);
+		swap_two(&stack_a, &stack_b);
 	if (ac == 3)
-		swap_three(nb, &stack_a, &stack_b);
+		swap_three(&stack_a, &stack_b);
 	if (ac == 5)
-		swap_five(nb, &stack_a, &stack_b);
-	ft_exit(&stack_a, &stack_b, nb);
+		swap_five(&stack_a, &stack_b);
+	ft_exit(&stack_a, &stack_b);
 }
 
 int			push_swap(int ac, char *av[])

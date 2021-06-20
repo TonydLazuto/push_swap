@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:45:02 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 08:58:58 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/20 09:54:06 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		push_nb(t_num **cur, t_num **other_stack, const char *ins)
 	{
 		*cur = push_front(*cur, (*other_stack)->val);
 		if (!*cur)
-			ft_error(cur, other_stack, NULL); 
+			ft_error(cur, other_stack); 
 		*other_stack = pop_front(*other_stack);
 	}
 }
@@ -51,7 +51,7 @@ t_num		*roll_stack(t_num *cur, t_num *other_stack, const char *ins)
 	{
 		cur = push_back(cur, cur->val);
 		if (!cur)
-			ft_error(&cur, &other_stack, NULL);
+			ft_error(&cur, &other_stack);
 		cur = pop_front(cur);
 	}
 	return (cur);
@@ -65,7 +65,7 @@ t_num		*reverse_roll_stack(t_num *cur, t_num *other_stack, const char *ins)
 	{
 		cur = push_front(cur, last_num(cur)->val);
 		if (!cur)
-			ft_error(&cur, &other_stack, NULL);
+			ft_error(&cur, &other_stack);
 		cur = pop_back(cur);
 	}
 	return (cur);

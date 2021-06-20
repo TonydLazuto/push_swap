@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 08:44:18 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/20 09:52:49 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int			my_atoi(char *str, t_num *mynb)
 	}
 	nb *= sign;
 	if (nb > INT32_MAX || nb < INT32_MIN)
-		ft_error(&mynb, NULL, NULL);
+		ft_error(&mynb, NULL);
 	return ((int)nb);
 }
 
 void		check_duplicate(t_num *nb, int val)
 {
 	if (is_point_in_list(nb, val))
-		ft_error(&nb, NULL, NULL);
+		ft_error(&nb, NULL);
 }
 
 t_num		*check_args(int ac, char *av[], t_num *nb)
@@ -62,14 +62,14 @@ t_num		*check_args(int ac, char *av[], t_num *nb)
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
-				ft_error(&nb, NULL, NULL);
+				ft_error(&nb, NULL);
 			j++;
 		}
 		val = my_atoi(av[i], nb);
 		check_duplicate(nb, val);
 		nb = push_back(nb, val);
 		if (!nb)
-			ft_error(&nb, NULL, NULL);
+			ft_error(&nb, NULL);
 		i++;
 	}
 	return (nb);
