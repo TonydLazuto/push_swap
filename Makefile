@@ -19,8 +19,10 @@ SRCS		= push_swap.c \
 			  check_args.c \
 			  lst_nb.c \
 			  lst_nb2.c \
+			  exec_ins.c \
+			  exec_ins2.c \
 			  exit.c \
-			  errors.c
+			  utils.c
 
 OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
 

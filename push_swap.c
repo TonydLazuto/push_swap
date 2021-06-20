@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/18 12:16:07 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/20 09:01:35 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 ** rra = reverse rotate a - Last element is now 1st.
 ** rrr = rra + rrb
 */
+
 int			*fill_nb(t_num *lst)
 {
 	int		*nb;
@@ -36,7 +37,7 @@ int			*fill_nb(t_num *lst)
 	size = list_lenght(lst);
 	nb = malloc(sizeof(int) * size);
 	if (!nb)
-		ft_error(&lst, nb);
+		return (NULL);
 	while (lst)
 	{
 		nb[i++] = lst->val;
@@ -45,19 +46,22 @@ int			*fill_nb(t_num *lst)
 	return (nb);
 }
 
-void		check_extras(int ac, t_num *lst)
+void		check_extras(int ac, t_num *stack_a)
 {
-	int	*nb;
+	int		*nb;
+	t_num	*stack_b;
 
-	nb = fill_nb(lst);
+	stack_b = NULL;
+	nb = fill_nb(stack_a);
+	if (!nb)
+		ft_exit(&stack_a, &stack_b,  nb);
 	if (ac == 2)
 		swap_two(nb);
 	if (ac == 3)
-		swap_three(nb, ac);
+		swap_three(nb, &stack_a, &stack_b);
 	if (ac == 5)
-		swap_five(nb, ac);
-	printf("HOO\n");
-	ft_exit(&lst, nb);
+		swap_five(nb, &stack_a, &stack_b);
+	ft_exit(&stack_a, &stack_b, nb);
 }
 
 int			push_swap(int ac, char *av[])
