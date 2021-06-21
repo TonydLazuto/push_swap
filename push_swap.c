@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 09:53:23 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/21 01:31:59 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ void		check_extras(int ac, t_num *stack_a)
 	stack_b = NULL;
 	if (ac == 2)
 		swap_two(&stack_a, &stack_b);
-	if (ac == 3)
+	else if (ac == 3)
 		swap_three(&stack_a, &stack_b);
+	/*
+	else
+		swap();
+	*/	
 	if (ac == 5)
 		swap_five(&stack_a, &stack_b);
 	ft_exit(&stack_a, &stack_b);

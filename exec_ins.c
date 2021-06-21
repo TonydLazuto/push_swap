@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:31:49 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 09:55:44 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/20 11:01:32 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void		go_roll(t_num **stack_a, t_num **stack_b,
 		if (!ft_strncmp(ins, "rr", 2))
 		{
 			*stack_a = roll_stack(*stack_a, *stack_b, ins);
-			*stack_b = roll_stack(*stack_b, *stack_a, "");
+			*stack_b = roll_stack(*stack_b, *stack_a, ""); //voir si ca marche
 		}
 	}
 }
@@ -81,6 +81,7 @@ void			exec_instructions(t_num **stack_a, t_num **stack_b,
 	
 	printf("Stack A :\n");
 	print_nb(*stack_a);
-	printf("Stack B :\n\n");
+	printf("Stack B :\n");
 	print_nb(*stack_b);
+	printf("\n");
 }
