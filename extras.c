@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 14:47:14 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 15:57:05 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ void	swap_five(t_num **stack_a, t_num **stack_b)
 	swap_three(stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pa");
 	swap_three(stack_a, stack_b);
-*/
-}
+
+}*/

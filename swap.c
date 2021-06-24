@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 01:12:24 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 14:46:39 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 15:59:43 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,10 @@ t_num	*get_greatest(t_num *stack_a, t_num *elet)
 void	get_xtrms(t_num **stack_a, t_num **stack_b)
 {
 	t_num	*elet;
+	t_num	*elet2;
 
 	elet = get_lowest(*stack_a, elet);
 	printf("lowest number: %d\n", elet->val);
-	//i = get_greatest(nb, size);
-	//printf("Greatest number: %d\n", nb[i]);
+	elet2 = get_greatest(*stack_a, elet2);
+	printf("Greatest number: %d\n", elet2->val);
 }
