@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 13:00:53 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 16:09:57 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void		check_extras(int ac, t_num *stack_a)
 	else
 		swap();
 	*/
-	get_xtrms(&stack_a, &stack_b);
+	pop_xtrms(&stack_a, &stack_b);
 	/*
 	if (ac == 5)
 		swap_five(&stack_a, &stack_b);*/

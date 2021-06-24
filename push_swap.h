@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 14:02:28 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 18:50:35 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ typedef struct		s_num
 	int				val;
 	struct s_num	*next;
 }					t_num;
+
+typedef	struct	s_roll
+{
+	int			nb;
+	char		*ins;
+}				t_roll;
 
 t_num	*new_nb(int val);
 t_num	*last_num(t_num *nb);
@@ -45,8 +51,6 @@ void	swap_two(t_num **stack_a, t_num **stack_b);
 void	swap_three(t_num **stack_a, t_num **stack_b);
 void	swap_five(t_num **stack_a, t_num **stack_b);
 
-void	get_xtrms(t_num **stack_a, t_num **stack_b);
-
 void	exec_instructions(t_num **stack_a, t_num **stack_b,
 								const char *ins);
 t_num	*switch_nb(t_num *cur, t_num *other_stack, const char *ins);
@@ -56,5 +60,9 @@ t_num	*reverse_roll_stack(t_num *cur, t_num *other_stack, const char *ins);
 
 void	print_nb(t_num *nb);
 void	print_const(const char *s, int fd);
+
+void	init_roll(t_roll *r);
+void	free_roll_ins(t_roll *r);
+void	pop_xtrms(t_num **stack_a, t_num **stack_b);
 
 #endif
