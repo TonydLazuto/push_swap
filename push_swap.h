@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 18:50:35 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 20:16:29 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct		s_num
 typedef	struct	s_roll
 {
 	int			nb;
-	char		*ins;
+	const char	*ins;
 }				t_roll;
 
 t_num	*new_nb(int val);
@@ -62,7 +62,9 @@ void	print_nb(t_num *nb);
 void	print_const(const char *s, int fd);
 
 void	init_roll(t_roll *r);
-void	free_roll_ins(t_roll *r);
+t_num	*get_lowest(t_num *stack_a, t_num *elet);
+t_num	*get_greatest(t_num *stack_a, t_num *elet);
+t_roll	get_nb_rolls(t_num *stack_a, t_num *elet);
 void	pop_xtrms(t_num **stack_a, t_num **stack_b);
 
 #endif

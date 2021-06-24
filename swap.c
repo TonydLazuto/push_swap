@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 01:12:24 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 18:58:00 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 20:51:59 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_num	*get_lowest(t_num *stack_a, t_num *elet)
 				valid++;
 			tmp = tmp->next;
 		}
+		//printf("valid : %d\nelet : %d\nsize : %d\n",valid, elet->val, size);
 		if (valid == size)
 			return (elet);
 		elet = elet->next;
@@ -84,11 +85,10 @@ t_roll	get_nb_rolls(t_num *stack_a, t_num *elet)
 	}
 	if (ra.nb < rra.nb)
 	{
-		ra.ins = ft_strdup("ra");
+		ra.ins = "ra";
 		return (ra);
 	}
-	free_roll_ins(&ra);
-	rra.ins = ft_strdup("rra");
+	rra.ins = "rra";
 	return (rra);
 }
 
@@ -102,13 +102,11 @@ void	pop_xtrms(t_num **stack_a, t_num **stack_b)
 	elet2 = *stack_a;
 	elet = get_lowest(*stack_a, elet);
 	roll = get_nb_rolls(*stack_a, elet);
-	printf("lowest number : %d\nnb : %d\nins : %s\n",
-				elet->val, roll.nb, roll.ins);
-	
+	//printf("lowest number : %d\nnb : %d\nins : %s\n",
+				//elet->val, roll.nb, roll.ins);
 	elet2 = get_greatest(*stack_a, elet2);
 	roll = get_nb_rolls(*stack_a, elet2);
-	printf("Greatest number : %d\nnb : %d\nins : %s\n",
-				elet2->val, roll.nb, roll.ins);
-
+	//printf("gtest number : %d\nnb : %d\nins : %s\n",
+				//elet2->val, roll.nb, roll.ins);
 	print_nb(*stack_a);
 }

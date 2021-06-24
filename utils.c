@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 10:21:07 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 18:50:28 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 19:47:25 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 void	init_roll(t_roll *r)
 {
 	r->nb = 0;
-	r->ins = NULL;
-}
-
-void	free_roll_ins(t_roll *r)
-{
-	free(r->ins);
 	r->ins = NULL;
 }
 
