@@ -6,33 +6,69 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 01:12:24 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/21 01:32:03 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 14:46:39 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void	push_lowest_nb(t_num **stack_a, t_num **stack_b)
+t_num	*get_lowest(t_num *stack_a, t_num *elet)
 {
-	//find_lowest_nb
-	lowest = get_lowest_nb(stack_a);
-	if (!lowest)
-		ft_error(stack_a, stack_b);
-	;
+	int		valid;
+	t_num	*tmp;
+	int		size;
+
+	tmp = NULL;
+	size = list_length(stack_a);
+	while (elet)
+	{
+		tmp = stack_a;
+		valid = 1;
+		while (tmp)
+		{
+			if (elet->val < tmp->val)
+				valid++;
+			tmp = tmp->next;
+		}
+		if (valid == size)
+			return (elet);
+		elet = elet->next;
+	}
+	elet = last_num(stack_a);
+	return (elet);
+}
+t_num	*get_greatest(t_num *stack_a, t_num *elet)
+{
+	int		valid;
+	t_num	*tmp;
+	int		size;
+
+	tmp = NULL;
+	size = list_length(stack_a);
+	while (elet)
+	{
+		tmp = stack_a;
+		valid = 1;
+		while (tmp)
+		{
+			if (elet->val > tmp->val)
+				valid++;
+			tmp = tmp->next;
+		}
+		if (valid == size)
+			return (elet);
+		elet = elet->next;
+	}
+	elet = last_num(stack_a);
+	return (elet);
 }
 
-void	swap(t_num **stack_a, t_num **stack_b)
+void	get_xtrms(t_num **stack_a, t_num **stack_b)
 {
-	t_num	*lowest;
+	t_num	*elet;
 
-	while (*stack_a)
-	{
-		lowest = push_lowest_nb(stack_a, stack_b);
-		pop_lowest_nb(stack_a, lowest);
-	}
-	while (*stack_b)
-	{
-		*stack_b = pop_front
-	}
+	elet = get_lowest(*stack_a, elet);
+	printf("lowest number: %d\n", elet->val);
+	//i = get_greatest(nb, size);
+	//printf("Greatest number: %d\n", nb[i]);
 }

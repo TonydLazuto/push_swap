@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 09:50:56 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 14:02:28 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct		s_num
 
 t_num	*new_nb(int val);
 t_num	*last_num(t_num *nb);
-int		list_lenght(t_num *lst);
+int		list_length(t_num *lst);
 int		is_point_in_list(t_num *nb, int val);
 t_num	*push_back(t_num *list, int val);
 t_num	*push_front(t_num *list, int val);
@@ -44,6 +44,8 @@ void	ft_error(t_num **lst1, t_num **lst2);
 void	swap_two(t_num **stack_a, t_num **stack_b);
 void	swap_three(t_num **stack_a, t_num **stack_b);
 void	swap_five(t_num **stack_a, t_num **stack_b);
+
+void	get_xtrms(t_num **stack_a, t_num **stack_b);
 
 void	exec_instructions(t_num **stack_a, t_num **stack_b,
 								const char *ins);

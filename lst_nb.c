@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/18 08:22:42 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 13:07:35 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_num		*last_num(t_num *elet)
 	return (elet);
 }
 
-int			list_lenght(t_num *lst)
+int			list_length(t_num *lst)
 {
 	int		size;
 

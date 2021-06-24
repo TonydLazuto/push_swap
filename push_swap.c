@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/21 01:31:59 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/24 13:00:53 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,23 @@ void		check_extras(int ac, t_num *stack_a)
 	/*
 	else
 		swap();
-	*/	
+	*/
+	get_xtrms(&stack_a, &stack_b);
+	/*
 	if (ac == 5)
-		swap_five(&stack_a, &stack_b);
+		swap_five(&stack_a, &stack_b);*/
 	ft_exit(&stack_a, &stack_b);
-}
-
-int			push_swap(int ac, char *av[])
-{
-	t_num	*lst;
-
-	lst = NULL;
-	lst = check_args(ac, av, lst);
-	check_extras(ac, lst);
-	return (0);
 }
 
 int			main(int ac, char *av[])
 {
+	t_num	*lst;
+
+	lst = NULL;
 	if (ac == 1)
 		return (0);
 	ac -= 1;
-	push_swap(ac, av);
+	lst = check_args(ac, av, lst);
+	check_extras(ac, lst);
 	return (0);
 }
