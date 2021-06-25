@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 20:55:03 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/25 09:54:41 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,26 @@
 ** rrr = rra + rrb
 */
 
+
+void	pop_xtrms(t_num **stack_a, t_num **stack_b)
+{
+	t_num	*elet;
+	t_num	*elet2;
+	t_roll	roll;
+
+	elet = *stack_a;
+	elet2 = *stack_a;
+	elet = get_lowest(*stack_a, elet);
+	roll = get_nb_rolls(*stack_a, elet);
+	//printf("lowest number : %d\nnb : %d\nins : %s\n",
+				//elet->val, roll.nb, roll.ins);
+	elet2 = get_greatest(*stack_a, elet2);
+	roll = get_nb_rolls(*stack_a, elet2);
+	//printf("gtest number : %d\nnb : %d\nins : %s\n",
+				//elet2->val, roll.nb, roll.ins);
+	print_nb(*stack_a);
+}
+
 void		check_extras(int ac, t_num *stack_a)
 {
 	t_num	*stack_b;
@@ -35,6 +55,8 @@ void		check_extras(int ac, t_num *stack_a)
 		swap_two(&stack_a, &stack_b);
 	else if (ac == 3)
 		swap_three(&stack_a, &stack_b);
+	else if (ac == 4)
+		swap_four(&stack_a, &stack_b);
 	else if (ac == 5)
 		swap_five(&stack_a, &stack_b);
 	/*

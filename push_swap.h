@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 20:16:29 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/25 09:53:25 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_error(t_num **lst1, t_num **lst2);
 
 void	swap_two(t_num **stack_a, t_num **stack_b);
 void	swap_three(t_num **stack_a, t_num **stack_b);
+void	swap_four(t_num **stack_a, t_num **stack_b);
 void	swap_five(t_num **stack_a, t_num **stack_b);
 
 void	exec_instructions(t_num **stack_a, t_num **stack_b,
@@ -65,6 +66,7 @@ void	init_roll(t_roll *r);
 t_num	*get_lowest(t_num *stack_a, t_num *elet);
 t_num	*get_greatest(t_num *stack_a, t_num *elet);
 t_roll	get_nb_rolls(t_num *stack_a, t_num *elet);
+void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
 void	pop_xtrms(t_num **stack_a, t_num **stack_b);
 
 #endif

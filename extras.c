@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 20:54:45 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/25 09:55:32 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,21 @@ void	swap_three(t_num **stack_a, t_num **stack_b)
 	}
 }
 
-void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b)
+void	swap_four(t_num **stack_a, t_num **stack_b)
 {
-	while (roll.nb != 0)
-	{
-		exec_instructions(stack_a, stack_b, roll.ins);
-		roll.nb--;
-	}
+	t_num	*low;
+	t_roll	roll_low;
+	t_roll	roll_great;
+
+	low = *stack_a;
+
+	low = get_lowest(*stack_a, low);
+	roll_low = get_nb_rolls(*stack_a, low);
+	put_nb_on_top(roll_low, stack_a, stack_b);
+	exec_instructions(stack_a, stack_b, "pb");
+
+	swap_three(stack_a, stack_b);
+	exec_instructions(stack_a, stack_b, "pa");
 }
 
 void	swap_five(t_num **stack_a, t_num **stack_b)

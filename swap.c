@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 01:12:24 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 20:51:59 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/25 09:54:36 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,21 +92,12 @@ t_roll	get_nb_rolls(t_num *stack_a, t_num *elet)
 	return (rra);
 }
 
-void	pop_xtrms(t_num **stack_a, t_num **stack_b)
+void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b)
 {
-	t_num	*elet;
-	t_num	*elet2;
-	t_roll	roll;
-
-	elet = *stack_a;
-	elet2 = *stack_a;
-	elet = get_lowest(*stack_a, elet);
-	roll = get_nb_rolls(*stack_a, elet);
-	//printf("lowest number : %d\nnb : %d\nins : %s\n",
-				//elet->val, roll.nb, roll.ins);
-	elet2 = get_greatest(*stack_a, elet2);
-	roll = get_nb_rolls(*stack_a, elet2);
-	//printf("gtest number : %d\nnb : %d\nins : %s\n",
-				//elet2->val, roll.nb, roll.ins);
-	print_nb(*stack_a);
+	while (roll.nb != 0)
+	{
+		exec_instructions(stack_a, stack_b, roll.ins);
+		roll.nb--;
+	}
 }
+
