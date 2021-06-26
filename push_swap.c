@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/25 09:54:41 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 11:43:11 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,25 @@
 ** rrr = rra + rrb
 */
 
-
-void	pop_xtrms(t_num **stack_a, t_num **stack_b)
+void	no_chunk(t_num **stack_a, t_num **stack_b)
 {
-	t_num	*elet;
-	t_num	*elet2;
-	t_roll	roll;
+	t_num	*low;
+	t_roll	roll_low;
+	t_roll	roll_great;
 
-	elet = *stack_a;
-	elet2 = *stack_a;
-	elet = get_lowest(*stack_a, elet);
-	roll = get_nb_rolls(*stack_a, elet);
-	//printf("lowest number : %d\nnb : %d\nins : %s\n",
-				//elet->val, roll.nb, roll.ins);
-	elet2 = get_greatest(*stack_a, elet2);
-	roll = get_nb_rolls(*stack_a, elet2);
-	//printf("gtest number : %d\nnb : %d\nins : %s\n",
-				//elet2->val, roll.nb, roll.ins);
-	print_nb(*stack_a);
+	while (*stack_a)
+	{
+		low = *stack_a;
+		low = get_lowest(*stack_a, low);
+		roll_low = get_nb_rolls(*stack_a, low);
+		put_nb_on_top(roll_low, stack_a, stack_b);
+		exec_instructions(stack_a, stack_b, "pb");
+	}
+	while (*stack_b)
+		exec_instructions(stack_a, stack_b, "pa");
 }
 
-void		check_extras(int ac, t_num *stack_a)
+void		pick_swap(int ac, t_num *stack_a)
 {
 	t_num	*stack_b;
 
@@ -59,12 +57,13 @@ void		check_extras(int ac, t_num *stack_a)
 		swap_four(&stack_a, &stack_b);
 	else if (ac == 5)
 		swap_five(&stack_a, &stack_b);
-	/*
-	else
-		swap();
-	*/
-	//pop_xtrms(&stack_a, &stack_b);
-	print_nb(stack_a);
+	else if (ac > 5 && ac < 50)
+		no_chunk(&stack_a, &stack_b);
+/*	else if (ac >= 50 && ac < 300)
+		chunk5(&stack_a, &stack_b, ac);
+	else if (ac >= 300)
+		chunk11(&stack_a, &stack_b);
+*/	print_nb(stack_a);
 	ft_exit(&stack_a, &stack_b);
 }
 
@@ -77,6 +76,6 @@ int			main(int ac, char *av[])
 		return (0);
 	ac -= 1;
 	lst = check_args(ac, av, lst);
-	check_extras(ac, lst);
+	pick_swap(ac, lst);
 	return (0);
 }

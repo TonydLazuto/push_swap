@@ -22,7 +22,7 @@ SRCS		= push_swap.c \
 			  exec_ins.c \
 			  exec_ins2.c \
 			  exit.c \
-			  swap.c \
+			  rolls.c \
 			  utils.c
 
 OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))

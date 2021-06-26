@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 09:52:49 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 11:40:39 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int			my_atoi(char *str, t_num *mynb)
 		str++;
 	}
 	nb *= sign;
-	if (nb > INT32_MAX || nb < INT32_MIN)
+	if (nb > INT_MAX || nb < INT_MIN)
 		ft_error(&mynb, NULL);
 	return ((int)nb);
 }

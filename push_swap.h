@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/25 09:53:25 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/25 10:17:44 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ t_num	*get_lowest(t_num *stack_a, t_num *elet);
 t_num	*get_greatest(t_num *stack_a, t_num *elet);
 t_roll	get_nb_rolls(t_num *stack_a, t_num *elet);
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
-void	pop_xtrms(t_num **stack_a, t_num **stack_b);
 
 #endif

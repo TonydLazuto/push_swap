@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 10:21:07 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 19:47:25 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/25 11:47:01 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,11 @@ void	print_const(const char *s, int fd)
 	i = 0;
 	if (!s || fd == 0)
 		return ;
-	ft_putchar_fd('!', 1);
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	ft_putchar_fd('!', 1);
 	ft_putchar_fd('\n', fd);
 }
 
