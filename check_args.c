@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 11:40:39 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 11:53:11 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		check_duplicate(t_num *nb, int val)
 		ft_error(&nb, NULL);
 }
 
-t_num		*check_args(int ac, char *av[], t_num *nb)
+t_num		*check_args(char *av[], t_num *nb)
 {
 	int		i;
 	int 	j;

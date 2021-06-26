@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:31:49 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 20:57:36 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 12:00:53 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ static void		go_switch(t_num **stack_a, t_num **stack_b,
 							const char *ins)
 {
 	if (!ft_strncmp(ins, "sa", 2))
-		*stack_a = switch_nb(*stack_a, *stack_b, ins);
+		*stack_a = switch_nb(*stack_a, ins);
 	if (!ft_strncmp(ins, "sb", 2))
-		*stack_b = switch_nb(*stack_b, *stack_a, ins);
+		*stack_b = switch_nb(*stack_b, ins);
 	if(!ft_strncmp(ins, "ss", 2))
 	{
-		*stack_a = switch_nb(*stack_a, *stack_b, ins);
-		*stack_b = switch_nb(*stack_b, *stack_a, "");
+		*stack_a = switch_nb(*stack_a, ins);
+		*stack_b = switch_nb(*stack_b, "");
 	}
 }
 

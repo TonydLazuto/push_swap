@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/25 10:17:44 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 11:56:57 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_num	*pop_front(t_num *list);
 
 int		my_atoi(char *str, t_num *mynb);
 void	check_duplicate(t_num *nb, int val);
-t_num	*check_args(int ac, char *av[], t_num *nb);
+t_num	*check_args(char *av[], t_num *nb);
 
 void	empty_lst(t_num **nb);
 int		ft_exit(t_num **lst1, t_num **lst2);
@@ -54,7 +54,7 @@ void	swap_five(t_num **stack_a, t_num **stack_b);
 
 void	exec_instructions(t_num **stack_a, t_num **stack_b,
 								const char *ins);
-t_num	*switch_nb(t_num *cur, t_num *other_stack, const char *ins);
+t_num	*switch_nb(t_num *cur, const char *ins);
 void	push_nb(t_num **cur, t_num **other_stack, const char *ins);
 t_num	*roll_stack(t_num *cur, t_num *other_stack, const char *ins);
 t_num	*reverse_roll_stack(t_num *cur, t_num *other_stack, const char *ins);

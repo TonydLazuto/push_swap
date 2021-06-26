@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/25 09:55:32 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 11:50:53 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	swap_four(t_num **stack_a, t_num **stack_b)
 {
 	t_num	*low;
 	t_roll	roll_low;
-	t_roll	roll_great;
 
 	low = *stack_a;
 

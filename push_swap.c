@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 11:43:11 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 11:57:20 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	no_chunk(t_num **stack_a, t_num **stack_b)
 {
 	t_num	*low;
 	t_roll	roll_low;
-	t_roll	roll_great;
 
 	while (*stack_a)
 	{
@@ -75,7 +74,7 @@ int			main(int ac, char *av[])
 	if (ac == 1)
 		return (0);
 	ac -= 1;
-	lst = check_args(ac, av, lst);
+	lst = check_args(av, lst);
 	pick_swap(ac, lst);
 	return (0);
 }

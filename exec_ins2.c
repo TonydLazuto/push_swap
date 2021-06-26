@@ -6,13 +6,13 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:45:02 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/20 09:54:06 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 11:58:44 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_num		*switch_nb(t_num *cur, t_num *other_stack, const char *ins)
+t_num		*switch_nb(t_num *cur, const char *ins)
 {
 	int		val;
 
@@ -29,9 +29,6 @@ t_num		*switch_nb(t_num *cur, t_num *other_stack, const char *ins)
 
 void		push_nb(t_num **cur, t_num **other_stack, const char *ins)
 {
-	t_num	*elet;
-
-	elet = NULL;
 	if (ins)
 		print_const(ins, 1);
 	if (*other_stack)
