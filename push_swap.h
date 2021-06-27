@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 11:56:57 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 23:50:26 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct		s_num
 
 typedef	struct	s_roll
 {
-	int			nb;
+	int			pos;
 	const char	*ins;
 }				t_roll;
 
@@ -67,5 +67,7 @@ t_num	*get_lowest(t_num *stack_a, t_num *elet);
 t_num	*get_greatest(t_num *stack_a, t_num *elet);
 t_roll	get_nb_rolls(t_num *stack_a, t_num *elet);
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
+void	mymerge(t_num **stack_a, t_num **stack_b);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 11:57:20 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 23:50:17 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,15 @@ void		pick_swap(int ac, t_num *stack_a)
 		swap_four(&stack_a, &stack_b);
 	else if (ac == 5)
 		swap_five(&stack_a, &stack_b);
-	else if (ac > 5 && ac < 50)
-		no_chunk(&stack_a, &stack_b);
+	else if (ac >= 6 && ac < 30)
+		no_chunk(&stack_a, &stack_b);	
+	else if (ac >= 30 && ac < 60)
+		mymerge(&stack_a, &stack_b);	
 /*	else if (ac >= 50 && ac < 300)
 		chunk5(&stack_a, &stack_b, ac);
 	else if (ac >= 300)
 		chunk11(&stack_a, &stack_b);
-*/	print_nb(stack_a);
+*/ //print_nb(stack_a);
 	ft_exit(&stack_a, &stack_b);
 }
 

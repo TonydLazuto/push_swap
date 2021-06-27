@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rolls.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 01:12:24 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/25 09:54:36 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:43:41 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,15 @@ t_roll	get_nb_rolls(t_num *stack_a, t_num *elet)
 	tmp = stack_a;
 	while (tmp->val != elet->val)
 	{
-		ra.nb++;
+		ra.pos++;
 		tmp = tmp->next;
 	}
 	while (elet)
 	{
-		rra.nb++;
+		rra.pos++;
 		elet = elet->next;
 	}
-	if (ra.nb < rra.nb)
+	if (ra.pos < rra.pos)
 	{
 		ra.ins = "ra";
 		return (ra);
@@ -94,10 +94,10 @@ t_roll	get_nb_rolls(t_num *stack_a, t_num *elet)
 
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b)
 {
-	while (roll.nb != 0)
+	while (roll.pos != 0)
 	{
 		exec_instructions(stack_a, stack_b, roll.ins);
-		roll.nb--;
+		roll.pos--;
 	}
 }
 
