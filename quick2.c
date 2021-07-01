@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   quick2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 10:21:07 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/01 20:35:45 by tonyd            ###   ########.fr       */
+/*   Created: 2021/06/28 19:12:48 by tonyd             #+#    #+#             */
+/*   Updated: 2021/06/28 19:33:21 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_roll(t_roll *r)
+void	set_num_pos(t_num **stack)
 {
-	r->pos = 0;
-	r->ins = NULL;
-}
-
-void	print_const(const char *s, int fd)
-{
+	t_num	*tmp;
 	int		i;
 
+	tmp = *stack;
 	i = 0;
-	if (!s || fd == 0)
-		return ;
-	while (s[i])
+	if (*stack)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-	ft_putchar_fd('\n', fd);
-}
-
-void		print_nb(t_num *nb)
-{
-	t_num	*cpy;
-
-	cpy = nb;
-	while (cpy)
-	{
-		printf("|%d|->%d\n", cpy->val, cpy->pos);
-		cpy = cpy->next;
+		while (tmp)
+		{
+			tmp->pos = i;
+			tmp = tmp->next;
+			i++;
+		}
 	}
 }

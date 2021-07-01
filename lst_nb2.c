@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 08:27:14 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/18 08:15:44 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/01 20:30:43 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_num		*push_back(t_num *list, int val)
 	if (!list)
 		return (elet);
 	tmp = last_num(tmp);
+	elet->back = tmp;
 	tmp->next = elet;
 	return (list);
 }
@@ -35,10 +36,11 @@ t_num		*push_front(t_num *list, int val)
 	elet = new_nb(val);
 	if (!elet)
 		return (NULL);
-	if (!list)
-		elet->next = NULL;
-	else
+	if (list)
+	{
+		list->back = elet;
 		elet->next = list;
+	}
 	return (elet);
 }
 
@@ -51,7 +53,7 @@ t_num	*pop_back(t_num *list)
 	before = list;
 	if (!list)
 		return (list);
-	if (!list->next)
+	if (!list->next && !list->back)
 	{
 		free(list);
 		list = NULL;
@@ -63,6 +65,7 @@ t_num	*pop_back(t_num *list)
 		tmp = tmp->next;
 	}
 	before->next = NULL;
+	tmp->back = NULL;
 	free(tmp);
 	tmp = NULL;
 	return (list);
@@ -76,6 +79,8 @@ t_num	*pop_front(t_num *list)
 	if (!list)
 		return (NULL);
 	list = list->next;
+	first->next = NULL;
+	list->back = NULL;
 	free(first);
 	first = NULL;
 	return (list);

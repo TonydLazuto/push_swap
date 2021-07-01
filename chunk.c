@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 11:30:29 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/27 10:17:47 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/01 20:33:33 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	split_array(t_num **stack, t_num **array_a, t_num **array_b)
 	}
 }
 
-
+/*
 t_num	*merge(t_num *array_a, t_num *array_b)
 {
 	t_num	*sorted;
@@ -80,86 +80,79 @@ t_num	*merge_sort(t_num *stack)
 	print_nb(array_b);
 	array_a = merge_sort(array_a);
 	array_b = merge_sort(array_b);
+
 	return (merge(array_a, array_b));
 
 	//merge half on stack_b
 	//merge stack_a
 	//merge stack_b on stack_a
 }
+*/
 
-void	mymerge(t_num **stack_a, t_num **stack_b)
-{
-	t_num *sorted1;
-	t_num *sorted2;
+/*	t_num	*array_a;
+	t_num	*array_b;
 
-	sorted1 = NULL;
-	sorted2 = NULL;
-	split_array(stack_a, &sorted1, &sorted2);
-	(void)stack_b;
-	sorted1 = merge_sort(sorted1);
-	print_nb(sorted1);
-}
-
+	array_a = NULL;
+	array_b = NULL;
+	split_array(&stack, &array_a, &array_b);
+	printf("____________________________\n");
+	print_nb(array_a);
+	printf("____________________________\n");
+	print_nb(array_b);
+*/
 /*
-void	chunk(t_num **stack_a, t_num **stack_b, int ac)
+t_num	*get_pivot(t_num *stack_a) // new stack
 {
-	int	half;
-	int	min_chunk;
-	int	max_chunk;
+	t_num	*pivot;
 
-	t_num	*low;
-	t_num	*great;
-	t_roll	roll_low;
-	t_roll	roll_great;
-
-	half = ac / 2;
-
-	min_chunk = 0;
-	max_chunk = 20;
-
-	while (*stack_a)
+	pivot = stack_a;
+	if (stack_a)
 	{
-
+		while (pivot->pos != list_length(*stack_a) / 2)
+			pivot = pivot->next;
 	}
-	great = *stack_a;
-
-	great = get_greatest(*stack_a, great);
-	roll_great = get_nb_rolls(*stack_a, great);
-	put_nb_on_top(roll_great, stack_a, stack_b);
-	exec_instructions(stack_a, stack_b, "pb");
-
-	low = *stack_a;
-
-	low = get_lowest(*stack_a, low);
-	roll_low = get_nb_rolls(*stack_a, low);
-	put_nb_on_top(roll_low, stack_a, stack_b);
-	exec_instructions(stack_a, stack_b, "pb");
-
-	swap_three(stack_a, stack_b);
-	exec_instructions(stack_a, stack_b, "pa");
-	exec_instructions(stack_a, stack_b, "pa");
-	exec_instructions(stack_a, stack_b, "ra");
-
-}
-void	chunk5(t_num **stack_a, t_num **stack_b, int ac)
-{
-	t_num	*low;
-	t_roll	roll_low;
-	t_roll	roll_great;
-
-	while (ac / 5)
-	{
-		low = *stack_a;
-		low = get_lowest(*stack_a, low);
-		roll_low = get_nb_rolls(*stack_a, low);
-		put_nb_on_top(roll_low, stack_a, stack_b);
-		exec_instructions(stack_a, stack_b, "pb");
-	}
-	while (*stack_b)
-		exec_instructions(stack_a, stack_b, "pa");	
+	return (pivot);
 }
 
-void	chun11(t_num **stack_a, t_num **stack_b, int ac)
+int		partition(t_num **stack_a, t_num **stack_b, int lb, int ub)
 {
+	t_num*	pivot;
+	int		start;
+	int		end;
+
+	pivot = get_pivot(*stack_a);
+	start = lb;
+	end = ub;
+	while (start < end)
+	{
+		while ((*stack_a)->val < pivot)
+		{
+			*stack_a = (*stack_a)->next;
+			start++;
+		}
+		*stack_a = pivot->next;
+		while (*stack_a > pivot)
+		{
+		}
+	}
+}
+
+void	quick_sort(t_num **stack_a, t_num **stack_b, int lb, int ub)
+{
+	int		pivot_pos;
+
+	if (lb < ub)
+	{
+		pivot_pos = partition(stack_a, stack_b, lb ,ub);
+		//quick_sort(stack_a, stack_b, lb, pivot_pos - 1);
+		//quick_sort(stack_a, stack_b, pivot_pos + 1, ub);
+	}
 }
 */
+void	myquick(t_num **stack_a, t_num **stack_b)
+{
+	set_num_pos(stack_a);
+	print_nb(*stack_a);
+	//quick_sort(stack_a, stack_b, 1, list_length(*stack_a) - 1);
+}
+

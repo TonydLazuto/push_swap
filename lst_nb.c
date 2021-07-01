@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/24 13:07:35 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/01 19:36:22 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_num		*new_nb(int val)
 		return (NULL);
 	elet->val = val;
 	elet->next = NULL;
+	elet->back = NULL;
 	return (elet);
 }
 
