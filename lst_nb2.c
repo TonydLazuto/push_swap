@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 08:27:14 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/01 20:30:43 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/02 19:15:03 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ t_num	*pop_front(t_num *list)
 		return (NULL);
 	list = list->next;
 	first->next = NULL;
-	list->back = NULL;
 	free(first);
 	first = NULL;
 	return (list);

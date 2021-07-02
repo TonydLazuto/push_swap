@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/01 19:36:22 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/01 21:54:42 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ t_num		*new_nb(int val)
 	elet->val = val;
 	elet->next = NULL;
 	elet->back = NULL;
+	return (elet);
+}
+
+t_num		*begin_num(t_num *elet)
+{
+	if (!elet)
+		return (NULL);
+	while (elet->back)
+		elet = elet->back;
 	return (elet);
 }
 

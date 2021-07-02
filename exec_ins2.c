@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:45:02 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 11:58:44 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/02 19:01:50 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void		push_nb(t_num **cur, t_num **other_stack, const char *ins)
 			ft_error(cur, other_stack); 
 		*other_stack = pop_front(*other_stack);
 	}
+
 }
 
 t_num		*roll_stack(t_num *cur, t_num *other_stack, const char *ins)

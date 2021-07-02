@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/01 19:42:39 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/02 18:17:58 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,14 @@
 # include <unistd.h>
 # include <limits.h>
 # include "./libft/libft.h"
-
+/*
+typedef struct		s_list
+{
+	int				len;
+	struct s_num	*first;
+	struct s_num	*last;
+}					t_list;
+*/
 typedef struct		s_num
 {
 	int				val;
@@ -35,6 +42,7 @@ typedef	struct	s_roll
 
 
 t_num	*new_nb(int val);
+t_num	*begin_num(t_num *nb);
 t_num	*last_num(t_num *nb);
 int		list_length(t_num *lst);
 int		is_point_in_list(t_num *nb, int val);
@@ -74,6 +82,8 @@ void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
 
 void	myquick(t_num **stack_a, t_num **stack_b);
 void	set_num_pos(t_num **stack);
+t_num	*go_position(int val, t_num *stack);
+t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max);
 
 
 #endif

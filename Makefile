@@ -23,7 +23,7 @@ SRCS		= push_swap.c \
 			  exec_ins2.c \
 			  exit.c \
 			  rolls.c \
-			  chunk.c \
+			  quick.c \
 			  quick2.c \
 			  utils.c
 
