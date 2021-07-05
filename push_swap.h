@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/02 18:17:58 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/05 19:23:40 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,13 @@ void	print_const(const char *s, int fd);
 void	init_roll(t_roll *r);
 t_num	*get_lowest(t_num *stack_a, t_num *elet);
 t_num	*get_greatest(t_num *stack_a, t_num *elet);
-t_roll	get_nb_rolls(t_num *stack_a, t_num *elet);
+t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select);
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
 
 void	myquick(t_num **stack_a, t_num **stack_b);
 void	set_num_pos(t_num **stack);
-t_num	*go_position(int val, t_num *stack);
+t_num	*get_nb_by_pos(int pos, t_num *stack);
+t_num	*get_nb_by_val(int val, t_num *stack);
 t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max);
 
 

@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/01 21:04:22 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/05 18:57:53 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	no_chunk(t_num **stack_a, t_num **stack_b)
 	{
 		low = *stack_a;
 		low = get_lowest(*stack_a, low);
-		roll_low = get_nb_rolls(*stack_a, low);
+		roll_low = get_nb_rolls(*stack_a, low, 'a');
 		put_nb_on_top(roll_low, stack_a, stack_b);
 		exec_instructions(stack_a, stack_b, "pb");
 	}

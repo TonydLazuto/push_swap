@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 10:21:07 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/01 20:35:45 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/05 17:09:32 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_const(const char *s, int fd)
 	int		i;
 
 	i = 0;
-	if (!s || fd == 0)
+	if (!s || fd == 0 || !ft_strlen(s))
 		return ;
 	while (s[i])
 	{
@@ -40,7 +40,10 @@ void		print_nb(t_num *nb)
 	cpy = nb;
 	while (cpy)
 	{
-		printf("|%d|->%d\n", cpy->val, cpy->pos);
+		if (cpy->val / 10)
+			printf(" %d -> pos : %d\n", cpy->val, cpy->pos);
+		else
+			printf(" %d --> pos : %d\n", cpy->val, cpy->pos);
 		cpy = cpy->next;
 	}
 }

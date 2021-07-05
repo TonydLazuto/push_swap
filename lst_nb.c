@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/01 21:54:42 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/05 15:00:07 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_num		*begin_num(t_num *elet)
 	return (elet);
 }
 
-t_num		*last_num(t_num *elet)
+t_num		*last_num(t_num *elet) //check_half_length for go->next or go->back
 {
 	if (!elet)
 		return (NULL);

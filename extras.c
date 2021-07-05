@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 07:42:08 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/02 19:15:21 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/05 18:58:20 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	swap_four(t_num **stack_a, t_num **stack_b)
 	low = *stack_a;
 
 	low = get_lowest(*stack_a, low);
-	roll_low = get_nb_rolls(*stack_a, low);
+	roll_low = get_nb_rolls(*stack_a, low, 'a');
 	put_nb_on_top(roll_low, stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pb");
 
@@ -74,14 +74,14 @@ void	swap_five(t_num **stack_a, t_num **stack_b)
 	great = *stack_a;
 
 	great = get_greatest(*stack_a, great);
-	roll_great = get_nb_rolls(*stack_a, great);
+	roll_great = get_nb_rolls(*stack_a, great, 'a');
 	put_nb_on_top(roll_great, stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pb");
 
 	low = *stack_a;
 
 	low = get_lowest(*stack_a, low);
-	roll_low = get_nb_rolls(*stack_a, low);
+	roll_low = get_nb_rolls(*stack_a, low, 'a');
 	put_nb_on_top(roll_low, stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pb");
 

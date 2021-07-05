@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 01:12:24 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 17:43:41 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/05 18:58:51 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,32 +64,50 @@ t_num	*get_greatest(t_num *stack_a, t_num *elet)
 	return (elet);
 }
 
-t_roll	get_nb_rolls(t_num *stack_a, t_num *elet)
+t_roll	get_ins(t_roll roll, t_roll reverse, char select)
+{
+	if (select == 'a')
+	{
+		if (roll.pos < reverse.pos)
+			roll.ins = "ra";
+		else
+			reverse.ins = "rra";
+	}
+	else
+	{
+		if (roll.pos < reverse.pos)
+			roll.ins = "rb";
+		else
+			reverse.ins = "rrb";
+	}
+	if (roll.ins)
+		return (roll);
+	return (reverse);
+}
+
+t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select)
 {
 	t_num	*tmp;
-	t_roll	ra;
-	t_roll	rra;
+	t_roll	roll;
+	t_roll	reverse;
+	t_roll	ret;
 
-	init_roll(&ra);
-	init_roll(&rra);
-	tmp = stack_a;
+	init_roll(&roll);
+	init_roll(&reverse);
+	init_roll(&ret);
+	tmp = stack;
 	while (tmp->val != elet->val)
 	{
-		ra.pos++;
+		roll.pos++;
 		tmp = tmp->next;
 	}
 	while (elet)
 	{
-		rra.pos++;
+		reverse.pos++;
 		elet = elet->next;
 	}
-	if (ra.pos < rra.pos)
-	{
-		ra.ins = "ra";
-		return (ra);
-	}
-	rra.ins = "rra";
-	return (rra);
+	ret	= get_ins(roll, reverse, select);
+	return (ret);
 }
 
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b)

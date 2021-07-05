@@ -6,112 +6,107 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 11:30:29 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/02 19:22:09 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/05 19:48:03 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/**
- * Here, I will find the pivot which is
- * the middle value in the stack.
- * Thereby, the precision of the quicksort algorithm
- * will be more like O=nlog(n) than O=(n square)
- */
 
-//unuse splitarray
-void	split_array(t_num **stack, t_num **array_a, t_num **array_b)
+void		fill_stack_b(t_num **stack_a, t_num **stack_b, t_num *pivot, int max)
 {
-	int		i;
-	int		half;
-	t_num	*sa;
-
-	i = 0;
-	sa = *stack;
-	half = list_length(*stack) / 2;
-	while (i < half)
+	while ((*stack_a)->pos < pivot->pos)
 	{
-		*array_a = push_back(*array_a, sa->val);
-		sa = sa->next;
-		i++;
+		if ((*stack_a)->val < pivot->val)
+			exec_instructions(stack_a, stack_b, "pb");
+		else
+			exec_instructions(stack_a, stack_b, "ra");
 	}
-	while (sa)
+	exec_instructions(stack_a, stack_b, "pb");
+	while ((*stack_a)->pos != max)
 	{
-		*array_b = push_back(*array_b, sa->val);
-		sa = sa->next;
+		if ((*stack_a)->val < pivot->val)
+			exec_instructions(stack_a, stack_b, "pb");
+		else if ((*stack_a)->val > pivot->val &&
+					(*stack_b)->val != pivot->val)
+			exec_instructions(stack_a, stack_b, "rr");
+		else
+			exec_instructions(stack_a, stack_b, "ra");
 	}
 }
 
-void		ft_swap(t_num **stack_a, t_num **stack_b, t_num **start, t_num **end)
+void		clear_stack_b(t_num **stack_a, t_num **stack_b, t_num *cpy_pivot)
 {
-	t_roll r_start;
-	t_roll r_end;
+	t_roll	roll_b;
+	t_num	*new_piv;
 
-	r_start = get_nb_rolls(*stack_a, *start);
-	r_end = get_nb_rolls(*stack_a, *end);
-	if (r_start.pos < r_end.pos)
-	{
-		put_nb_on_top(r_start, start, stack_b);
-		exec_instructions(stack_a, stack_b, "pb");
-		put_nb_on_top(r_end, end, stack_b);
-		exec_instructions(stack_a, stack_b, "pb");
-	}
-	else 
-	{
-		put_nb_on_top(r_end, end, stack_b);
-		exec_instructions(stack_a, stack_b, "pb");
-		put_nb_on_top(r_start, start, stack_b);
-		exec_instructions(stack_a, stack_b, "pb");
-	}
+	new_piv = *stack_b;
+	init_roll(&roll_b);
+	set_num_pos(stack_b);
+	while (new_piv->val != cpy_pivot->val)
+		new_piv = new_piv->next;
+	roll_b = get_nb_rolls(*stack_b, new_piv, 'b');
+	put_nb_on_top(roll_b, stack_a, stack_b);
+	while (list_length(*stack_b))
+		exec_instructions(stack_a, stack_b, "pa");
 }
 
-t_num		*partition(t_num **stack_a, t_num **stack_b, int min, int max)
+int			partition(t_num **stack_a, t_num **stack_b, int min, int max)
 {
 	t_num*	pivot;
-	t_num*	start;
-	t_num*	end;
+	t_num*	cpy_pivot;
+	t_num*	cur_min;
+	t_roll	roll_a;
 
-	print_nb(*stack_a);
-	printf("____________________________\n");
+	//print_nb(*stack_a);
+	//printf("____________________________\n");
 	pivot = get_pivot(stack_a, stack_b, min, max);
-	printf("pivot->val : %d\n", pivot->val);
-	start = go_position(min, *stack_a);
-	end = go_position(max, *stack_a);
-	int i = 0;
-	//while (start->pos < end->pos)
-	/*
-	while (i < 1)
-	{
-		while (start->val < pivot->val)
-			start = start->next;
-		printf("start->val : %d\n", start->val);
-		while (end->val > pivot->val)
-			end = end->back;
-		printf("end->val : %d\n", end->val);
-		printf("start->pos : %d\nend->pos : %d\n", start->pos, end->pos);
-	printf("____________________________\n");
-		if (start->pos < end->pos)
-			ft_swap(stack_a, stack_b, &start, &end);
-	i++;
-	}
-	*/
-	return (end);
+	//printf("pivot->val : %d\n", pivot->val);
+	cur_min = get_nb_by_pos(min, *stack_a);
+	roll_a = get_nb_rolls(*stack_a, cur_min, 'a');
+	put_nb_on_top(roll_a, stack_a, stack_b);
+
+	cpy_pivot = new_nb(pivot->val);
+	if (!cpy_pivot)
+		ft_error(stack_a, stack_b);
+	cpy_pivot->pos = pivot->pos;
+
+	fill_stack_b(stack_a, stack_b, cpy_pivot, max);
+	clear_stack_b(stack_a, stack_b, cpy_pivot);
+
+	set_num_pos(stack_a);
+	pivot = get_nb_by_val(cpy_pivot->val, *stack_a);
+	return (pivot->pos);
 }
 
 void		quick_sort(t_num **stack_a, t_num **stack_b, int min, int max)
 {
-	t_num	*pivot_pos;
+	int		pos;
 
+	set_num_pos(stack_a);
 	if (min < max)
 	{
-		set_num_pos(stack_a);
-		pivot_pos = partition(stack_a, stack_b, min ,max);
-		//quick_sort(stack_a, stack_b, min, pivot_pos - 1);
-		//quick_sort(stack_a, stack_b, pivot_pos + 1, max);
+		pos = partition(stack_a, stack_b, min ,max);
+	
+		printf("__________STACK_A__________________\n");
+		print_nb(*stack_a);
+		printf("__________STACK_B__________________\n");
+		print_nb(*stack_b);
+		/*
+		if (pivot->back)
+			quick_sort(stack_a, stack_b, min, pos);
+		if (pivot->next)
+			quick_sort(stack_a, stack_b, pos + 1, max);
+		*/
 	}
 }
-// find middle value
+
 void		myquick(t_num **stack_a, t_num **stack_b)
 {
-	quick_sort(stack_a, stack_b, 0, list_length(*stack_a) - 1);
+	int min;
+	int max;
+
+	min = 0;
+	max = list_length(*stack_a) - 1;
+	quick_sort(stack_a, stack_b, min, max);
 }
 
