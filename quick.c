@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 11:30:29 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/06 20:43:14 by aderose          ###   ########.fr       */
+/*   Updated: 2021/07/06 21:05:41 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,12 @@ void		fill_stack_b(t_num **stack_a, t_num **stack_b, t_num *pivot, int max)
 {	
 	while ((*stack_a)->pos < pivot->pos)
 	{
-	printf("(*stack_a)->val : %d\n", (*stack_a)->val);
-	printf("(*stack_a)->pos : %d\n", (*stack_a)->pos);
-	printf("pivot->val : %d\n", pivot->val);
-	printf("pivot->pos : %d\n", pivot->pos);
 		if ((*stack_a)->val < pivot->val)
 			exec_instructions(stack_a, stack_b, "pb");
 		else
 			exec_instructions(stack_a, stack_b, "ra");
 	}
-		printf("___FILL_______STACK_A__________________\n");
-		print_nb(*stack_a);
-		printf("____FILL______STACK_B__________________\n");
-		print_nb(*stack_b);
 	exec_instructions(stack_a, stack_b, "pb");
-
 	while ((*stack_a)->pos != max)
 	{
 		if ((*stack_a)->val < pivot->val)
@@ -41,6 +32,10 @@ void		fill_stack_b(t_num **stack_a, t_num **stack_b, t_num *pivot, int max)
 		else
 			exec_instructions(stack_a, stack_b, "ra");
 	}
+	printf("___FILL_______STACK_A__________________\n");
+	print_nb(*stack_a);
+	printf("____FILL______STACK_B__________________\n");
+	print_nb(*stack_b);
 }
 
 void		clear_stack_b(t_num **stack_a, t_num **stack_b, t_num *cpy_pivot)
@@ -86,10 +81,6 @@ int			partition(t_num **stack_a, t_num **stack_b, int min, int max)
 	cur_min = get_nb_by_pos(min, *stack_a);
 	roll_a = get_nb_rolls(*stack_a, cur_min, 'a');
 	put_nb_on_top(roll_a, stack_a, stack_b);
-
-		printf("_______CUR_MIN___STACK_A__________________\n");
-		print_nb(*stack_a);
-	printf("min : %d\nmax : %d\n", min, max);
 
 	cpy_pivot = new_nb(pivot->val, pivot->pos, pivot->true_pos);
 	if (!cpy_pivot)
