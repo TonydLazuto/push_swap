@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 11:53:11 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/06 20:38:09 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_num		*check_args(char *av[], t_num *nb)
 		}
 		val = my_atoi(av[i], nb);
 		check_duplicate(nb, val);
-		nb = push_back(nb, val);
+		nb = push_back(nb, val, 0, 0);
 		if (!nb)
 			ft_error(&nb, NULL);
 		i++;

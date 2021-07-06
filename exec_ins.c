@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:31:49 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/26 12:00:53 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/06 20:27:56 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void		go_roll(t_num **stack_a, t_num **stack_b,
 		if (!ft_strncmp(ins, "rr", 2))
 		{
 			*stack_a = roll_stack(*stack_a, *stack_b, ins);
-			*stack_b = roll_stack(*stack_b, *stack_a, ""); //voir si ca marche
+			*stack_b = roll_stack(*stack_b, *stack_a, "");
 		}
 	}
 }

@@ -6,18 +6,18 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 08:27:14 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/02 19:15:03 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/06 20:26:52 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_num		*push_back(t_num *list, int val)
+t_num		*push_back(t_num *list, int val, int pos, int true_pos)
 {
 	t_num	*elet;
 	t_num	*tmp;
 
-	elet = new_nb(val);
+	elet = new_nb(val, pos, true_pos);
 	tmp = list;
 	if (!elet)
 		return (NULL);
@@ -29,11 +29,11 @@ t_num		*push_back(t_num *list, int val)
 	return (list);
 }
 
-t_num		*push_front(t_num *list, int val)
+t_num		*push_front(t_num *list, int val, int pos, int true_pos)
 {
 	t_num	*elet;
 
-	elet = new_nb(val);
+	elet = new_nb(val, pos, true_pos);
 	if (!elet)
 		return (NULL);
 	if (list)

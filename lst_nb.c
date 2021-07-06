@@ -6,13 +6,13 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:00:57 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/05 15:00:07 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/06 20:23:46 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_num		*new_nb(int val)
+t_num		*new_nb(int val, int pos, int true_pos)
 {
 	t_num *elet;
 
@@ -20,6 +20,8 @@ t_num		*new_nb(int val)
 	if (!elet)
 		return (NULL);
 	elet->val = val;
+	elet->pos = pos;
+	elet->true_pos = true_pos;
 	elet->next = NULL;
 	elet->back = NULL;
 	return (elet);

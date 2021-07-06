@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/05 19:23:40 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/06 20:37:15 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct		s_num
 {
 	int				val;
 	int				pos;
+	int				true_pos;
 	struct s_num	*back;
 	struct s_num	*next;
 }					t_num;
@@ -39,15 +40,13 @@ typedef	struct	s_roll
 	const char	*ins;
 }				t_roll;
 
-
-
-t_num	*new_nb(int val);
+t_num	*new_nb(int val, int pos, int true_pos);
 t_num	*begin_num(t_num *nb);
 t_num	*last_num(t_num *nb);
 int		list_length(t_num *lst);
 int		is_point_in_list(t_num *nb, int val);
-t_num	*push_back(t_num *list, int val);
-t_num	*push_front(t_num *list, int val);
+t_num	*push_back(t_num *list, int val, int pos, int true_pos);
+t_num	*push_front(t_num *list, int val, int pos, int true_pos);
 t_num	*pop_back(t_num *list);
 t_num	*pop_front(t_num *list);
 

@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 19:12:48 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/05 19:34:02 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/06 19:41:59 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max)
 	t_num	*pivot;
 
 	pivot = *stack_a;
-	if (list_length(*stack_a) >= 4)
-		pivot = get_nb_middle(pivot, min, max);
+	pivot = get_nb_middle(pivot, min, max);
 	return (pivot);
 }
 

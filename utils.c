@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 10:21:07 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/05 17:09:32 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/07/06 18:48:05 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	print_const(const char *s, int fd)
 
 	i = 0;
 	if (!s || fd == 0 || !ft_strlen(s))
-		return ;
+		return ;/*
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	ft_putchar_fd('\n', fd);
+	ft_putchar_fd('\n', fd);*/
 }
 
 void		print_nb(t_num *nb)
@@ -41,9 +41,19 @@ void		print_nb(t_num *nb)
 	while (cpy)
 	{
 		if (cpy->val / 10)
-			printf(" %d -> pos : %d\n", cpy->val, cpy->pos);
+		{
+			if (cpy->pos / 10)
+				printf(" %d -> pos : %d -> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
+			else
+				printf(" %d -> pos : %d --> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
+		}
 		else
-			printf(" %d --> pos : %d\n", cpy->val, cpy->pos);
+		{
+			if (cpy->pos / 10)
+				printf(" %d --> pos : %d -> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
+			else
+				printf(" %d --> pos : %d --> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
+		}
 		cpy = cpy->next;
 	}
 }
