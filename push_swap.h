@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:16 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/06 20:37:15 by aderose          ###   ########.fr       */
+/*   Updated: 2021/07/09 17:50:26 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_num	*push_back(t_num *list, int val, int pos, int true_pos);
 t_num	*push_front(t_num *list, int val, int pos, int true_pos);
 t_num	*pop_back(t_num *list);
 t_num	*pop_front(t_num *list);
+void	clear_lst(t_num **lst);
 
 int		my_atoi(char *str, t_num *mynb);
 void	check_duplicate(t_num *nb, int val);
@@ -74,8 +75,8 @@ void	print_nb(t_num *nb);
 void	print_const(const char *s, int fd);
 
 void	init_roll(t_roll *r);
-t_num	*get_lowest(t_num *stack_a, t_num *elet);
-t_num	*get_greatest(t_num *stack_a, t_num *elet);
+t_num	*get_lowest(t_num *stack_a);
+t_num	*get_greatest(t_num *stack_a);
 t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select);
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
 
@@ -84,6 +85,11 @@ void	set_num_pos(t_num **stack);
 t_num	*get_nb_by_pos(int pos, t_num *stack);
 t_num	*get_nb_by_val(int val, t_num *stack);
 t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max);
+int		get_lowest_pos(t_num *stack_a);
+t_num	*get_sub_lst(t_num **stack_a, t_num **stack_b, int min, int max);
 
+int		*get_sub_lst2(t_num **stack_a,
+			t_num **stack_b, int min, int max);
+int		get_lowest_pos2(int *sub_stack, int min, int max);
 
 #endif

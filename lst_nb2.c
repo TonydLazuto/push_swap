@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 08:27:14 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/06 20:26:52 by aderose          ###   ########.fr       */
+/*   Updated: 2021/07/07 09:57:04 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,10 @@ t_num	*pop_front(t_num *list)
 	free(first);
 	first = NULL;
 	return (list);
+}
+
+void	clear_lst(t_num **lst)
+{
+	while (*lst)
+		*lst = pop_front(*lst);
 }

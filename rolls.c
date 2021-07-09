@@ -6,19 +6,21 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 01:12:24 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/06 19:46:15 by aderose          ###   ########.fr       */
+/*   Updated: 2021/07/07 08:48:06 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_num	*get_lowest(t_num *stack_a, t_num *elet)
+t_num	*get_lowest(t_num *stack_a)
 {
 	int		valid;
 	t_num	*tmp;
+	t_num	*elet;
 	int		size;
 
 	tmp = NULL;
+	elet = stack_a;
 	size = list_length(stack_a);
 	while (elet)
 	{
@@ -30,7 +32,6 @@ t_num	*get_lowest(t_num *stack_a, t_num *elet)
 				valid++;
 			tmp = tmp->next;
 		}
-		//printf("valid : %d\nelet : %d\nsize : %d\n",valid, elet->val, size);
 		if (valid == size)
 			return (elet);
 		elet = elet->next;
@@ -38,13 +39,16 @@ t_num	*get_lowest(t_num *stack_a, t_num *elet)
 	elet = last_num(stack_a);
 	return (elet);
 }
-t_num	*get_greatest(t_num *stack_a, t_num *elet)
+
+t_num	*get_greatest(t_num *stack_a)
 {
 	int		valid;
 	t_num	*tmp;
+	t_num	*elet;
 	int		size;
 
 	tmp = NULL;
+	elet = stack_a;
 	size = list_length(stack_a);
 	while (elet)
 	{
