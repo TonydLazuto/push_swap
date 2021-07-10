@@ -71,9 +71,22 @@ int			main(int ac, char *av[])
 {
 	t_num	*lst;
 
-	lst = NULL;
+ 	lst = NULL;
 	if (ac == 1)
-		return (0);
+    {
+        av[1] = "9 36 4 15 35 14 29 31 24 2 28 12 20 34 26 25 39 10 27 18 16 6 8 23 38 5 17 3 21 30 33 19 0 1 37 13 32 11 22";
+        ac = 3;
+		av[2] = NULL;
+		//return (0);
+    }
+    if (!av[2])
+	{
+        av = split_args(av);
+		int len = 0;
+		while (av[len])
+			len++;
+		ac = len;
+	}
 	ac -= 1;
 	lst = check_args(av, lst);
 	pick_swap(ac, lst);

@@ -21,37 +21,30 @@
  * which is the same amount of < than > with
  * all elements between min & max
  **/
-t_num	*get_nb_middle(t_num *pivot, int min, int max)
+
+t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max)
 {
+	t_num	*pivot;
 	int 	j;
 	int 	nb_less;
-	t_num 	*tmp;
 	t_num 	*tmp2;
 
-	tmp = get_nb_by_pos(min, pivot);
-	while (tmp->pos < max)
+	pivot = *stack_a;
+	pivot = get_nb_by_pos(min, pivot);
+	while (pivot->pos < max)
 	{
 		tmp2 = get_nb_by_pos(min, pivot);
 		nb_less = 0;
 		while (tmp2->pos < max)
 		{
-			if (tmp2->val < tmp->val)
+			if (tmp2->val < pivot->val)
 				nb_less++;
 			tmp2 = tmp2->next;;
 		}
 		if (nb_less == (max - min) / 2)
-			return (tmp);
-		tmp = tmp->next;
+			return (pivot);
+		pivot = pivot->next;
 	}
-	return (tmp);
-}
-
-t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max)
-{
-	t_num	*pivot;
-
-	pivot = *stack_a;
-	pivot = get_nb_middle(pivot, min, max);
 	return (pivot);
 }
 

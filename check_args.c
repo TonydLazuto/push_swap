@@ -74,3 +74,23 @@ t_num		*check_args(char *av[], t_num *nb)
 	}
 	return (nb);
 }
+
+char        **split_args(char *av[])
+{
+	char    **tmp;
+	int     i;
+	int     j;
+	int     size;
+
+	i = 0;
+	tmp = ft_split(av[1], ' ');
+	av[1] = NULL;
+	while (tmp[i])
+	{
+		av[i + 1] = ft_strdup(tmp[i]);
+		i++;
+	}
+	free(*tmp);
+	*tmp = NULL;
+	return (av);
+}

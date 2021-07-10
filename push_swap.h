@@ -54,6 +54,7 @@ void	clear_lst(t_num **lst);
 int		my_atoi(char *str, t_num *mynb);
 void	check_duplicate(t_num *nb, int val);
 t_num	*check_args(char *av[], t_num *nb);
+char	**split_args(char *av[]);
 
 void	empty_lst(t_num **nb);
 int		ft_exit(t_num **lst1, t_num **lst2);
@@ -88,8 +89,5 @@ t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max);
 int		get_lowest_pos(t_num *stack_a);
 t_num	*get_sub_lst(t_num **stack_a, t_num **stack_b, int min, int max);
 
-int		*get_sub_lst2(t_num **stack_a,
-			t_num **stack_b, int min, int max);
-int		get_lowest_pos2(int *sub_stack, int min, int max);
 
 #endif
