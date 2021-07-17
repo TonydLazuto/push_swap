@@ -30,10 +30,10 @@ t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max)
 	t_num 	*tmp2;
 
 	pivot = *stack_a;
-	pivot = get_nb_by_pos(min, pivot);
+	pivot = get_nb_by_pos(min, *stack_a);
 	while (pivot->pos < max)
 	{
-		tmp2 = get_nb_by_pos(min, pivot);
+		tmp2 = get_nb_by_pos(min, *stack_a);
 		nb_less = 0;
 		while (tmp2->pos < max)
 		{
