@@ -35,10 +35,15 @@ t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max)
 	{
 		tmp2 = get_nb_by_pos(min, *stack_a);
 		nb_less = 0;
-		while (tmp2->pos < max)
+		while (tmp2 && tmp2->pos <= max)
 		{
 			if (tmp2->val < pivot->val)
+			{
+				//printf("tmp2->val : %d\npivot->val : %d\n",
+				//	tmp2->val, pivot->val);
 				nb_less++;
+			}
+			//printf("_______\n");
 			tmp2 = tmp2->next;;
 		}
 		if (nb_less == (max - min) / 2)
@@ -96,4 +101,32 @@ void	set_num_pos(t_num **stack)
 			i++;
 		}
 	}
+}
+
+int		get_lowest_pos(t_num *stack_a)
+{
+	int		valid;
+	t_num	*tmp;
+	t_num	*elet;
+	int		size;
+
+	tmp = NULL;
+	elet = stack_a;
+	size = list_length(stack_a);
+	while (elet)
+	{
+		tmp = stack_a;
+		valid = 1;
+		while (tmp)
+		{
+			if (elet->pos < tmp->pos)
+				valid++;
+			tmp = tmp->next;
+		}
+		if (valid == size)
+			return (elet->pos);
+		elet = elet->next;
+	}
+	elet = last_num(stack_a);
+	return (elet->pos);
 }

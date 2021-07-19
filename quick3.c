@@ -12,34 +12,6 @@
 
 #include "push_swap.h"
 
-int		get_lowest_pos(t_num *stack_a)
-{
-	int		valid;
-	t_num	*tmp;
-	t_num	*elet;
-	int		size;
-
-	tmp = NULL;
-	elet = stack_a;
-	size = list_length(stack_a);
-	while (elet)
-	{
-		tmp = stack_a;
-		valid = 1;
-		while (tmp)
-		{
-			if (elet->pos < tmp->pos)
-				valid++;
-			tmp = tmp->next;
-		}
-		if (valid == size)
-			return (elet->pos);
-		elet = elet->next;
-	}
-	elet = last_num(stack_a);
-	return (elet->pos);
-}
-
 t_num	*get_sub_lst(t_num **stack_a,
 			t_num **stack_b, int min, int max)
 {
@@ -58,3 +30,19 @@ t_num	*get_sub_lst(t_num **stack_a,
 	return (sub_lst);
 }
 
+void		resort(t_num **stack_a, t_num **stack_b, int last_min_val)
+{
+	t_num	*lowest;
+	t_roll	r;
+
+	lowest = NULL;
+	init_roll(&r);
+
+printf("______STACK_A_______BE4_RESORT_______\n");
+print_nb(*stack_a);
+
+	lowest = get_nb_by_val(last_min_val, *stack_a);
+	r = get_nb_rolls(*stack_a, lowest, 'a');
+	put_nb_on_top(r, stack_a, stack_b);
+	set_num_pos(stack_a);
+}

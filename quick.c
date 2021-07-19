@@ -12,31 +12,26 @@
 
 #include "push_swap.h"
 
-void		fill_stack_b(t_num **stack_a, t_num **stack_b, t_num *pivot, int max)
+void		fill_stack_b(t_num **stack_a, t_num **stack_b, t_num *cpy_pivot, int max)
 {	
-	while ((*stack_a)->pos <= pivot->pos)
+	int	end;
+
+	end = 0;
+	while ((*stack_a)->pos <= cpy_pivot->pos)
 	{
-		if ((*stack_a)->val <= pivot->val)
+		if ((*stack_a)->val <= cpy_pivot->val)
 			exec_instructions(stack_a, stack_b, "pb");
 		else
 			exec_instructions(stack_a, stack_b, "ra");
 	}
-	while ((*stack_a)->pos != max)
+	while ((*stack_a)->pos <= max && end != 1)
 	{
-		if ((*stack_a)->val < pivot->val)
+		if ((*stack_a)->pos == max)
+			end = 1;
+		if ((*stack_a)->val < cpy_pivot->val)
 			exec_instructions(stack_a, stack_b, "pb");
-		else if ((*stack_a)->val > pivot->val &&
-					(*stack_b)->val != pivot->val)
-			exec_instructions(stack_a, stack_b, "rr");
-		else
-			exec_instructions(stack_a, stack_b, "ra");
-	}
-	if ((*stack_a)->pos == max)
-	{
-		if ((*stack_a)->val < pivot->val)
-			exec_instructions(stack_a, stack_b, "pb");
-		else if ((*stack_a)->val > pivot->val &&
-					(*stack_b)->val != pivot->val)
+		else if ((*stack_a)->val > cpy_pivot->val &&
+					(*stack_b)->val != cpy_pivot->val)
 			exec_instructions(stack_a, stack_b, "rr");
 		else
 			exec_instructions(stack_a, stack_b, "ra");
@@ -57,7 +52,6 @@ void		clear_stack_b(t_num **stack_a, t_num **stack_b, t_num *cpy_pivot)
 	init_roll(&roll_b);
 	while (elet->val != cpy_pivot->val)
 		elet = elet->next;
-	printf("MYPUSH pivot->val : %d\n", elet->val);
 	roll_b = get_nb_rolls(*stack_b, elet, 'b');
 	put_nb_on_top(roll_b, stack_a, stack_b);
 	while (list_length(*stack_b))
@@ -81,35 +75,13 @@ void		resort_sublist(t_num **stack_a, t_num **stack_b, int min, int max)
 	put_nb_on_top(r, stack_a, stack_b);
 }
 
-void		resort(t_num **stack_a, t_num **stack_b, int min, int max)
-{
-	int		pos;
-	t_num	*lowest;
-	t_roll	r;
-
-	pos = 0;
-	lowest = NULL;
-	init_roll(&r);
-printf("______STACK_A_______BE4_RESORT________\n");
-print_nb(*stack_a);
-	if (min == 0 && max == (list_length(*stack_a) + list_length(*stack_b) - 1))
-		set_num_pos(stack_a);
-	else
-	{
-		pos = get_lowest_pos(*stack_a);
-		lowest = get_nb_by_pos(pos, *stack_a);
-		r = get_nb_rolls(*stack_a, lowest, 'a');
-		put_nb_on_top(r, stack_a, stack_b);
-	}
-		
-}
-
 int			partition(t_num **stack_a, t_num **stack_b, int min, int max)
 {
 	t_num*	pivot;
 	t_num*	cpy_pivot;
 	t_num*	cur_min;
 	t_roll	roll_a;
+	static int last_min_val = 0;
 
 printf("____________________________\n");
 	pivot = get_pivot(stack_a, stack_b, min, max);
@@ -117,6 +89,7 @@ printf("____________________________\n");
 	if (!cpy_pivot)
 		ft_error(stack_a, stack_b);
 printf("pivot->val : %d\n", pivot->val);
+printf("pivot->pos : %d\n", pivot->pos);
 printf("____________________________\n");
 
 	cur_min = get_nb_by_pos(min, *stack_a);
@@ -131,20 +104,25 @@ print_nb(*stack_a);
 printf("___SUB___RESORT____STACK_A__________________\n");
 print_nb(*stack_a);
 	clear_stack_b(stack_a, stack_b, cpy_pivot);
-
-
-	resort(stack_a, stack_b, min, max);
-	
-	printf("_______STACK_A____AFTER_SORT________\n");
+printf("___CLEAR___________STACKS___________________\n");
 print_nb(*stack_a);
+
+	if (min == 0)
+		set_num_pos(stack_a);
+	else
+		resort(stack_a, stack_b, last_min_val);
+
 	pivot = *stack_a;
 	pivot = get_nb_by_val(cpy_pivot->val, *stack_a);
-	printf("FINAL pivot->pos : %d\n", pivot->pos);
-	printf("FINAL cpy_pivot->pos : %d\n", cpy_pivot->pos);
 	pivot->true_pos = pivot->pos;
+	last_min_val = (*stack_a)->val;
 	clear_lst(&cpy_pivot);
-//printf("_______STACK_A__END________\n");
-//print_nb(*stack_a);
+printf("_______STACK_A__END________\n");
+print_nb(*stack_a);
+printf("___________________----------------------------____________________\n");
+printf("___________________----------------------------____________________\n");
+printf("___________________----------------------------____________________\n");
+
 	return (pivot->true_pos);
 }
 
@@ -153,6 +131,7 @@ int			quick_sort(t_num **stack_a, t_num **stack_b, int min, int max)
 	int		pos;
 
 	set_num_pos(stack_a);
+	print_nb(*stack_a);
 	if (min < max)
 	{
 		pos = partition(stack_a, stack_b, min ,max);
@@ -178,15 +157,17 @@ void		myquick(t_num **stack_a, t_num **stack_b)
 	max = list_length(*stack_a) - 1;
 	pos = quick_sort(stack_a, stack_b, min, max);
 
-	printf("%d : pos\n%d : max\n", min, pos);
-	quick_sort(stack_a, stack_b, min, pos);
+	printf("%d : min\n%d : max\n", pos + 1, max);
+	max = pos - 1;
+	pos = quick_sort(stack_a, stack_b, min, pos - 1);
 /*		printf("__________STACK_A__________________\n");
 		print_nb(*stack_a);
-*/		
-//	printf("%d : pos\n%d : max\n", pos + 1, max);
-//	quick_sort(stack_a, stack_b, pos + 1, max);
+*/
+	printf("%d : min\n%d : max\n", min, pos - 1);
+	quick_sort(stack_a, stack_b, min, pos - 1);
+	printf("%d : min\n%d : max\n", pos + 1, max);
+	quick_sort(stack_a, stack_b, pos + 1, max);
 /*		printf("__________STACK_A__________________\n");
 		print_nb(*stack_a);
 */
 }
-
