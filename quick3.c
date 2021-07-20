@@ -46,3 +46,17 @@ print_nb(*stack_a);
 	put_nb_on_top(r, stack_a, stack_b);
 	set_num_pos(stack_a);
 }
+
+int			check_end(t_num **stack_a)
+{
+	t_num	*elet;
+
+	elet = *stack_a;
+	while (elet)
+	{
+		if (elet->true_pos == -1)
+			return (0);
+		elet = elet->next;
+	}
+	return (1);
+}

@@ -89,7 +89,6 @@ t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max);
 int		get_lowest_pos(t_num *stack_a);
 t_num	*get_sub_lst(t_num **stack_a, t_num **stack_b, int min, int max);
 void	resort(t_num **stack_a, t_num **stack_b, int last_min_val);
-
-
+int		check_end(t_num **stack_a);
 
 #endif

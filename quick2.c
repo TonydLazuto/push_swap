@@ -38,13 +38,8 @@ t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max)
 		while (tmp2 && tmp2->pos <= max)
 		{
 			if (tmp2->val < pivot->val)
-			{
-				//printf("tmp2->val : %d\npivot->val : %d\n",
-				//	tmp2->val, pivot->val);
 				nb_less++;
-			}
-			//printf("_______\n");
-			tmp2 = tmp2->next;;
+			tmp2 = tmp2->next;
 		}
 		if (nb_less == (max - min) / 2)
 			return (pivot);

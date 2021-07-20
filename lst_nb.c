@@ -16,7 +16,7 @@ t_num		*new_nb(int val, int pos, int true_pos)
 {
 	t_num *elet;
 
-	elet = malloc(sizeof(*elet));
+	elet = (t_num *)malloc(sizeof(*elet));
 	if (!elet)
 		return (NULL);
 	elet->val = val;

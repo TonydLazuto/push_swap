@@ -67,7 +67,7 @@ t_num		*check_args(char *av[], t_num *nb)
 		}
 		val = my_atoi(av[i], nb);
 		check_duplicate(nb, val);
-		nb = push_back(nb, val, 0, 0);
+		nb = push_back(nb, val, 0, -1);
 		if (!nb)
 			ft_error(&nb, NULL);
 		i++;
