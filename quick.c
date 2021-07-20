@@ -38,10 +38,10 @@ void		fill_stack_b(t_num **stack_a, t_num **stack_b, t_num *cpy_pivot, int range
 			exec_instructions(stack_a, stack_b, "ra");
 		i++;
 	}
-	printf("___FILL_______STACK_A__________________\n");
-	print_nb(*stack_a);
-	printf("____FILL______STACK_B__________________\n");
-	print_nb(*stack_b);
+	//printf("___FILL_______STACK_A__________________\n");
+	//print_nb(*stack_a);
+	//printf("____FILL______STACK_B__________________\n");
+	//print_nb(*stack_b);
 }
 
 
@@ -85,7 +85,7 @@ t_num		*partition(t_num **stack_a, t_num **stack_b, int min, int max)
 	t_roll		roll_a;
 
 	pivot = get_pivot(stack_a, stack_b, min, max);
-printf("pivot->pos : %d\npivot->val : %d\n", pivot->pos, pivot->val);
+//printf("pivot->pos : %d\npivot->val : %d\n", pivot->pos, pivot->val);
 	cpy_pivot = new_nb(pivot->val, pivot->pos, pivot->true_pos);
 	if (!cpy_pivot)
 		ft_error(stack_a, stack_b);
@@ -93,15 +93,15 @@ printf("pivot->pos : %d\npivot->val : %d\n", pivot->pos, pivot->val);
 	roll_a = get_nb_rolls(*stack_a, cur_min, 'a');
 	put_nb_on_top(roll_a, stack_a, stack_b);
 
-printf("______CUR_MIN____STACK_A__________________\n");
-print_nb(*stack_a);
+//printf("______CUR_MIN____STACK_A__________________\n");
+//print_nb(*stack_a);
 	fill_stack_b(stack_a, stack_b, cpy_pivot, max - min);
 	resort_sublist(stack_a, stack_b, min, max);
-printf("___SUB___RESORT____STACK_A__________________\n");
-print_nb(*stack_a);
+//printf("___SUB___RESORT____STACK_A__________________\n");
+//print_nb(*stack_a);
 	clear_stack_b(stack_a, stack_b, cpy_pivot);
-printf("___CLEAR___________STACKS___________________\n");
-print_nb(*stack_a);
+//printf("___CLEAR___________STACKS___________________\n");
+//print_nb(*stack_a);
 
 	return (cpy_pivot);
 }

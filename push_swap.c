@@ -84,7 +84,8 @@ void		pick_swap(int ac, t_num *stack_a)
 		swap_five(&stack_a, &stack_b);
 	else if (ac >= 6 && ac < 30)
 		no_chunk(&stack_a, &stack_b);
-	else if (ac >= 30 && ac < 60)
+	//else if (ac >= 30 && ac < 60)
+	else
 		launch_quick_sort(&stack_a, &stack_b);
 /*	else if (ac >= 50 && ac < 300)
 		chunk5(&stack_a, &stack_b, ac);

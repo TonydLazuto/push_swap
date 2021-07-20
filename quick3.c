@@ -38,8 +38,8 @@ void		resort(t_num **stack_a, t_num **stack_b, int last_min_val)
 	lowest = NULL;
 	init_roll(&r);
 
-printf("______STACK_A_______BE4_RESORT_______\n");
-print_nb(*stack_a);
+//printf("______STACK_A_______BE4_RESORT_______\n");
+//print_nb(*stack_a);
 
 	lowest = get_nb_by_val(last_min_val, *stack_a);
 	r = get_nb_rolls(*stack_a, lowest, 'a');
@@ -51,7 +51,7 @@ int			get_pos_single_range(t_num **stack_a, int min)
 {
 	t_num*		pivot;
 
-printf("yo\n");
+//printf("yo\n");
 
 	pivot = get_nb_by_pos(min, *stack_a);
 	pivot->true_pos = pivot->pos;
