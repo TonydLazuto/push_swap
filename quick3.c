@@ -47,16 +47,32 @@ print_nb(*stack_a);
 	set_num_pos(stack_a);
 }
 
-int			check_end(t_num **stack_a)
+int			get_pos_single_range(t_num **stack_a, int min)
 {
-	t_num	*elet;
+	t_num*		pivot;
 
-	elet = *stack_a;
-	while (elet)
-	{
-		if (elet->true_pos == -1)
-			return (0);
-		elet = elet->next;
-	}
-	return (1);
+printf("yo\n");
+
+	pivot = get_nb_by_pos(min, *stack_a);
+	pivot->true_pos = pivot->pos;
+	return (pivot->true_pos);
+}
+
+void		resort_multiple_range(t_num **stack_a, t_num **stack_b,
+				 int last_min_val, int min)
+{
+	if (min == 0)
+		set_num_pos(stack_a);
+	else
+		resort(stack_a, stack_b, last_min_val);
+}
+
+int			get_pos_multiple_range(t_num **stack_a, t_num *cpy_pivot)
+{
+	t_num*	pivot;
+
+	pivot = *stack_a;
+	pivot = get_nb_by_val(cpy_pivot->val, *stack_a);
+	pivot->true_pos = pivot->pos;
+	return (pivot->true_pos);	
 }
