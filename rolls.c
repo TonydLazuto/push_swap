@@ -89,7 +89,7 @@ t_roll	get_ins(t_roll roll, t_roll reverse, char select)
 	return (reverse);
 }
 
-t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select)
+t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select_stack)
 {
 	t_num	*tmp;
 	t_roll	roll;
@@ -110,7 +110,7 @@ t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select)
 		reverse.pos++;
 		elet = elet->next;
 	}
-	ret	= get_ins(roll, reverse, select);
+	ret	= get_ins(roll, reverse, select_stack);
 	return (ret);
 }
 

@@ -28,29 +28,24 @@
 
 void		launch_quick_sort(t_num **stack_a, t_num **stack_b)
 {
-	int min;
-	int max;
+	int min[2];
+	int max[2];
 	int pos;
 	
-	min = 0;
-	max = list_length(*stack_a) - 1;
-	quick_sort(stack_a, stack_b, min, max);
-	printf("__________STACK_A__________________\n");
-	print_nb(*stack_a);
-/*
-	printf("%d : min\n%d : max\n", pos + 1, max);
-	max = pos - 1;
-	pos = quick_sort(stack_a, stack_b, min, pos - 1);
-		printf("__________STACK_A__________________\n");
-		print_nb(*stack_a);
+	min[0] = 0;
+	max[0] = list_length(*stack_a) - 1;
+	max[1] = max[0];
+	pos = quick_sort(stack_a, stack_b, min[0], max[0]);
 
-	printf("%d : min\n%d : max\n", min, pos - 1);
-	quick_sort(stack_a, stack_b, min, pos - 1);
-	printf("%d : min\n%d : max\n", pos + 1, max);
-	quick_sort(stack_a, stack_b, pos + 1, max);
-		printf("__________STACK_A__________________\n");
-		print_nb(*stack_a);
-*/
+	max[0] = pos - 1;
+	min[1] = pos + 1;
+	pos = quick_sort(stack_a, stack_b, min[0], max[0]);
+	quick_sort(stack_a, stack_b, pos + 1, max[0]);
+
+//printf("%d : min[1]\n%d : max[1]\n", min[1], max[1]);
+	pos = quick_sort(stack_a, stack_b, min[1], max[1]);
+	quick_sort(stack_a, stack_b, pos + 1, max[1]);
+
 }
 
 void	no_chunk(t_num **stack_a, t_num **stack_b)
@@ -84,14 +79,12 @@ void		pick_swap(int ac, t_num *stack_a)
 		swap_five(&stack_a, &stack_b);
 	else if (ac >= 6 && ac < 30)
 		no_chunk(&stack_a, &stack_b);
-	//else if (ac >= 30 && ac < 60)
+	else if (ac >= 30 && ac < 100)
+		launch_quick_sort(&stack_a, &stack_b);
+	//else if (ac >= 100 && ac < 200)
+	//else if (ac >= 200 && ac < 400)
 	else
 		launch_quick_sort(&stack_a, &stack_b);
-/*	else if (ac >= 50 && ac < 300)
-		chunk5(&stack_a, &stack_b, ac);
-	else if (ac >= 300)
-		chunk11(&stack_a, &stack_b);
-*/ //print_nb(stack_a);
 	ft_exit(&stack_a, &stack_b);
 }
 

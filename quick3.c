@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 t_num	*get_sub_lst(t_num **stack_a,
-			t_num **stack_b, int min, int max)
+ int min, int max)
 {
 	t_num	*sub_lst;
 	t_num	*cpy;
@@ -30,7 +30,7 @@ t_num	*get_sub_lst(t_num **stack_a,
 	return (sub_lst);
 }
 
-void		resort(t_num **stack_a, t_num **stack_b, int last_min_val)
+void		resort2(t_num **stack_a, t_num **stack_b, int last_min_val)
 {
 	t_num	*lowest;
 	t_roll	r;
@@ -38,33 +38,19 @@ void		resort(t_num **stack_a, t_num **stack_b, int last_min_val)
 	lowest = NULL;
 	init_roll(&r);
 
-//printf("______STACK_A_______BE4_RESORT_______\n");
-//print_nb(*stack_a);
-
 	lowest = get_nb_by_val(last_min_val, *stack_a);
 	r = get_nb_rolls(*stack_a, lowest, 'a');
 	put_nb_on_top(r, stack_a, stack_b);
 	set_num_pos(stack_a);
 }
 
-int			get_pos_single_range(t_num **stack_a, int min)
-{
-	t_num*		pivot;
-
-//printf("yo\n");
-
-	pivot = get_nb_by_pos(min, *stack_a);
-	pivot->true_pos = pivot->pos;
-	return (pivot->true_pos);
-}
-
-void		resort_multiple_range(t_num **stack_a, t_num **stack_b,
+void		resort(t_num **stack_a, t_num **stack_b,
 				 int last_min_val, int min)
 {
 	if (min == 0)
 		set_num_pos(stack_a);
 	else
-		resort(stack_a, stack_b, last_min_val);
+		resort2(stack_a, stack_b, last_min_val);
 }
 
 int			get_pos_multiple_range(t_num **stack_a, t_num *cpy_pivot)

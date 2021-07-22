@@ -78,7 +78,7 @@ void	print_const(const char *s, int fd);
 void	init_roll(t_roll *r);
 t_num	*get_lowest(t_num *stack_a);
 t_num	*get_greatest(t_num *stack_a);
-t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select);
+t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select_stack);
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
 
 void	launch_quick_sort(t_num **stack_a, t_num **stack_b);
@@ -89,11 +89,19 @@ t_num	*get_nb_by_pos(int pos, t_num *stack);
 t_num	*get_nb_by_val(int val, t_num *stack);
 t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max);
 int		get_lowest_pos(t_num *stack_a);
-t_num	*get_sub_lst(t_num **stack_a, t_num **stack_b, int min, int max);
-void	resort(t_num **stack_a, t_num **stack_b, int last_min_val);
-int		get_pos_single_range(t_num **stack_a, int min);
-void	resort_multiple_range(t_num **stack_a, t_num **stack_b,
+t_num	*get_sub_lst(t_num **stack_a, int min, int max);
+
+
+void	resort2(t_num **stack_a, t_num **stack_b, int last_min_val);
+
+void	resort(t_num **stack_a, t_num **stack_b,
 				 int last_min_val, int min);
 int		get_pos_multiple_range(t_num **stack_a, t_num *cpy_pivot);
+
+
+void	fill_stack_b(t_num **stack_a, t_num **stack_b,
+				t_num *cpy_pivot, int range);
+void	check_switch(t_num **stack_a, t_num **stack_b);
+int		check_switch_a(t_num **stack_a);
 
 #endif
