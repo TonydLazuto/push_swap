@@ -27,6 +27,7 @@ SRCS		= push_swap.c \
 			  quick2.c \
 			  quick3.c \
 			  quick4.c \
+			  quick5.c \
 			  utils.c
 
 OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))

@@ -12,55 +12,105 @@
 
 #include "push_swap.h"
 
-void		switch3(t_num **stack_a, t_num **stack_b)
-{
-	int		nb[3];
-	t_num	*cpy;
-	
-	cpy = *stack_a;
-	nb[0] = (*stack_a)->val;
-	nb[1] = (*stack_a)->next->val;
-	nb[2] = (*stack_a)->next->next->val;
-	if (nb[0] > nb[1] && nb[1] < nb[2] && nb[2] > nb[0])
-		exec_instructions(stack_a, stack_b, "sa");
-	else if (nb[0] > nb[1] && nb[1] < nb[2] && nb[2] < nb[0])
-		exec_instructions(stack_a, stack_b, "ra");
-	else if (nb[0] < nb[1] && nb[1] > nb[2] && nb[2] < nb[0])
-		exec_instructions(stack_a, stack_b, "rra");
-	else if (nb[0] > nb[1] && nb[1] > nb[2] && nb[2] < nb[0])
-	{
-		exec_instructions(stack_a, stack_b, "sa");
-		exec_instructions(stack_a, stack_b, "rra");
-	}
-	else if (nb[0] < nb[1] && nb[1] > nb[2] && nb[2] > nb[0])
-	{
-		exec_instructions(stack_a, stack_b, "sa");
-		exec_instructions(stack_a, stack_b, "ra");
-	}
-}
+/**
+ * get sublist from the *stack_a to cur_min in paramaters
+ * and then find the tmp pivot.
+ **/
 
-void		switch4(t_num **stack_a, t_num **stack_b)
-{
-}
-
-void	check_switch(t_num **stack_a, t_num **stack_b)
+t_num	*get_sub_tmp_pivot(t_num **stack_a, t_roll r)
 {
 	t_num	*cpy;
+	t_num	*sub;
 	int		i;
+	int		direction;
 
-	i = 1;
+	i = -1;
+	sub = NULL;
 	cpy = *stack_a;
-	while (i <= 5 && cpy)
+	direction = 1;
+	if (ft_strlen(r.ins) == 3)
 	{
-		if (!check_switch_a(&cpy))
-			break ;
-		i++;
-		cpy = cpy->next;
+		cpy = last_num(*stack_a);
+		direction = -1;
 	}
-	if (i == 2)
-		switch2(stack_a, stack_b);
-	if (i == 3)
-		switch3(stack_a, stack_b);
-	if (i == 4)
-		switch4(stack_a, stack_b);
+	while (r.pos != 0)
+	{
+		sub = push_back(sub, cpy->val, ++i, cpy->true_pos);
+		if (direction > 0)
+			cpy = cpy->next;
+		else
+			cpy = cpy->back;
+		r.pos--;
+	}
+	return (sub);
+}
+
+void	empty_stack_b_go_min(t_num **stack_a, t_num **stack_b)
+{
+	while(*stack_b)
+	{
+		exec_instructions(stack_a, stack_b, "pa");
+		if (check_switch_a(stack_a))
+		{
+			exec_instructions(stack_a, stack_b, "sa");
+			switch_pos(stack_a);
+		}
+	}
+}
+
+void		roll_to_min(t_num **stack_a, t_num **stack_b,
+				t_roll r, t_num *tmp_pivot)
+{
+	while (r.pos != 1)
+	{
+		
+		if (tmp_pivot && ((*stack_a)->pos < tmp_pivot->pos)
+				&& ((*stack_a)->val > tmp_pivot->val))
+		{
+			//printf("\nbe4 push\n(*stack_a)->val : %d\n(*stack_a)->next->val : %d\n", (*stack_a)->val, (*stack_a)->next->val);
+			exec_instructions(stack_a, stack_b, "pb");
+		}
+		else if (check_switch_a(stack_a))
+		{
+			//printf("\nbe4 switch\n(*stack_a)->val : %d\n(*stack_a)->next->val : %d\n", (*stack_a)->val, (*stack_a)->next->val);
+			exec_instructions(stack_a, stack_b, "sa");
+			switch_pos(stack_a);
+		}
+		exec_instructions(stack_a, stack_b, "ra");
+		r.pos--;
+	}
+}
+void		reverse_to_min(t_num **stack_a, t_num **stack_b,
+				t_roll r, t_num *tmp_pivot)
+{
+	exec_instructions(stack_a, stack_b, "rra");
+	r.pos--;
+	exec_instructions(stack_a, stack_b, "rra");
+	r.pos--;
+	while (r.pos != 1)
+	{
+		if (tmp_pivot && ((*stack_a)->pos > tmp_pivot->pos)
+				&& ((*stack_a)->val < tmp_pivot->val))
+			exec_instructions(stack_a, stack_b, "pb");
+		if (check_switch_a(stack_a))
+		{
+			exec_instructions(stack_a, stack_b, "sa");
+			switch_pos(stack_a);
+		}
+		exec_instructions(stack_a, stack_b, "rra");
+		r.pos--;
+	}
+}
+
+void		go_to_min2(t_num **stack_a, t_num **stack_b,	
+				t_roll r, t_num *tmp_pivot)
+{
+	if (ft_strlen(r.ins) == 2)
+		roll_to_min(stack_a, stack_b, r, tmp_pivot);
+	else
+		reverse_to_min(stack_a, stack_b, r, tmp_pivot);
+	empty_stack_b_go_min(stack_a, stack_b);
+	exec_instructions(stack_a, stack_b, r.ins);
+	if (check_switch_a(stack_a))
+		exec_instructions(stack_a, stack_b, "sa");
 }

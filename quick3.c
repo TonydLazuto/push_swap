@@ -30,7 +30,7 @@ t_num	*get_sub_lst(t_num **stack_a,
 	return (sub_lst);
 }
 
-void		resort2(t_num **stack_a, t_num **stack_b, int last_min_val)
+void		resort2(t_num **stack_a, t_num **stack_b, int last_min_pos)
 {
 	t_num	*lowest;
 	t_roll	r;
@@ -38,19 +38,19 @@ void		resort2(t_num **stack_a, t_num **stack_b, int last_min_val)
 	lowest = NULL;
 	init_roll(&r);
 
-	lowest = get_nb_by_val(last_min_val, *stack_a);
+	lowest = get_nb_by_pos(last_min_pos, *stack_a);
 	r = get_nb_rolls(*stack_a, lowest, 'a');
 	put_nb_on_top(r, stack_a, stack_b);
 	set_num_pos(stack_a);
 }
 
 void		resort(t_num **stack_a, t_num **stack_b,
-				 int last_min_val, int min)
+				 int last_min_pos, int min)
 {
 	if (min == 0)
 		set_num_pos(stack_a);
 	else
-		resort2(stack_a, stack_b, last_min_val);
+		resort2(stack_a, stack_b, last_min_pos);
 }
 
 int			get_pos_multiple_range(t_num **stack_a, t_num *cpy_pivot)

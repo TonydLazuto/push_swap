@@ -68,49 +68,51 @@ t_num	*get_greatest(t_num *stack_a)
 	return (elet);
 }
 
-t_roll	get_ins(t_roll roll, t_roll reverse, char select)
+t_roll	get_ins(int roll, int reverse, char select, t_roll ret)
 {
+	if (roll < reverse)
+		ret.pos = roll;
+	else
+		ret.pos = reverse;
 	if (select == 'a')
 	{
-		if (roll.pos < reverse.pos)
-			roll.ins = "ra";
+		if (roll < reverse)
+			ret.ins = "ra";
 		else
-			reverse.ins = "rra";
+			ret.ins = "rra";
 	}
 	else
 	{
-		if (roll.pos < reverse.pos)
-			roll.ins = "rb";
+		if (roll < reverse)
+			ret.ins = "rb";
 		else
-			reverse.ins = "rrb";
+			ret.ins = "rrb";
 	}
-	if (roll.ins)
-		return (roll);
-	return (reverse);
+	return (ret);
 }
 
 t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select_stack)
 {
 	t_num	*tmp;
-	t_roll	roll;
-	t_roll	reverse;
+	int	roll;
+	int	reverse;
 	t_roll	ret;
 
-	init_roll(&roll);
-	init_roll(&reverse);
+	roll = 0;
+	reverse = 0;
 	init_roll(&ret);
 	tmp = stack;
 	while (tmp->val != elet->val)
 	{
-		roll.pos++;
+		roll++;
 		tmp = tmp->next;
 	}
 	while (elet)
 	{
-		reverse.pos++;
+		reverse++;
 		elet = elet->next;
 	}
-	ret	= get_ins(roll, reverse, select_stack);
+	ret	= get_ins(roll, reverse, select_stack, ret);
 	return (ret);
 }
 

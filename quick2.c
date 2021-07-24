@@ -22,24 +22,24 @@
  * all elements between min & max
  **/
 
-t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max)
+t_num	*get_pivot(t_num *stack_a, int min, int max)
 {
 	t_num	*pivot;
 	int 	j;
 	int 	nb_less;
-	t_num 	*tmp2;
+	t_num 	*tmp;
 
-	pivot = *stack_a;
-	pivot = get_nb_by_pos(min, *stack_a);
+	pivot = stack_a;
+	pivot = get_nb_by_pos(min, stack_a);
 	while (pivot->pos < max)
 	{
-		tmp2 = get_nb_by_pos(min, *stack_a);
+		tmp = get_nb_by_pos(min, stack_a);
 		nb_less = 0;
-		while (tmp2 && tmp2->pos <= max)
+		while (tmp && tmp->pos <= max)
 		{
-			if (tmp2->val < pivot->val)
+			if (tmp->val < pivot->val)
 				nb_less++;
-			tmp2 = tmp2->next;
+			tmp = tmp->next;
 		}
 		if (nb_less == (max - min) / 2)
 			return (pivot);

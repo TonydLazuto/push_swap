@@ -87,7 +87,7 @@ int		quick_sort(t_num **stack_a, t_num **stack_b, int min, int max);
 void	set_num_pos(t_num **stack);
 t_num	*get_nb_by_pos(int pos, t_num *stack);
 t_num	*get_nb_by_val(int val, t_num *stack);
-t_num	*get_pivot(t_num **stack_a, t_num **stack_b, int min, int max);
+t_num	*get_pivot(t_num *stack_a, int min, int max);
 int		get_lowest_pos(t_num *stack_a);
 t_num	*get_sub_lst(t_num **stack_a, int min, int max);
 
@@ -103,5 +103,15 @@ void	fill_stack_b(t_num **stack_a, t_num **stack_b,
 				t_num *cpy_pivot, int range);
 void	check_switch(t_num **stack_a, t_num **stack_b);
 int		check_switch_a(t_num **stack_a);
+
+void	go_to_min2(t_num **stack_a, t_num **stack_b,	
+			t_roll r, t_num *tmp_pivot);
+t_num	*get_sub_tmp_pivot(t_num **stack_a, t_roll r);
+void	switch_pos(t_num **stack_a);
+void	empty_stack_b_go_min(t_num **stack_a, t_num **stack_b);
+void	roll_to_min(t_num **stack_a, t_num **stack_b,
+			t_roll r, t_num *tmp_pivot);
+void	reverse_to_min(t_num **stack_a, t_num **stack_b,
+			t_roll r, t_num *tmp_pivot);
 
 #endif
