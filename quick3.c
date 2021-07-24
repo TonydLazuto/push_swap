@@ -53,12 +53,12 @@ void		resort(t_num **stack_a, t_num **stack_b,
 		resort2(stack_a, stack_b, last_min_pos);
 }
 
-int			get_pos_multiple_range(t_num **stack_a, t_num *cpy_pivot)
+int			get_pos_multiple_range(t_num **stack_a, t_num *pivot)
 {
-	t_num*	pivot;
+	t_num*	cpy;
 
-	pivot = *stack_a;
-	pivot = get_nb_by_val(cpy_pivot->val, *stack_a);
-	pivot->true_pos = pivot->pos;
-	return (pivot->true_pos);	
+	cpy = *stack_a;
+	cpy = get_nb_by_val(pivot->val, *stack_a);
+	cpy->true_pos = cpy->pos;
+	return (cpy->true_pos);	
 }

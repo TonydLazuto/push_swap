@@ -96,7 +96,7 @@ void	resort2(t_num **stack_a, t_num **stack_b, int last_min_val);
 
 void	resort(t_num **stack_a, t_num **stack_b,
 				 int last_min_val, int min);
-int		get_pos_multiple_range(t_num **stack_a, t_num *cpy_pivot);
+int		get_pos_multiple_range(t_num **stack_a, t_num *pivot);
 
 
 void	fill_stack_b(t_num **stack_a, t_num **stack_b,

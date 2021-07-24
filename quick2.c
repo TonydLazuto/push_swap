@@ -25,26 +25,28 @@
 t_num	*get_pivot(t_num *stack_a, int min, int max)
 {
 	t_num	*pivot;
+	t_num	*cpy;
 	int 	j;
 	int 	nb_less;
 	t_num 	*tmp;
 
-	pivot = stack_a;
-	pivot = get_nb_by_pos(min, stack_a);
-	while (pivot->pos < max)
+	cpy = stack_a;
+	cpy = get_nb_by_pos(min, stack_a);
+	while (cpy->pos < max)
 	{
 		tmp = get_nb_by_pos(min, stack_a);
 		nb_less = 0;
 		while (tmp && tmp->pos <= max)
 		{
-			if (tmp->val < pivot->val)
+			if (tmp->val < cpy->val)
 				nb_less++;
 			tmp = tmp->next;
 		}
 		if (nb_less == (max - min) / 2)
-			return (pivot);
-		pivot = pivot->next;
+			break ;
+		cpy = cpy->next;
 	}
+	pivot = new_nb(cpy->val, cpy->pos, cpy->true_pos);
 	return (pivot);
 }
 

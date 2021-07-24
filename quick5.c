@@ -58,19 +58,19 @@ void	empty_stack_b_go_min(t_num **stack_a, t_num **stack_b)
 	}
 }
 
-void		roll_to_min(t_num **stack_a, t_num **stack_b,
+void	roll_to_min(t_num **stack_a, t_num **stack_b,
 				t_roll r, t_num *tmp_pivot)
 {
 	while (r.pos != 1)
 	{
-		
 		if (tmp_pivot && ((*stack_a)->pos < tmp_pivot->pos)
 				&& ((*stack_a)->val > tmp_pivot->val))
 		{
 			//printf("\nbe4 push\n(*stack_a)->val : %d\n(*stack_a)->next->val : %d\n", (*stack_a)->val, (*stack_a)->next->val);
 			exec_instructions(stack_a, stack_b, "pb");
 		}
-		else if (check_switch_a(stack_a))
+		
+		if (check_switch_a(stack_a))
 		{
 			//printf("\nbe4 switch\n(*stack_a)->val : %d\n(*stack_a)->next->val : %d\n", (*stack_a)->val, (*stack_a)->next->val);
 			exec_instructions(stack_a, stack_b, "sa");
@@ -80,7 +80,7 @@ void		roll_to_min(t_num **stack_a, t_num **stack_b,
 		r.pos--;
 	}
 }
-void		reverse_to_min(t_num **stack_a, t_num **stack_b,
+void	reverse_to_min(t_num **stack_a, t_num **stack_b,
 				t_roll r, t_num *tmp_pivot)
 {
 	exec_instructions(stack_a, stack_b, "rra");
@@ -92,6 +92,7 @@ void		reverse_to_min(t_num **stack_a, t_num **stack_b,
 		if (tmp_pivot && ((*stack_a)->pos > tmp_pivot->pos)
 				&& ((*stack_a)->val < tmp_pivot->val))
 			exec_instructions(stack_a, stack_b, "pb");
+		
 		if (check_switch_a(stack_a))
 		{
 			exec_instructions(stack_a, stack_b, "sa");
@@ -102,7 +103,7 @@ void		reverse_to_min(t_num **stack_a, t_num **stack_b,
 	}
 }
 
-void		go_to_min2(t_num **stack_a, t_num **stack_b,	
+void	go_to_min2(t_num **stack_a, t_num **stack_b,	
 				t_roll r, t_num *tmp_pivot)
 {
 	if (ft_strlen(r.ins) == 2)

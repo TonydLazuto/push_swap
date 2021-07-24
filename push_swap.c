@@ -44,8 +44,8 @@ void		launch_quick_sort(t_num **stack_a, t_num **stack_b)
 
 //printf("%d : min[1]\n%d : max[1]\n", min[1], max[1]);
 	pos = quick_sort(stack_a, stack_b, min[1], max[1]);
-/*	quick_sort(stack_a, stack_b, pos + 1, max[1]);
-*/
+	quick_sort(stack_a, stack_b, pos + 1, max[1]);
+
 }
 
 void	no_chunk(t_num **stack_a, t_num **stack_b)
