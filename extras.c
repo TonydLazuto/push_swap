@@ -53,7 +53,7 @@ void	swap_four(t_num **stack_a, t_num **stack_b)
 	t_num	*low;
 	t_roll	roll_low;
 
-	low = get_lowest(*stack_a);
+	low = get_lowest_val(*stack_a);
 	roll_low = get_nb_rolls(*stack_a, low, 'a');
 	put_nb_on_top(roll_low, stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pb");
@@ -69,12 +69,12 @@ void	swap_five(t_num **stack_a, t_num **stack_b)
 	t_roll	roll_low;
 	t_roll	roll_great;
 
-	great = get_greatest(*stack_a);
+	great = get_highest_val(*stack_a);
 	roll_great = get_nb_rolls(*stack_a, great, 'a');
 	put_nb_on_top(roll_great, stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pb");
 
-	low = get_lowest(*stack_a);
+	low = get_lowest_val(*stack_a);
 	roll_low = get_nb_rolls(*stack_a, low, 'a');
 	put_nb_on_top(roll_low, stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pb");

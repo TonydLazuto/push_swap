@@ -72,7 +72,7 @@ void		switch2(t_num **stack_a, t_num **stack_b,
 void		fill_stack_b(t_num **stack_a, t_num **stack_b,
 				t_num *cpy_pivot, int range)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (i <= range)
@@ -90,4 +90,5 @@ void		fill_stack_b(t_num **stack_a, t_num **stack_b,
 		}
 		i++;
 	}
+	
 }

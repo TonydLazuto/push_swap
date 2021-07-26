@@ -76,8 +76,8 @@ void	print_nb(t_num *nb);
 void	print_const(const char *s, int fd);
 
 void	init_roll(t_roll *r);
-t_num	*get_lowest(t_num *stack_a);
-t_num	*get_greatest(t_num *stack_a);
+t_num	*get_lowest_val(t_num *stack_a);
+t_num	*get_highest_val(t_num *stack_a);
 t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select_stack);
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
 
@@ -113,5 +113,14 @@ void	roll_to_min(t_num **stack_a, t_num **stack_b,
 			t_roll r, t_num *tmp_pivot);
 void	reverse_to_min(t_num **stack_a, t_num **stack_b,
 			t_roll r, t_num *tmp_pivot);
+
+void	fill_and_sort(t_num **stack_a, t_num **stack_b,
+			t_num *cpy_pivot, int range);
+
+void	launch_chunk4(t_num **stack_a, t_num **stack_b);
+t_num	*pop_elet(t_num *chunk, t_num *lowest_chunk, t_roll r);
+t_num	*get_chunk(t_num **stack_a, int chunk_size);
+void	resort3(t_num **stack_a, t_num **stack_b);
+
 
 #endif

@@ -60,24 +60,24 @@ void		go_to_min(t_num **stack_a, t_num **stack_b, int min)
 	tmp_pivot = NULL;
 	cur_min = get_nb_by_pos(min, *stack_a);
 	r = get_nb_rolls(*stack_a, cur_min, 'a');
-	printf("-->r.pos = %d\n-->r.ins = %s\n\n", r.pos, r.ins);
+//printf("-->r.pos = %d\n-->r.ins = %s\n\n", r.pos, r.ins);
 
 	sub = get_sub_tmp_pivot(stack_a, r);
 	if (sub && list_length(sub) > 5)
 	{
-		printf("______GET_SUB_TMP--------------/////////////////////------------------\n");
-		print_nb(sub);
+//printf("______GET_SUB_TMP--------------/////////////////////------------------\n");
+//print_nb(sub);
 		tmp_pivot = get_pivot(sub, 0, list_length(sub) - 1);
 		if (!tmp_pivot)
 		ft_error(stack_a, stack_b);
-		printf("\ntmp_pivot->val : %d\n", tmp_pivot->val);
+//printf("\ntmp_pivot->val : %d\n", tmp_pivot->val);
 		clear_lst(&sub);
 	}
 	if (r.pos > 2)
 		go_to_min2(stack_a, stack_b, r, tmp_pivot);
 	else
 		put_nb_on_top(r, stack_a, stack_b);
-printf("-->r.pos = %d\n-->r.ins = %s\n\n", r.pos, r.ins);
+//printf("-->r.pos = %d\n-->r.ins = %s\n\n", r.pos, r.ins);
 }
 
 t_num		*partition(t_num **stack_a, t_num **stack_b, int min, int max)
@@ -88,14 +88,12 @@ t_num		*partition(t_num **stack_a, t_num **stack_b, int min, int max)
 	if (!pivot)
 		ft_error(stack_a, stack_b);
 printf("pivot->pos : %d\npivot->val : %d\n", pivot->pos, pivot->val);
-	
-	
-
 	go_to_min(stack_a, stack_b, min);
 printf("______CUR_MIN____STACK_A__________________\n");
 print_nb(*stack_a);
 	//check_fill_direction(stack_a, pivot, max - min);
 	fill_stack_b(stack_a, stack_b, pivot, max - min);
+	//fill_and_sort(stack_a, stack_b, pivot, max - min);
 	//clear_lst(&sub);
 printf("___FILL_______STACK_A__________________\n");
 print_nb(*stack_a);
@@ -118,6 +116,7 @@ int			quick_sort(t_num **stack_a, t_num **stack_b, int min, int max)
 	t_num*		pivot;
 
 	set_num_pos(stack_a);
+printf("%d : min\n%d : max\n", min, max);
 	pivot = partition(stack_a, stack_b, min ,max);
 
 	resort(stack_a, stack_b, last_min_pos, min);

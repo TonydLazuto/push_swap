@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_num	*get_lowest(t_num *stack_a)
+t_num	*get_lowest_val(t_num *stack_a)
 {
 	int		valid;
 	t_num	*tmp;
@@ -40,7 +40,7 @@ t_num	*get_lowest(t_num *stack_a)
 	return (elet);
 }
 
-t_num	*get_greatest(t_num *stack_a)
+t_num	*get_highest_val(t_num *stack_a)
 {
 	int		valid;
 	t_num	*tmp;

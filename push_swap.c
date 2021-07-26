@@ -39,12 +39,12 @@ void		launch_quick_sort(t_num **stack_a, t_num **stack_b)
 
 	max[0] = pos - 1;
 	min[1] = pos + 1;
-	pos = quick_sort(stack_a, stack_b, min[0], max[0]);
-	quick_sort(stack_a, stack_b, pos + 1, max[0]);
+	//pos = quick_sort(stack_a, stack_b, min[0], max[0]);
+	//quick_sort(stack_a, stack_b, pos + 1, max[0]);
 
 //printf("%d : min[1]\n%d : max[1]\n", min[1], max[1]);
-	pos = quick_sort(stack_a, stack_b, min[1], max[1]);
-	quick_sort(stack_a, stack_b, pos + 1, max[1]);
+	//pos = quick_sort(stack_a, stack_b, min[1], max[1]);
+	//quick_sort(stack_a, stack_b, pos + 1, max[1]);
 
 }
 
@@ -55,7 +55,7 @@ void	no_chunk(t_num **stack_a, t_num **stack_b)
 
 	while (*stack_a)
 	{
-		low = get_lowest(*stack_a);
+		low = get_lowest_val(*stack_a);
 		roll_low = get_nb_rolls(*stack_a, low, 'a');
 		put_nb_on_top(roll_low, stack_a, stack_b);
 		exec_instructions(stack_a, stack_b, "pb");
@@ -79,12 +79,13 @@ void		pick_swap(int ac, t_num *stack_a)
 		swap_five(&stack_a, &stack_b);
 	else if (ac >= 6 && ac < 30)
 		no_chunk(&stack_a, &stack_b);
-	else if (ac >= 30 && ac < 100)
-		launch_quick_sort(&stack_a, &stack_b);
+	else	
+		launch_chunk4(&stack_a, &stack_b);
+
+	//else if (ac >= 30 && ac < 100)
 	//else if (ac >= 100 && ac < 200)
 	//else if (ac >= 200 && ac < 400)
-	else
-		launch_quick_sort(&stack_a, &stack_b);
+	
 	ft_exit(&stack_a, &stack_b);
 }
 
