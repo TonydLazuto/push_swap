@@ -34,9 +34,10 @@ void		launch_quick_sort(t_num **stack_a, t_num **stack_b)
 	
 	min[0] = 0;
 	max[0] = list_length(*stack_a) - 1;
+
 	max[1] = max[0];
 	pos = quick_sort(stack_a, stack_b, min[0], max[0]);
-
+/*
 	max[0] = pos - 1;
 	min[1] = pos + 1;
 	pos = quick_sort(stack_a, stack_b, min[0], max[0]);
@@ -45,7 +46,8 @@ void		launch_quick_sort(t_num **stack_a, t_num **stack_b)
 //printf("%d : min[1]\n%d : max[1]\n", min[1], max[1]);
 	pos = quick_sort(stack_a, stack_b, min[1], max[1]);
 	quick_sort(stack_a, stack_b, pos + 1, max[1]);
-
+*/
+	//myquick_sort(stack_a, stack_b, min[0], max[0]);
 }
 
 void	no_chunk(t_num **stack_a, t_num **stack_b)
