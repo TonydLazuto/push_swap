@@ -67,8 +67,6 @@ void		switch2(t_num **stack_a, t_num **stack_b,
 	*/
 }
 
-// attention aux fuites memoire du roll_stack() ft_error(cur, other_stack)
-// cur est en faite sub et stack_a ne sera pas vidée en cas d'erreur
 void		fill_stack_b(t_num **stack_a, t_num **stack_b,
 				t_num *cpy_pivot, int range)
 {

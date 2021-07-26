@@ -29,7 +29,7 @@ t_num	*get_sub_lst(t_num **stack_a,
 	}
 	return (sub_lst);
 }
-
+/*
 void		resort2(t_num **stack_a, t_num **stack_b, int last_min_pos)
 {
 	t_num	*lowest;
@@ -62,3 +62,4 @@ int			get_pos_multiple_range(t_num **stack_a, t_num *pivot)
 	cpy->true_pos = cpy->pos;
 	return (cpy->true_pos);	
 }
+*/
