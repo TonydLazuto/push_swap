@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk4.c                                           :+:      :+:    :+:   */
+/*   chunk5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 void		push_chunk(t_num **stack_a, t_num **stack_b, t_num *chunk)
 {
 	t_num		*lowest_chunk;
@@ -71,21 +71,30 @@ print_nb(*stack_b);
 	}
 }
 
-void		chunk4(t_num **stack_a, t_num **stack_b, int min, int max)
+void		chunk5(t_num **stack_a, t_num **stack_b, int min, int max)
 {
 	t_num*		pivot;
 	
 	push5chunk(stack_a, stack_b);
 }
+*/
 
-void	launch_chunk4(t_num **stack_a, t_num **stack_b)
+void	launch_chunk5(t_num **stack_a, t_num **stack_b)
 {
 	int min;
 	int max;
 	int pos;
+	int nb_chunks = 5; // en fonction 100 200 300...
 
 	min = 0;
 	max = list_length(*stack_a) - 1;
 	set_num_pos(stack_a);
-	chunk4(stack_a, stack_b, min, max);
+	assign_chunks(stack_a, nb_chunks);
+printf("___CHUNK_______STACK_A__________________\n");
+print_nb(*stack_a);
+//printf("elet->val : %d\nnb_less : %d\n", cpy->val, nb_less);
+printf("___-----------------------------------______________________________\n");
+printf("___-----------------------------------______________________________\n");
+printf("___-----------------------------------______________________________\n");
+	//chunk5(stack_a, stack_b, min, max);
 }

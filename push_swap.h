@@ -117,10 +117,12 @@ void	reverse_to_min(t_num **stack_a, t_num **stack_b,
 void	fill_and_sort(t_num **stack_a, t_num **stack_b,
 			t_num *cpy_pivot, int range);
 
-void	launch_chunk4(t_num **stack_a, t_num **stack_b);
+void	launch_chunk5(t_num **stack_a, t_num **stack_b);
 t_num	*pop_elet(t_num *chunk, t_num *lowest_chunk, t_roll r);
 t_num	*get_chunk(t_num **stack_a, int chunk_size);
 void	resort3(t_num **stack_a, t_num **stack_b);
 
+
+void	assign_chunks(t_num **stack_a, int nb_chunks);
 
 #endif

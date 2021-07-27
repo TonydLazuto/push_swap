@@ -1,0 +1,1581 @@
+pb
+ra
+pb
+sb
+pb
+ra
+pb
+sb
+ra
+ra
+ra
+pb
+ss
+pb
+ss
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ss
+pb
+ss
+pb
+ss
+pb
+ss
+pb
+ss
+ra
+ra
+ra
+pb
+ss
+pb
+sb
+pb
+sb
+ra
+ra
+ra
+pb
+sb
+pb
+sb
+pb
+ss
+pb
+ss
+ra
+ra
+pb
+sb
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pivot->pos : 12
+pivot->val : 20
+-->r.pos = 0
+-->r.ins = ra
+
+-->r.pos = 0
+-->r.ins = ra
+
+______CUR_MIN____STACK_A__________________
+ 9 --> pos : 0 --> true_pos = -1
+ 36 -> pos : 1 --> true_pos = -1
+ 4 --> pos : 2 --> true_pos = -1
+ 15 -> pos : 3 --> true_pos = -1
+ 35 -> pos : 4 --> true_pos = -1
+ 14 -> pos : 5 --> true_pos = -1
+ 29 -> pos : 6 --> true_pos = -1
+ 31 -> pos : 7 --> true_pos = -1
+ 24 -> pos : 8 --> true_pos = -1
+ 2 --> pos : 9 --> true_pos = -1
+ 28 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 20 -> pos : 12 -> true_pos = -1
+ 34 -> pos : 13 -> true_pos = -1
+ 26 -> pos : 14 -> true_pos = -1
+ 25 -> pos : 15 -> true_pos = -1
+ 39 -> pos : 16 -> true_pos = -1
+ 10 -> pos : 17 -> true_pos = -1
+ 27 -> pos : 18 -> true_pos = -1
+ 18 -> pos : 19 -> true_pos = -1
+ 16 -> pos : 20 -> true_pos = -1
+ 6 --> pos : 21 -> true_pos = -1
+ 8 --> pos : 22 -> true_pos = -1
+ 23 -> pos : 23 -> true_pos = -1
+ 38 -> pos : 24 -> true_pos = -1
+ 5 --> pos : 25 -> true_pos = -1
+ 17 -> pos : 26 -> true_pos = -1
+ 3 --> pos : 27 -> true_pos = -1
+ 21 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = -1
+ 33 -> pos : 30 -> true_pos = -1
+ 19 -> pos : 31 -> true_pos = -1
+ 0 --> pos : 32 -> true_pos = -1
+ 1 --> pos : 33 -> true_pos = -1
+ 37 -> pos : 34 -> true_pos = -1
+ 13 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 11 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___FILL_______STACK_A__________________
+ 36 -> pos : 1 --> true_pos = -1
+ 35 -> pos : 4 --> true_pos = -1
+ 29 -> pos : 6 --> true_pos = -1
+ 31 -> pos : 7 --> true_pos = -1
+ 24 -> pos : 8 --> true_pos = -1
+ 28 -> pos : 10 -> true_pos = -1
+ 34 -> pos : 13 -> true_pos = -1
+ 26 -> pos : 14 -> true_pos = -1
+ 25 -> pos : 15 -> true_pos = -1
+ 39 -> pos : 16 -> true_pos = -1
+ 23 -> pos : 23 -> true_pos = -1
+ 27 -> pos : 18 -> true_pos = -1
+ 38 -> pos : 24 -> true_pos = -1
+ 21 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = -1
+ 33 -> pos : 30 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 34 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+____FILL______STACK_B__________________
+ 20 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 37 -> true_pos = -1
+ 13 -> pos : 35 -> true_pos = -1
+ 1 --> pos : 33 -> true_pos = -1
+ 0 --> pos : 32 -> true_pos = -1
+ 19 -> pos : 31 -> true_pos = -1
+ 17 -> pos : 26 -> true_pos = -1
+ 3 --> pos : 27 -> true_pos = -1
+ 5 --> pos : 25 -> true_pos = -1
+ 8 --> pos : 22 -> true_pos = -1
+ 6 --> pos : 21 -> true_pos = -1
+ 16 -> pos : 20 -> true_pos = -1
+ 18 -> pos : 19 -> true_pos = -1
+ 10 -> pos : 17 -> true_pos = -1
+ 15 -> pos : 3 --> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 2 --> pos : 9 --> true_pos = -1
+ 14 -> pos : 5 --> true_pos = -1
+ 9 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 2 --> true_pos = -1
+___SUB___RESORT____STACK_A__________________
+ 36 -> pos : 1 --> true_pos = -1
+ 35 -> pos : 4 --> true_pos = -1
+ 29 -> pos : 6 --> true_pos = -1
+ 31 -> pos : 7 --> true_pos = -1
+ 24 -> pos : 8 --> true_pos = -1
+ 28 -> pos : 10 -> true_pos = -1
+ 34 -> pos : 13 -> true_pos = -1
+ 26 -> pos : 14 -> true_pos = -1
+ 25 -> pos : 15 -> true_pos = -1
+ 39 -> pos : 16 -> true_pos = -1
+ 23 -> pos : 23 -> true_pos = -1
+ 27 -> pos : 18 -> true_pos = -1
+ 38 -> pos : 24 -> true_pos = -1
+ 21 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = -1
+ 33 -> pos : 30 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 34 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___CLEAR___________STACKS___________________
+ 4 --> pos : 2 --> true_pos = -1
+ 9 --> pos : 0 --> true_pos = -1
+ 14 -> pos : 5 --> true_pos = -1
+ 2 --> pos : 9 --> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 15 -> pos : 3 --> true_pos = -1
+ 10 -> pos : 17 -> true_pos = -1
+ 18 -> pos : 19 -> true_pos = -1
+ 16 -> pos : 20 -> true_pos = -1
+ 6 --> pos : 21 -> true_pos = -1
+ 8 --> pos : 22 -> true_pos = -1
+ 5 --> pos : 25 -> true_pos = -1
+ 3 --> pos : 27 -> true_pos = -1
+ 17 -> pos : 26 -> true_pos = -1
+ 19 -> pos : 31 -> true_pos = -1
+ 0 --> pos : 32 -> true_pos = -1
+ 1 --> pos : 33 -> true_pos = -1
+ 13 -> pos : 35 -> true_pos = -1
+ 11 -> pos : 37 -> true_pos = -1
+ 20 -> pos : 12 -> true_pos = -1
+ 36 -> pos : 1 --> true_pos = -1
+ 35 -> pos : 4 --> true_pos = -1
+ 29 -> pos : 6 --> true_pos = -1
+ 31 -> pos : 7 --> true_pos = -1
+ 24 -> pos : 8 --> true_pos = -1
+ 28 -> pos : 10 -> true_pos = -1
+ 34 -> pos : 13 -> true_pos = -1
+ 26 -> pos : 14 -> true_pos = -1
+ 25 -> pos : 15 -> true_pos = -1
+ 39 -> pos : 16 -> true_pos = -1
+ 23 -> pos : 23 -> true_pos = -1
+ 27 -> pos : 18 -> true_pos = -1
+ 38 -> pos : 24 -> true_pos = -1
+ 21 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = -1
+ 33 -> pos : 30 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 34 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+ 4 --> pos : 0 --> true_pos = -1
+ 9 --> pos : 1 --> true_pos = -1
+ 14 -> pos : 2 --> true_pos = -1
+ 2 --> pos : 3 --> true_pos = -1
+ 12 -> pos : 4 --> true_pos = -1
+ 15 -> pos : 5 --> true_pos = -1
+ 10 -> pos : 6 --> true_pos = -1
+ 18 -> pos : 7 --> true_pos = -1
+ 16 -> pos : 8 --> true_pos = -1
+ 6 --> pos : 9 --> true_pos = -1
+ 8 --> pos : 10 -> true_pos = -1
+ 5 --> pos : 11 -> true_pos = -1
+ 3 --> pos : 12 -> true_pos = -1
+ 17 -> pos : 13 -> true_pos = -1
+ 19 -> pos : 14 -> true_pos = -1
+ 0 --> pos : 15 -> true_pos = -1
+ 1 --> pos : 16 -> true_pos = -1
+ 13 -> pos : 17 -> true_pos = -1
+ 11 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = -1
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___END___________STACK_A___________________
+ 4 --> pos : 0 --> true_pos = -1
+ 9 --> pos : 1 --> true_pos = -1
+ 14 -> pos : 2 --> true_pos = -1
+ 2 --> pos : 3 --> true_pos = -1
+ 12 -> pos : 4 --> true_pos = -1
+ 15 -> pos : 5 --> true_pos = -1
+ 10 -> pos : 6 --> true_pos = -1
+ 18 -> pos : 7 --> true_pos = -1
+ 16 -> pos : 8 --> true_pos = -1
+ 6 --> pos : 9 --> true_pos = -1
+ 8 --> pos : 10 -> true_pos = -1
+ 5 --> pos : 11 -> true_pos = -1
+ 3 --> pos : 12 -> true_pos = -1
+ 17 -> pos : 13 -> true_pos = -1
+ 19 -> pos : 14 -> true_pos = -1
+ 0 --> pos : 15 -> true_pos = -1
+ 1 --> pos : 16 -> true_pos = -1
+ 13 -> pos : 17 -> true_pos = -1
+ 11 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+pivot->pos : 6
+pivot->val : 10
+-->r.pos = 0
+-->r.ins = ra
+
+-->r.pos = 0
+-->r.ins = ra
+
+______CUR_MIN____STACK_A__________________
+ 4 --> pos : 0 --> true_pos = -1
+ 9 --> pos : 1 --> true_pos = -1
+ 14 -> pos : 2 --> true_pos = -1
+ 2 --> pos : 3 --> true_pos = -1
+ 12 -> pos : 4 --> true_pos = -1
+ 15 -> pos : 5 --> true_pos = -1
+ 10 -> pos : 6 --> true_pos = -1
+ 18 -> pos : 7 --> true_pos = -1
+ 16 -> pos : 8 --> true_pos = -1
+ 6 --> pos : 9 --> true_pos = -1
+ 8 --> pos : 10 -> true_pos = -1
+ 5 --> pos : 11 -> true_pos = -1
+ 3 --> pos : 12 -> true_pos = -1
+ 17 -> pos : 13 -> pb
+pb
+ra
+pb
+sb
+ra
+ra
+pb
+ra
+ra
+pb
+ss
+pb
+ss
+pb
+sb
+pb
+sb
+ra
+ra
+pb
+sb
+pb
+ss
+ra
+ra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+true_pos = -1
+ 19 -> pos : 14 -> true_pos = -1
+ 0 --> pos : 15 -> true_pos = -1
+ 1 --> pos : 16 -> true_pos = -1
+ 13 -> pos : 17 -> true_pos = -1
+ 11 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___FILL_______STACK_A__________________
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+ 14 -> pos : 2 --> true_pos = -1
+ 12 -> pos : 4 --> true_pos = -1
+ 15 -> pos : 5 --> true_pos = -1
+ 18 -> pos : 7 --> true_pos = -1
+ 16 -> pos : 8 --> true_pos = -1
+ 17 -> pos : 13 -> true_pos = -1
+ 19 -> pos : 14 -> true_pos = -1
+ 11 -> pos : 18 -> true_pos = -1
+ 13 -> pos : 17 -> true_pos = -1
+____FILL______STACK_B__________________
+ 10 -> pos : 6 --> true_pos = -1
+ 1 --> pos : 16 -> true_pos = -1
+ 0 --> pos : 15 -> true_pos = -1
+ 8 --> pos : 10 -> true_pos = -1
+ 3 --> pos : 12 -> true_pos = -1
+ 5 --> pos : 11 -> true_pos = -1
+ 6 --> pos : 9 --> true_pos = -1
+ 9 --> pos : 1 --> true_pos = -1
+ 2 --> pos : 3 --> true_pos = -1
+ 4 --> pos : 0 --> true_pos = -1
+___SUB___RESORT____STACK_A__________________
+ 14 -> pos : 2 --> true_pos = -1
+ 12 -> pos : 4 --> true_pos = -1
+ 15 -> pos : 5 --> true_pos = -1
+ 18 -> pos : 7 --> true_pos = -1
+ 16 -> pos : 8 --> true_pos = -1
+ 17 -> pos : 13 -> true_pos = -1
+ 19 -> pos : 14 -> true_pos = -1
+ 11 -> pos : 18 -> true_pos = -1
+ 13 -> pos : 17 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___CLEAR___________STACKS___________________
+ 4 --> pos : 0 --> true_pos = -1
+ 2 --> pos : 3 --> true_pos = -1
+ 9 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 9 --> true_pos = -1
+ 5 --> pos : 11 -> true_pos = -1
+ 3 --> pos : 12 -> true_pos = -1
+ 8 --> pos : 10 -> true_pos = -1
+ 0 --> pos : 15 -> true_pos = -1
+ 1 --> pos : 16 -> true_pos = -1
+ 10 -> pos : 6 --> true_pos = -1
+ 14 -> pos : 2 --> true_pos = -1
+ 12 -> pos : 4 --> true_pos = -1
+ 15 -> pos : 5 --> true_pos = -1
+ 18 -> pos : 7 --> true_pos = -1
+ 16 -> pos : 8 --> true_pos = -1
+ 17 -> pos : 13 -> true_pos = -1
+ 19 -> pos : 14 -> true_pos = -1
+ 11 -> pos : 18 -> true_pos = -1
+ 13 -> pos : 17 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 ->sa
+ra
+ra
+sa
+ra
+sa
+ra
+sa
+ra
+sa
+ra
+sa
+ra
+sa
+ra
+ra
+ra
+sa
+ true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+ 4 --> pos : 0 --> true_pos = -1
+ 2 --> pos : 1 --> true_pos = -1
+ 9 --> pos : 2 --> true_pos = -1
+ 6 --> pos : 3 --> true_pos = -1
+ 5 --> pos : 4 --> true_pos = -1
+ 3 --> pos : 5 --> true_pos = -1
+ 8 --> pos : 6 --> true_pos = -1
+ 0 --> pos : 7 --> true_pos = -1
+ 1 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = -1
+ 14 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 15 -> pos : 12 -> true_pos = -1
+ 18 -> pos : 13 -> true_pos = -1
+ 16 -> pos : 14 -> true_pos = -1
+ 17 -> pos : 15 -> true_pos = -1
+ 19 -> pos : 16 -> true_pos = -1
+ 11 -> pos : 17 -> true_pos = -1
+ 13 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___END___________STACK_A___________________
+ 4 --> pos : 0 --> true_pos = -1
+ 2 --> pos : 1 --> true_pos = -1
+ 9 --> pos : 2 --> true_pos = -1
+ 6 --> pos : 3 --> true_pos = -1
+ 5 --> pos : 4 --> true_pos = -1
+ 3 --> pos : 5 --> true_pos = -1
+ 8 --> pos : 6 --> true_pos = -1
+ 0 --> pos : 7 --> true_pos = -1
+ 1 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 14 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 15 -> pos : 12 -> true_pos = -1
+ 18 -> pos : 13 -> true_pos = -1
+ 16 -> pos : 14 -> true_pos = -1
+ 17 -> pos : 15 -> true_pos = -1
+ 19 -> pos : 16 -> true_pos = -1
+ 11 -> pos : 17 -> true_pos = -1
+ 13 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+pivot->pos : 12
+pivot->val : 15
+-->r.pos = 10
+-->r.ins = ra
+
+______GET_SUB_TMP--------------/////////////////////------------------
+ 4 --> pos : 0 --> true_pos = -1
+ 2 --> pos : 1 --> true_pos = -1
+ 9 --> pos : 2 --> true_pos = -1
+ 6 --> pos : 3 --> true_pos = -1
+ 5 --> pos : 4 --> true_pos = -1
+ 3 --> pos : 5 --> true_pos = -1
+ 8 --> pos : 6 --> true_pos = -1
+ 0 --> pos : 7 --> true_pos = -1
+ 1 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+
+tmp_pivot->val : 4
+-->r.pos = 10
+-->r.ins = ra
+
+______CUR_MIN____STACK_A__________________
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 10 -> true_pos = -1
+ 15 -> pos : 12 -> true_pos = -1
+ 18 -> pos : 13 -> true_pos = -1
+ 16 -> pos : 14 -> true_pos = -1
+ 17 -> pos : 15 -> true_pos = -1
+ 19 -> pos : 16 -> true_pos = -1
+ 11 -> pos : 17 -> true_pos = -1
+ 13 -> pos pb
+pb
+pb
+ra
+ra
+ra
+ra
+pb
+sb
+pb
+rra
+rra
+rra
+rra
+rb
+pa
+pa
+pa
+pa
+pa
+: 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+___FILL_______STACK_A__________________
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 18 -> pos : 13 -> true_pos = -1
+ 16 -> pos : 14 -> true_pos = -1
+ 17 -> pos : 15 -> true_pos = -1
+ 19 -> pos : 16 -> true_pos = -1
+____FILL______STACK_B__________________
+ 13 -> pos : 18 -> true_pos = -1
+ 15 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 17 -> true_pos = -1
+ 14 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+___SUB___RESORT____STACK_A__________________
+ 18 -> pos : 13 -> true_pos = -1
+ 16 -> pos : 14 -> true_pos = -1
+ 17 -> pos : 15 -> true_pos = -1
+ 19 -> pos : 16 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+___CLEAR___________STACKS___________________
+ 13 -> pos : 18 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 10 -> true_pos = -1
+ 11 -> pos : 17 -> true_pos = -1
+ 15 -> pos : 12 -> true_pos = -1
+ 18 -> pos : 13 -> true_pos = -1
+ 16 -> pos : 14 -> true_pos = -1
+ 17 -> pos : 15 -> true_pos = -1
+ 19 -> pos : 16 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = -1
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___END___________STACK_A___________________
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 31 -> pos : 23 -> true_pos = -1
+ 24 -> pos : 24 -> true_pos = -1
+ 28 -> pos : 25 -> true_pos = -1
+ 34 -> pos : 26 -> true_pos = -1
+ 26 -> pos : 27 -> true_pos = -1
+ 25 -> pos : 28 -> true_pos = -1
+ 39 -> pos : 29 -> true_pos = -1
+ 23 -> pos : 30 -> true_pos = -1
+ 27 -> pos : 31 -> true_pos = -1
+ 38 -> pos : 32 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+ 30 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 35 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 37 -> pos : 37 -> true_pos = -1
+ 22 -> pos : 38 -> true_pos = -1
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+pivot->pos : 34
+pivot->val : 30
+-->r.pos = 19
+-->r.ins = rra
+
+______GET_SUB_TMP--------------/////////////////////------------------
+ 22 -> pos : 0 --> true_pos = -1
+ 37 -> pos : 1 --> true_pos = -1
+ 32 -> pos : 2 --> true_pos = -1
+ 33 -> pos : 3 --> true_pos = -1
+ 30 -> pos : 4 --> true_pos = -1
+ 21 -> pos : 5 --> true_pos = -1
+ 38 -> pos : 6 --> true_pos = -1
+ 27 -> pos : 7 --> true_pos = -1
+ 23 -> pos : 8 --> true_pos = -1
+ 39 -> pos : 9 --> true_pos = -1
+ 25 -> pos : 10 -> true_pos = -1rra
+rra
+sa
+rra
+sa
+rra
+sa
+rra
+sa
+rra
+pb
+rra
+sa
+rra
+pb
+rra
+pb
+rra
+sa
+rra
+pb
+rra
+pb
+rra
+sa
+rra
+pb
+rra
+pb
+rra
+sa
+rra
+pb
+rra
+pa
+pa
+pa
+sa
+pa
+sa
+pa
+sa
+pa
+pa
+sa
+pa
+rra
+sa
+pb
+ra
+pb
+pb
+pb
+sb
+pb
+sb
+pb
+sb
+pb
+pb
+ra
+pb
+sb
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+
+ 26 -> pos : 11 -> true_pos = -1
+ 34 -> pos : 12 -> true_pos = -1
+ 28 -> pos : 13 -> true_pos = -1
+ 24 -> pos : 14 -> true_pos = -1
+ 31 -> pos : 15 -> true_pos = -1
+ 29 -> pos : 16 -> true_pos = -1
+ 35 -> pos : 17 -> true_pos = -1
+ 36 -> pos : 18 -> true_pos = -1
+
+tmp_pivot->val : 30
+-->r.pos = 19
+-->r.ins = rra
+
+______CUR_MIN____STACK_A__________________
+ 21 -> pos : 33 -> true_pos = -1
+ 36 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 31 -> true_pos = -1
+ 27 -> pos : 30 -> true_pos = -1
+ 24 -> pos : 28 -> true_pos = -1
+ 25 -> pos : 27 -> true_pos = -1
+ 26 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 24 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 22 -> pos : 23 -> true_pos = -1
+ 31 -> pos : 26 -> true_pos = -1
+ 34 -> pos : 29 -> true_pos = -1
+ 39 -> pos : 32 -> true_pos = -1
+ 38 -> pos : 34 -> true_pos = -1
+ 30 -> pos : 35 -> true_pos = -1
+ 33 -> pos : 36 -> true_pos = -1
+ 32 -> pos : 37 -> true_pos = -1
+ 37 -> pos : 38 -> true_pos = -1
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+___FILL_______STACK_A__________________
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 31 -> pos : 26 -> true_pos = -1
+ 34 -> pos : 29 -> true_pos = -1
+ 39 -> pos : 32 -> true_pos = -1
+ 38 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 36 -> true_pos = -1
+ 32 -> pos : 37 -> true_pos = -1
+ 37 -> pos : 38 -> true_pos = -1
+____FILL______STACK_B__________________
+ 30 -> pos : 35 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 22 -> pos : 23 -> true_pos = -1
+ 28 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 30 -> true_pos = -1
+ 26 -> pos : 25 -> true_pos = -1
+ 25 -> pos : 27 -> true_pos = -1
+ 24 -> pos : 28 -> true_pos = -1
+ 23 -> pos : 31 -> true_pos = -1
+ 21 -> pos : 33 -> true_pos = -1
+___SUB___RESORT____STACK_A__________________
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 31 -> pos : 26 -> true_pos = -1
+ 34 -> pos : 29 -> true_pos = -1
+ 39 -> pos : 32 -> true_pos = -1
+ 38 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 36 -> true_pos = -1
+ 32 -> pos : 37 -> true_pos = -1
+ 37 -> pos : 38 -> true_pos = -1
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+___CLEAR___________STACKS___________________
+ 21 -> pos : 33 -> true_pos = -1
+ 23 ->ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ pos : 31 -> true_pos = -1
+ 24 -> pos : 28 -> true_pos = -1
+ 25 -> pos : 27 -> true_pos = -1
+ 26 -> pos : 25 -> true_pos = -1
+ 27 -> pos : 30 -> true_pos = -1
+ 28 -> pos : 24 -> true_pos = -1
+ 22 -> pos : 23 -> true_pos = -1
+ 29 -> pos : 22 -> true_pos = -1
+ 30 -> pos : 35 -> true_pos = -1
+ 36 -> pos : 20 -> true_pos = -1
+ 35 -> pos : 21 -> true_pos = -1
+ 31 -> pos : 26 -> true_pos = -1
+ 34 -> pos : 29 -> true_pos = -1
+ 39 -> pos : 32 -> true_pos = -1
+ 38 -> pos : 34 -> true_pos = -1
+ 33 -> pos : 36 -> true_pos = -1
+ 32 -> pos : 37 -> true_pos = -1
+ 37 -> pos : 38 -> true_pos = -1
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = -1
+ 36 -> pos : 30 -> true_pos = -1
+ 35 -> pos : 31 -> true_pos = -1
+ 31 -> pos : 32 -> true_pos = -1
+ 34 -> pos : 33 -> true_pos = -1
+ 39 -> pos : 34 -> true_pos = -1
+ 38 -> pos : 35 -> true_pos = -1
+ 33 -> pos : 36 -> true_pos = -1
+ 32 -> pos : 37 -> true_pos = -1
+ 37 -> pos : 38 -> true_pos = -1
+___END___________STACK_A___________________
+ 2 --> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = 29
+ 36 -> pos : 30 -> true_pos = -1
+ 35 -> pos : 31 -> true_pos = -1
+ 31 -> pos : 32 -> true_pos = -1
+ 34 -> pos : 33 -> true_pos = -1
+ 39 -> pos : 34 -> true_pos = -1
+ 38 -> pos : 35 -> true_pos = -1
+ 33 -> pos : 36 -> true_pos = -1
+ 32 -> pos : 37 -> true_pos = -1
+ 37 -> pos : 38 -> true_pos = -1
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+pivot->pos : 31
+pivot->valrra
+rra
+pb
+sa
+rra
+pb
+rra
+sa
+rra
+sa
+rra
+pb
+rra
+pb
+rra
+pa
+pa
+sa
+pa
+sa
+pa
+sa
+rra
+sa
+pb
+ra
+pb
+pb
+pb
+pb
+pb
+ss
+ra
+ra
+rra
+rra
+rra
+ : 35
+-->r.pos = 9
+-->r.ins = rra
+
+______GET_SUB_TMP--------------/////////////////////------------------
+ 37 -> pos : 0 --> true_pos = -1
+ 32 -> pos : 1 --> true_pos = -1
+ 33 -> pos : 2 --> true_pos = -1
+ 38 -> pos : 3 --> true_pos = -1
+ 39 -> pos : 4 --> true_pos = -1
+ 34 -> pos : 5 --> true_pos = -1
+ 31 -> pos : 6 --> true_pos = -1
+ 35 -> pos : 7 --> true_pos = -1
+ 36 -> pos : 8 --> true_pos = -1
+
+tmp_pivot->val : 35
+-->r.pos = 9
+-->r.ins = rra
+
+______CUR_MIN____STACK_A__________________
+ 31 -> pos : 37 -> true_pos = -1
+ 36 -> pos : 30 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 33 -> pos : 33 -> true_pos = -1
+ 34 -> pos : 32 -> true_pos = -1
+ 35 -> pos : 31 -> true_pos = -1
+ 2 --> pos : 34 -> true_pos = -1
+ 39 -> pos : 35 -> true_pos = -1
+ 38 -> pos : 38 -> true_pos = -1
+ 37 -> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = 29
+___FILL_______STACK_A__________________
+ 37 -> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = 29
+ 36 -> pos : 30 -> true_pos = -1
+ 38 -> pos : 38 -> true_pos = -1
+ 39 -> pos : 35 -> true_pos = -1
+____FILL______STACK_B__________________
+ 35 -> pos : 31 -> true_pos = -1
+ 2 --> pos : 34 -> true_pos = -1
+ 34 -> pos : 32 -> true_pos = -1
+ 33 -> pos : 33 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 31 -> pos : 37 -> true_pos = -1
+___SUB___RESORT____STACK_A__________________
+ 36 -> pos : 30 -> true_pos = -1
+ 38 -> pos : 38 -> true_pos = -1
+ 39 -> pos : 35 -> true_pos = -1
+ 37 -> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : pa
+pa
+pa
+pa
+pa
+pa
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = 29
+___CLEAR___________STACKS___________________
+ 31 -> pos : 37 -> true_pos = -1
+ 32 -> pos : 36 -> true_pos = -1
+ 33 -> pos : 33 -> true_pos = -1
+ 34 -> pos : 32 -> true_pos = -1
+ 2 --> pos : 34 -> true_pos = -1
+ 35 -> pos : 31 -> true_pos = -1
+ 36 -> pos : 30 -> true_pos = -1
+ 38 -> pos : 38 -> true_pos = -1
+ 39 -> pos : 35 -> true_pos = -1
+ 37 -> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = 29
+ 37 -> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = 29
+ 31 -> pos : 30 -> true_pos = -1
+ 32 -> pos : 31 -> true_pos = -1
+ 33 -> pos : 32 -> true_pos = -1
+ 34 -> pos : 33 -> true_pos = -1
+ 2 --> pos : 34 -> true_pos = -1
+ 35 -> pos : 35 -> true_pos = -1
+ 36 -> pos : 36 -> true_pos = -1
+ 38 -> pos : 37 -> true_pos = -1
+ 39 -> pos : 38 -> true_pos = -1
+___END___________STACK_A___________________
+ 37 -> pos : 0 --> true_pos = -1
+ 4 --> pos : 1 --> true_pos = -1
+ 6 --> pos : 2 --> true_pos = -1
+ 5 --> pos : 3 --> true_pos = -1
+ 3 --> pos : 4 --> true_pos = -1
+ 8 --> pos : 5 --> true_pos = -1
+ 0 --> pos : 6 --> true_pos = -1
+ 1 --> pos : 7 --> true_pos = -1
+ 9 --> pos : 8 --> true_pos = -1
+ 10 -> pos : 9 --> true_pos = 9
+ 13 -> pos : 10 -> true_pos = -1
+ 12 -> pos : 11 -> true_pos = -1
+ 14 -> pos : 12 -> true_pos = -1
+ 11 -> pos : 13 -> true_pos = -1
+ 15 -> pos : 14 -> true_pos = 14
+ 18 -> pos : 15 -> true_pos = -1
+ 16 -> pos : 16 -> true_pos = -1
+ 17 -> pos : 17 -> true_pos = -1
+ 19 -> pos : 18 -> true_pos = -1
+ 20 -> pos : 19 -> true_pos = 19
+ 21 -> pos : 20 -> true_pos = -1
+ 23 -> pos : 21 -> true_pos = -1
+ 24 -> pos : 22 -> true_pos = -1
+ 25 -> pos : 23 -> true_pos = -1
+ 26 -> pos : 24 -> true_pos = -1
+ 27 -> pos : 25 -> true_pos = -1
+ 28 -> pos : 26 -> true_pos = -1
+ 22 -> pos : 27 -> true_pos = -1
+ 29 -> pos : 28 -> true_pos = -1
+ 30 -> pos : 29 -> true_pos = 29
+ 31 -> pos : 30 -> true_pos = -1
+ 32 -> pos : 31 -> true_pos = -1
+ 33 -> pos : 32 -> true_pos = -1
+ 34 -> pos : 33 -> true_pos = -1
+ 2 --> pos : 34 -> true_pos = -1
+ 35 -> pos : 35 -> true_pos = 35
+ 36 -> pos : 36 -> true_pos = -1
+ 38 -> pos : 37 -> true_pos = -1
+ 39 -> pos : 38 -> true_pos = -1
+___-----------------------------------______________________________
+___-----------------------------------______________________________
+___-----------------------------------______________________________

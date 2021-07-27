@@ -82,7 +82,7 @@ void		pick_swap(int ac, t_num *stack_a)
 	else if (ac >= 6 && ac < 30)
 		no_chunk(&stack_a, &stack_b);
 	else	
-		launch_chunk4(&stack_a, &stack_b);
+		launch_chunk5(&stack_a, &stack_b);
 
 	//else if (ac >= 30 && ac < 100)
 	//else if (ac >= 100 && ac < 200)

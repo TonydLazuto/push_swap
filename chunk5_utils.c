@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk4_utils.c                                     :+:      :+:    :+:   */
+/*   chunk5_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,6 +12,68 @@
 
 #include "push_swap.h"
 
+t_num	*assign_chunk(t_num *elet, int nb_less,
+						int nb_chunks, int chunks_size)
+{
+	int			i;
+	int			min_chunk;
+	int			max_chunk;
+
+	i = 1;
+	if (nb_less >= 0 && nb_less < chunks_size)
+		elet->true_pos = 1;
+	else
+	{
+		while (i < nb_chunks)
+		{
+			min_chunk = chunks_size * i;
+			max_chunk = chunks_size * i + chunks_size;
+			if (nb_less >= min_chunk && nb_less < max_chunk)
+			{
+				elet->true_pos = i;
+				break ;
+			}
+			i++;
+		}
+	}
+	return (elet);
+}
+
+t_num	*check_chunks(t_num *stack_a, int chunks_size,
+				int nb_chunks)
+{
+	t_num	*cpy;
+	int 	j;
+	int 	nb_less;
+	t_num 	*tmp;
+
+	cpy = stack_a;
+	while (cpy)
+	{
+		tmp = stack_a;
+		nb_less = 0;
+		while (tmp)
+		{
+			if (cpy->val > tmp->val)
+				nb_less++;
+			tmp = tmp->next;
+		}
+		assign_chunk(cpy, nb_less, nb_chunks, chunks_size);
+		cpy = cpy->next;
+	}
+	return (stack_a);
+}
+
+void	assign_chunks(t_num **stack_a, int nb_chunks)
+{
+	int chunks_size;
+	int rest;
+
+	chunks_size = list_length(*stack_a) / nb_chunks;
+	*stack_a = check_chunks(*stack_a, chunks_size, nb_chunks);
+
+}
+/*
 t_num	*get_chunk(t_num **stack_a, int chunk_size)
 {
 	t_num	*sub_lst;
@@ -91,3 +153,4 @@ t_num	*pop_elet(t_num *chunk, t_num *lowest, t_roll r)
 	chunk = pop_front(chunk);
 	return (chunk);
 }
+*/
