@@ -36,7 +36,7 @@ t_num		*begin_num(t_num *elet)
 	return (elet);
 }
 
-t_num		*last_num(t_num *elet) //check_half_length for go->next or go->back
+t_num		*last_num(t_num *elet)
 {
 	if (!elet)
 		return (NULL);

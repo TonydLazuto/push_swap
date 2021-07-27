@@ -20,7 +20,7 @@ t_num		*switch_nb(t_num *cur, const char *ins)
 
 	if (ins)
 		print_const(ins, 1);
-	if (cur && cur->next) // condition du bonus. pas utile ici pour les 4 fonctions
+	if (cur && cur->next)
 	{
 		pos = cur->pos;
 		cur->pos = cur->next->pos;

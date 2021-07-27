@@ -29,7 +29,6 @@ void	swap_three(t_num **stack_a, t_num **stack_b)
 	nb[0] = (*stack_a)->val;
 	nb[1] = (*stack_a)->next->val;
 	nb[2] = (*stack_a)->next->next->val;
-	//printf("nb[0] : %d\nnb[1] : %d\nnb[2] : %d\n",nb[0],nb[1],nb[2]);
 	if (nb[0] > nb[1] && nb[1] < nb[2] && nb[2] > nb[0])
 		exec_instructions(stack_a, stack_b, "sa");
 	else if (nb[0] > nb[1] && nb[1] < nb[2] && nb[2] < nb[0])
