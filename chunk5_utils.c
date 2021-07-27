@@ -12,16 +12,42 @@
 
 #include "push_swap.h"
 
+int		is_chunk_in_stack(t_num *stack, int num_chunk)
+{
+	t_num *cpy;
+
+	cpy = stack;
+	while (cpy && cpy->true_pos != num_chunk)
+		cpy = cpy->next;
+	if (cpy && cpy->true_pos == num_chunk)
+		return (1);
+	return (0);
+}
+
+t_roll	get_lower_roll(t_num **stack_a,
+			t_num *elet_top, t_num *elet_bot)
+{
+	t_roll	r[2];
+
+	init_roll(&r[0]);
+	init_roll(&r[1]);
+	r[0] = get_nb_rolls(*stack_a, elet_top, 'a');
+	r[1] = get_nb_rolls(*stack_a, elet_bot, 'a');
+	if (r[0].pos < r[1].pos)
+		return (r[0]);
+	return (r[1]);
+}
+
 t_num	*assign_chunk(t_num *elet, int nb_less,
 						int nb_chunks, int chunks_size)
 {
-	int			i;
-	int			min_chunk;
-	int			max_chunk;
+	int		i;
+	int		min_chunk;
+	int		max_chunk;
 
 	i = 1;
 	if (nb_less >= 0 && nb_less < chunks_size)
-		elet->true_pos = 1;
+		elet->true_pos = 0;
 	else
 	{
 		while (i < nb_chunks)
@@ -39,7 +65,7 @@ t_num	*assign_chunk(t_num *elet, int nb_less,
 	return (elet);
 }
 
-t_num	*check_chunks(t_num *stack_a, int chunks_size,
+t_num	*assign_chunks(t_num *stack_a, int chunks_size,
 				int nb_chunks)
 {
 	t_num	*cpy;
@@ -58,21 +84,12 @@ t_num	*check_chunks(t_num *stack_a, int chunks_size,
 				nb_less++;
 			tmp = tmp->next;
 		}
-		assign_chunk(cpy, nb_less, nb_chunks, chunks_size);
+		cpy = assign_chunk(cpy, nb_less, nb_chunks, chunks_size);
 		cpy = cpy->next;
 	}
 	return (stack_a);
 }
 
-void	assign_chunks(t_num **stack_a, int nb_chunks)
-{
-	int chunks_size;
-	int rest;
-
-	chunks_size = list_length(*stack_a) / nb_chunks;
-	*stack_a = check_chunks(*stack_a, chunks_size, nb_chunks);
-
-}
 /*
 t_num	*get_chunk(t_num **stack_a, int chunk_size)
 {

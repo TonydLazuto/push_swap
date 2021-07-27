@@ -122,7 +122,8 @@ t_num	*pop_elet(t_num *chunk, t_num *lowest_chunk, t_roll r);
 t_num	*get_chunk(t_num **stack_a, int chunk_size);
 void	resort3(t_num **stack_a, t_num **stack_b);
 
-
-void	assign_chunks(t_num **stack_a, int nb_chunks);
+t_roll	get_lower_roll(t_num **stack_a, t_num *elet_top, t_num *elet_bot);
+t_num	*assign_chunks(t_num *stack_a, int chunks_size, int nb_chunks);
+int		is_chunk_in_stack(t_num *stack, int num_chunk);
 
 #endif
