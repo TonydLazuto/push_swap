@@ -87,24 +87,24 @@ t_num		*partition(t_num **stack_a, t_num **stack_b, int min, int max)
 	pivot = get_pivot(*stack_a, min, max);
 	if (!pivot)
 		ft_error(stack_a, stack_b);
-printf("pivot->pos : %d\npivot->val : %d\n", pivot->pos, pivot->val);
+//printf("pivot->pos : %d\npivot->val : %d\n", pivot->pos, pivot->val);
 	go_to_min(stack_a, stack_b, min);
-printf("______CUR_MIN____STACK_A__________________\n");
-print_nb(*stack_a);
+//printf("______CUR_MIN____STACK_A__________________\n");
+//print_nb(*stack_a);
 	//check_fill_direction(stack_a, pivot, max - min);
 	fill_stack_b(stack_a, stack_b, pivot, max - min);
 	//fill_and_sort(stack_a, stack_b, pivot, max - min);
 	//clear_lst(&sub);
-printf("___FILL_______STACK_A__________________\n");
-print_nb(*stack_a);
-printf("____FILL______STACK_B__________________\n");
-print_nb(*stack_b);
+//printf("___FILL_______STACK_A__________________\n");
+//print_nb(*stack_a);
+//printf("____FILL______STACK_B__________________\n");
+//print_nb(*stack_b);
 	resort_sublist(stack_a, stack_b, min, max);
-printf("___SUB___RESORT____STACK_A__________________\n");
-print_nb(*stack_a);
+//printf("___SUB___RESORT____STACK_A__________________\n");
+//print_nb(*stack_a);
 	clear_stack_b(stack_a, stack_b, pivot);
-printf("___CLEAR___________STACKS___________________\n");
-print_nb(*stack_a);
+//printf("___CLEAR___________STACKS___________________\n");
+//print_nb(*stack_a);
 
 	return (pivot);
 }
@@ -116,19 +116,19 @@ int			quick_sort(t_num **stack_a, t_num **stack_b, int min, int max)
 	t_num*		pivot;
 
 	set_num_pos(stack_a);
-printf("%d : min\n%d : max\n", min, max);
+//printf("%d : min\n%d : max\n", min, max);
 	pivot = partition(stack_a, stack_b, min ,max);
 
 	resort(stack_a, stack_b, last_min_pos, min);
 
-print_nb(*stack_a);
+//print_nb(*stack_a);
 	pos = get_pos_multiple_range(stack_a, pivot);
 	clear_lst(&pivot);
-printf("___END___________STACK_A___________________\n");
-print_nb(*stack_a);
-printf("___-----------------------------------______________________________\n");
-printf("___-----------------------------------______________________________\n");
-printf("___-----------------------------------______________________________\n");
+//printf("___END___________STACK_A___________________\n");
+//print_nb(*stack_a);
+//printf("___-----------------------------------______________________________\n");
+//printf("___-----------------------------------______________________________\n");
+//printf("___-----------------------------------______________________________\n");
 	last_min_pos = (*stack_a)->pos;
 	return (pos);
 }

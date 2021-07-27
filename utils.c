@@ -24,13 +24,13 @@ void	print_const(const char *s, int fd)
 
 	i = 0;
 	if (!s || fd == 0 || !ft_strlen(s))
-		return ;
+		return ;/*
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	ft_putchar_fd('\n', fd);
+	ft_putchar_fd('\n', fd);*/
 }
 
 void		print_nb(t_num *nb)

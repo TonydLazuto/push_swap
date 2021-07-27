@@ -10,42 +10,119 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-void		chekc_both_stack(t_num **stack_a, t_num **stack_b,
-				t_num *pivot)
-{
-	if ((*stack_a)->val <= pivot->val)
-	{
-		exec_instructions(stack_a, stack_b, "pb");
-	}
-	else
-	{
-		exec_instructions(stack_a, stack_b, "ra");
-	}
-}
-void		fill_stack(t_num **stack_a, t_num **stack_b,
-				t_num *pivot, int range)
-{
-	int	i;
-	int half;
+/*
+ * Here, I will find the pivot which is
+ * the middle value in the stack.
+ * Thereby, the precision of the quicksort algorithm
+ * will be more like O=nlog(n) than O=(n square).
+ *
+ * get_nb_middle() find the best pivot
+ * which is the same amount of < than > with
+ * all elements between min & max
+ **/
 
-	i = 0;
-	half = list_length(*stack_a) / 2;
-	while (i < half)
+t_num	*get_pivot(t_num *stack_a, int min, int max)
+{
+	t_num	*pivot;
+	int 	j;
+	int 	nb_less;
+	t_num 	*tmp;
+
+	pivot = stack_a;
+	pivot = get_nb_by_pos(min, stack_a);
+	while (pivot->pos < max)
 	{
-		if (i > 1)
+		tmp = get_nb_by_pos(min, stack_a);
+		nb_less = 0;
+		while (tmp && tmp->pos <= max)
 		{
-			chekc_both_stack(stack_a, stack_b, pivot);
+			if (tmp->val < pivot->val)
+				nb_less++;
+			tmp = tmp->next;
+		}
+		if (nb_less == (max - min) / 2)
+			return (pivot);
+		pivot = pivot->next;
+	}
+	return (pivot);
+}
+
+t_num	*get_nb_by_val(int val, t_num *stack)
+{
+	t_num	*elet;
+
+	elet = stack;
+	while (elet->val != val)
+		elet = elet->next;
+	return (elet);
+}
+
+t_num	*get_nb_by_pos(int pos, t_num *stack)
+{
+	t_num	*elet;
+
+	elet = stack;
+	if (stack)
+	{
+		if (pos < list_length(stack) / 2)
+		{
+			while (elet->pos != pos)
+				elet = elet->next;
 		}
 		else
 		{
-			if ((*stack_a)->val <= pivot->val)
-				exec_instructions(stack_a, stack_b, "pb");
-			else
-				exec_instructions(stack_a, stack_b, "ra");
+			elet = last_num(stack);
+			while (elet->pos != pos)
+				elet = elet->back;
+		}
+	}
+	return (elet);
+}
+
+void	set_num_pos(t_num **stack)
+{
+	t_num	*tmp;
+	int		i;
+
+	tmp = *stack;
+	i = 0;
+	if (*stack)
+	{
+		while (tmp)
+		{
+			tmp->pos = i;
+			tmp = tmp->next;
 			i++;
 		}
 	}
+}
+
+int		get_lowest_pos(t_num *stack_a)
+{
+	int		valid;
+	t_num	*tmp;
+	t_num	*elet;
+	int		size;
+
+	tmp = NULL;
+	elet = stack_a;
+	size = list_length(stack_a);
+	while (elet)
+	{
+		tmp = stack_a;
+		valid = 1;
+		while (tmp)
+		{
+			if (elet->pos < tmp->pos)
+				valid++;
+			tmp = tmp->next;
+		}
+		if (valid == size)
+			return (elet->pos);
+		elet = elet->next;
+	}
+	elet = last_num(stack_a);
+	return (elet->pos);
 }
