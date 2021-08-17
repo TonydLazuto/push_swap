@@ -40,20 +40,12 @@ void		print_nb(t_num *nb)
 	cpy = nb;
 	while (cpy)
 	{
-		if (cpy->val / 10)
-		{
-			if (cpy->pos / 10)
-				printf(" %d -> pos : %d -> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
-			else
-				printf(" %d -> pos : %d --> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
-		}
+		if (cpy->val / 100)
+			printf(" %d -> num_chunk = %d\n", cpy->val, cpy->num_chunk);
+		else if (cpy->val / 10)
+			printf(" %d --> num_chunk = %d\n", cpy->val, cpy->num_chunk);
 		else
-		{
-			if (cpy->pos / 10)
-				printf(" %d --> pos : %d -> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
-			else
-				printf(" %d --> pos : %d --> true_pos = %d\n", cpy->val, cpy->pos, cpy->true_pos);
-		}
+			printf(" %d ---> num_chunk = %d\n", cpy->val, cpy->num_chunk);
 		cpy = cpy->next;
 	}
 }

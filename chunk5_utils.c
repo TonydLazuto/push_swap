@@ -17,9 +17,9 @@ int		is_chunk_in_stack(t_num *stack, int num_chunk)
 	t_num *cpy;
 
 	cpy = stack;
-	while (cpy && cpy->true_pos != num_chunk)
+	while (cpy && cpy->num_chunk != num_chunk)
 		cpy = cpy->next;
-	if (cpy && cpy->true_pos == num_chunk)
+	if (cpy && cpy->num_chunk == num_chunk)
 		return (1);
 	return (0);
 }
@@ -47,7 +47,7 @@ t_num	*assign_chunk(t_num *elet, int nb_less,
 
 	i = 1;
 	if (nb_less >= 0 && nb_less < chunks_size)
-		elet->true_pos = 0;
+		elet->num_chunk = 0;
 	else
 	{
 		while (i < nb_chunks)
@@ -56,7 +56,7 @@ t_num	*assign_chunk(t_num *elet, int nb_less,
 			max_chunk = chunks_size * i + chunks_size;
 			if (nb_less >= min_chunk && nb_less < max_chunk)
 			{
-				elet->true_pos = i;
+				elet->num_chunk = i;
 				break ;
 			}
 			i++;

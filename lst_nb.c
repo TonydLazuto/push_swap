@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_num		*new_nb(int val, int pos, int true_pos)
+t_num		*new_nb(int val, int num_chunk)
 {
 	t_num *elet;
 
@@ -20,19 +20,9 @@ t_num		*new_nb(int val, int pos, int true_pos)
 	if (!elet)
 		return (NULL);
 	elet->val = val;
-	elet->pos = pos;
-	elet->true_pos = true_pos;
+	elet->num_chunk = num_chunk;
 	elet->next = NULL;
 	elet->back = NULL;
-	return (elet);
-}
-
-t_num		*begin_num(t_num *elet)
-{
-	if (!elet)
-		return (NULL);
-	while (elet->back)
-		elet = elet->back;
 	return (elet);
 }
 

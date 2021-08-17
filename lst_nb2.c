@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-t_num		*push_back(t_num *list, int val, int pos, int true_pos)
+t_num		*push_back(t_num *list, int val, int num_chunk)
 {
 	t_num	*elet;
 	t_num	*tmp;
 
-	elet = new_nb(val, pos, true_pos);
+	elet = new_nb(val, num_chunk);
 	tmp = list;
 	if (!elet)
 		return (NULL);
@@ -29,11 +29,11 @@ t_num		*push_back(t_num *list, int val, int pos, int true_pos)
 	return (list);
 }
 
-t_num		*push_front(t_num *list, int val, int pos, int true_pos)
+t_num		*push_front(t_num *list, int val, int num_chunk)
 {
 	t_num	*elet;
 
-	elet = new_nb(val, pos, true_pos);
+	elet = new_nb(val, num_chunk);
 	if (!elet)
 		return (NULL);
 	if (list)

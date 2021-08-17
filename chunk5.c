@@ -19,9 +19,9 @@ t_num 	*scan_stack(t_num **stack_a, int nb_chunks, t_roll *r, int num_chunk)
 
 	elet_top = *stack_a;
 	elet_bot = last_num(*stack_a);
-	while (elet_top && elet_top->true_pos != num_chunk)
+	while (elet_top && elet_top->num_chunk != num_chunk)
 		elet_top = elet_top->next;
-	while (elet_bot && elet_bot->true_pos != num_chunk)
+	while (elet_bot && elet_bot->num_chunk != num_chunk)
 		elet_bot = elet_bot->back;
 	*r = get_lower_roll(stack_a, elet_top, elet_bot);
 	if (ft_strlen(r->ins) == 2)
@@ -70,7 +70,6 @@ void	chunk5(t_num **stack_a, t_num **stack_b,
 	elet = scan_stack(stack_a, nb_chunks, &r, num_chunk);
 	put_nb_on_top(r, stack_a, stack_b);
 	exec_instructions(stack_a, stack_b, "pb");
-
 	while (num_chunk < nb_chunks)
 	{
 	
@@ -112,30 +111,27 @@ void	repush(t_num **stack_a, t_num **stack_b)
 	}
 }
 
-void	launch_chunk5(t_num **stack_a, t_num **stack_b)
+void	launch_chunk5(t_num **stack_a, t_num **stack_b, int ac)
 {
 	int nb_chunks;
 	int	chunks_size;
-	int len;
-	
-	len = list_length(*stack_a);
-	if (len <= 30 && len > 70)
+
+	if (ac <= 30 && ac > 70)
 		nb_chunks = 4;
-	else if (len <= 70 && len > 150)
+	else if (ac <= 70 && ac > 150)
 		nb_chunks = 5;
-	else if (len <= 150 && len > 250)
+	else if (ac <= 150 && ac > 250)
 		nb_chunks = 7;
-	else if (len <= 250 && len > 350)
+	else if (ac <= 250 && ac > 350)
 		nb_chunks = 8;
 	else
 		nb_chunks = 11;
-
 	chunks_size = list_length(*stack_a) / nb_chunks;
 	*stack_a = assign_chunks(*stack_a, chunks_size, nb_chunks);
 	chunk5(stack_a, stack_b, chunks_size, nb_chunks);
 	repush(stack_a, stack_b);
-//printf("__________STACK_A__________________\n");
-//print_nb(*stack_a);
-//printf("__________STACK_B__________________\n");
-//print_nb(*stack_b);
+printf("__________STACK_A__________________\n");
+print_nb(*stack_a);
+printf("__________STACK_B__________________\n");
+print_nb(*stack_b);
 }
