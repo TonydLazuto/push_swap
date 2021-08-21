@@ -12,6 +12,20 @@
 
 #include "push_swap.h"
 
+void	repush(t_num **stack_a, t_num **stack_b)
+{
+	t_num	*highest;
+	t_roll	r;
+
+	while (*stack_b)
+	{
+		highest = get_highest_val(*stack_b);
+		r = get_nb_rolls(*stack_b, highest, 'b');
+		put_nb_on_top(r, stack_a, stack_b);
+		exec_instructions(stack_a, stack_b, "pa");
+	}
+}
+
 int		is_chunk_in_stack(t_num *stack, int num_chunk)
 {
 	t_num *cpy;
@@ -24,7 +38,7 @@ int		is_chunk_in_stack(t_num *stack, int num_chunk)
 	return (0);
 }
 
-t_roll	get_lower_roll(t_num **stack_a,
+t_roll	get_the_lowest_dist(t_num **stack_a,
 			t_num *elet_top, t_num *elet_bot)
 {
 	t_roll	r[2];
@@ -38,7 +52,7 @@ t_roll	get_lower_roll(t_num **stack_a,
 	return (r[1]);
 }
 
-t_num	*assign_chunk(t_num *elet, int nb_less,
+t_num	*assign_chunk(t_num *elet, int nb_sup,
 						int nb_chunks, int chunks_size)
 {
 	int		i;
@@ -46,15 +60,15 @@ t_num	*assign_chunk(t_num *elet, int nb_less,
 	int		max_chunk;
 
 	i = 1;
-	if (nb_less >= 0 && nb_less < chunks_size)
+	if (nb_sup >= 0 && nb_sup < chunks_size)
 		elet->num_chunk = 0;
 	else
 	{
 		while (i < nb_chunks)
 		{
 			min_chunk = chunks_size * i;
-			max_chunk = chunks_size * i + chunks_size;
-			if (nb_less >= min_chunk && nb_less < max_chunk)
+			max_chunk = min_chunk + chunks_size;
+			if (nb_sup >= min_chunk && nb_sup < max_chunk)
 			{
 				elet->num_chunk = i;
 				break ;
@@ -70,21 +84,21 @@ t_num	*assign_chunks(t_num *stack_a, int chunks_size,
 {
 	t_num	*cpy;
 	int 	j;
-	int 	nb_less;
+	int 	nb_sup;
 	t_num 	*tmp;
 
 	cpy = stack_a;
 	while (cpy)
 	{
 		tmp = stack_a;
-		nb_less = 0;
+		nb_sup = 0;
 		while (tmp)
 		{
 			if (cpy->val > tmp->val)
-				nb_less++;
+				nb_sup++;
 			tmp = tmp->next;
 		}
-		cpy = assign_chunk(cpy, nb_less, nb_chunks, chunks_size);
+		cpy = assign_chunk(cpy, nb_sup, nb_chunks, chunks_size);
 		cpy = cpy->next;
 	}
 	return (stack_a);
