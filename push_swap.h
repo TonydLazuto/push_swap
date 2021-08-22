@@ -72,8 +72,7 @@ t_num	*get_highest_val(t_num *stack_a);
 t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select_stack);
 void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b);
 
-void	launch_chunk5(t_num **stack_a, t_num **stack_b, int ac);
-t_roll	get_the_lowest_dist(t_num **stack_a, t_num *elet_top, t_num *elet_bot);
+void	launch_chunk(t_num **stack_a, t_num **stack_b, int ac);
 t_num	*assign_chunks(t_num *stack_a, int chunks_size, int nb_chunks);
 int		is_chunk_in_stack(t_num *stack, int num_chunk);
 void	repush(t_num **stack_a, t_num **stack_b);

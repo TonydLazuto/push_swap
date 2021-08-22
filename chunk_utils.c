@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk5_utils.c                                     :+:      :+:    :+:   */
+/*   chunk_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -36,20 +36,6 @@ int		is_chunk_in_stack(t_num *stack, int num_chunk)
 	if (cpy && cpy->num_chunk == num_chunk)
 		return (1);
 	return (0);
-}
-
-t_roll	get_the_lowest_dist(t_num **stack_a,
-			t_num *elet_top, t_num *elet_bot)
-{
-	t_roll	r[2];
-
-	init_roll(&r[0]);
-	init_roll(&r[1]);
-	r[0] = get_nb_rolls(*stack_a, elet_top, 'a');
-	r[1] = get_nb_rolls(*stack_a, elet_bot, 'a');
-	if (r[0].pos < r[1].pos)
-		return (r[0]);
-	return (r[1]);
 }
 
 t_num	*assign_chunk(t_num *elet, int nb_sup,
