@@ -9,9 +9,8 @@
 /*   Updated: 2021/06/17 17:42:06 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef CHECKER
-# define CHECKER
+#ifndef CHECKER_H
+# define CHECKER_H
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -23,17 +22,17 @@
 # include "./../libft/libft.h"
 # include "./get_next_line.h"
 
-typedef struct		s_ins
+typedef struct s_ins
 {
 	char			*str;
 	struct s_ins	*next;
-}					t_ins;
+}				t_ins;
 
-typedef struct		s_num
+typedef struct s_num
 {
 	int				val;
 	struct s_num	*next;
-}					t_num;
+}				t_num;
 
 void	print_ins(t_ins *ins);
 void	print_nb(t_num *nb);

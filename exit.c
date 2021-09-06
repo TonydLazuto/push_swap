@@ -14,7 +14,7 @@
 
 void	empty_lst(t_num **nb)
 {
-	t_num *next;
+	t_num	*next;
 
 	next = NULL;
 	if (*nb)
@@ -24,7 +24,7 @@ void	empty_lst(t_num **nb)
 			next = (*nb)->next;
 			free(*nb);
 			*nb = next;
-   		}
+		}
 	}
 }
 
@@ -34,7 +34,7 @@ void	ft_error(t_num **lst1, t_num **lst2)
 	ft_exit(lst1, lst2);
 }
 
-int		ft_exit(t_num **lst1, t_num **lst2)
+int	ft_exit(t_num **lst1, t_num **lst2)
 {
 	if (lst1)
 		empty_lst(lst1);

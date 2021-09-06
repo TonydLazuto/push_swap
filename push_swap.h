@@ -18,15 +18,15 @@
 # include <limits.h>
 # include "./libft/libft.h"
 
-typedef struct		s_num
+typedef struct s_num
 {
 	int				val;
 	int				num_chunk;
 	struct s_num	*back;
 	struct s_num	*next;
-}					t_num;
+}				t_num;
 
-typedef	struct	s_roll
+typedef struct s_roll
 {
 	int			pos;
 	const char	*ins;
@@ -56,8 +56,7 @@ void	swap_three(t_num **stack_a, t_num **stack_b);
 void	swap_four(t_num **stack_a, t_num **stack_b);
 void	swap_five(t_num **stack_a, t_num **stack_b);
 
-void	exec_instructions(t_num **stack_a, t_num **stack_b,
-								const char *ins);
+void	exec_instructions(t_num **stack_a, t_num **stack_b, const char *ins);
 t_num	*switch_nb(t_num *cur, const char *ins);
 void	push_nb(t_num **cur, t_num **other_stack, const char *ins);
 t_num	*roll_stack(t_num *cur, t_num *other_stack, const char *ins);

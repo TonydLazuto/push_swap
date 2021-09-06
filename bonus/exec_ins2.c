@@ -12,13 +12,13 @@
 
 #include "checker.h"
 
-void		ft_ko(t_num **stack_1, t_num **stack_2, t_ins *ins)
+void	ft_ko(t_num **stack_1, t_num **stack_2, t_ins *ins)
 {
 	ft_putendl_fd("KO", 1);
 	ft_exit(stack_1, stack_2, ins);
 }
 
-t_num		*switch_nb(t_num *cur, t_num *other_stack, t_ins *ins)
+t_num	*switch_nb(t_num *cur, t_num *other_stack, t_ins *ins)
 {
 	int		val;
 
@@ -33,7 +33,7 @@ t_num		*switch_nb(t_num *cur, t_num *other_stack, t_ins *ins)
 	return (cur);
 }
 
-void		push_nb(t_num **cur, t_num **other_stack, t_ins *ins)
+void	push_nb(t_num **cur, t_num **other_stack, t_ins *ins)
 {
 	t_num	*elet;
 
@@ -49,7 +49,7 @@ void		push_nb(t_num **cur, t_num **other_stack, t_ins *ins)
 		ft_ko(cur, other_stack, ins);
 }
 
-t_num		*roll_stack(t_num *cur, t_num *other_stack, t_ins *ins)
+t_num	*roll_stack(t_num *cur, t_num *other_stack, t_ins *ins)
 {
 	if (cur && cur->next)
 	{
@@ -63,7 +63,7 @@ t_num		*roll_stack(t_num *cur, t_num *other_stack, t_ins *ins)
 	return (cur);
 }
 
-t_num		*reverse_roll_stack(t_num *cur, t_num *other_stack, t_ins *ins)
+t_num	*reverse_roll_stack(t_num *cur, t_num *other_stack, t_ins *ins)
 {
 	if (cur && cur->next)
 	{

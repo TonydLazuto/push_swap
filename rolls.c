@@ -94,8 +94,8 @@ t_roll	get_ins(int roll, int reverse, char select, t_roll ret)
 t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select_stack)
 {
 	t_num	*tmp;
-	int	roll;
-	int	reverse;
+	int		roll;
+	int		reverse;
 	t_roll	ret;
 
 	roll = 0;
@@ -112,7 +112,7 @@ t_roll	get_nb_rolls(t_num *stack, t_num *elet, char select_stack)
 		reverse++;
 		elet = elet->next;
 	}
-	ret	= get_ins(roll, reverse, select_stack, ret);
+	ret = get_ins(roll, reverse, select_stack, ret);
 	return (ret);
 }
 
@@ -124,4 +124,3 @@ void	put_nb_on_top(t_roll roll, t_num **stack_a, t_num **stack_b)
 		roll.pos--;
 	}
 }
-

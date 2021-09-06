@@ -9,9 +9,8 @@
 /*   Updated: 2021/06/09 12:40:49 by tonyd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
@@ -19,7 +18,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <sys/stat.h>
-# define BUFFER_SIZE 3
+# define BUFFER_SIZE 30
 
 int				get_next_line(int fd, char **line);
 void			my_free(char **s);

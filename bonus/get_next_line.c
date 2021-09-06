@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-static int			pos_new_line(char *str)
+static int	pos_new_line(char *str)
 {
 	size_t	i;
 
@@ -29,36 +29,40 @@ static int			pos_new_line(char *str)
 	return (-1);
 }
 
-static int			check_error(int fd, char **cur, char **line)
+static int	check_error(int fd, char **cur, char **line)
 {
 	if (!line || fd < 0 || BUFFER_SIZE < 1)
 		return (-1);
 	if (!*cur)
 	{
-		if (!(*cur = (char*)malloc(BUFFER_SIZE + 1)))
+		*cur = (char *)malloc(BUFFER_SIZE + 1);
+		if (!*cur)
 			return (-1);
 		*cur[0] = '\0';
 	}
 	return (0);
 }
 
-static char			*split_lines(char **line, char *cur, int pos)
+static char	*split_lines(char **line, char *cur, int pos)
 {
 	char	*tmp;
 
 	tmp = NULL;
-	if (!(*line = my_substr(cur, 0, pos)))
+	*line = my_substr(cur, 0, pos);
+	if (!*line)
 		return (NULL);
-	if (!(tmp = my_substr(cur, pos + 1, my_strlen(cur) - pos + 1)))
+	tmp = my_substr(cur, pos + 1, my_strlen(cur) - pos + 1);
+	if (!tmp)
 		return (NULL);
 	my_free(&cur);
-	if (!(cur = my_strdup(tmp)))
+	cur = my_strdup(tmp);
+	if (!cur)
 		return (NULL);
 	my_free(&tmp);
 	return (cur);
 }
 
-static char			*read_buf(int fd, char *cur, int *ret, char **line)
+static char	*read_buf(int fd, char *cur, int *ret, char **line)
 {
 	char	buf[BUFFER_SIZE + 1];
 	int		pos;
@@ -69,13 +73,15 @@ static char			*read_buf(int fd, char *cur, int *ret, char **line)
 	while (pos == -1 && ((*ret = read(fd, buf, BUFFER_SIZE)) > 0))
 	{
 		buf[*ret] = '\0';
-		if (!(cur = strjoinfree(cur, buf)))
+		cur = strjoinfree(cur, buf);
+		if (!cur)
 			return (NULL);
 		pos = pos_new_line(cur);
 	}
 	if (pos != -1)
 	{
-		if (!(cur = split_lines(line, cur, pos)))
+		cur = split_lines(line, cur, pos);
+		if (!cur)
 			return (NULL);
 	}
 	if (*ret > 0)
@@ -83,15 +89,16 @@ static char			*read_buf(int fd, char *cur, int *ret, char **line)
 	return (cur);
 }
 
-int					get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
-	static char		*cur = NULL;
-	int				ret;
+	static char	*cur = NULL;
+	int			ret;
 
 	ret = 1;
 	if (check_error(fd, &cur, line) == -1)
 		return (-1);
-	if (!(cur = read_buf(fd, cur, &ret, line)))
+	cur = read_buf(fd, cur, &ret, line);
+	if (!cur)
 		return (-1);
 	if (ret == 0)
 	{

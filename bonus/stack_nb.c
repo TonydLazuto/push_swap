@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-int			my_atoi(char *str, t_num *mynb)
+int	my_atoi(char *str, t_num *mynb)
 {
 	int			sign;
 	long long	nb;
@@ -37,20 +37,20 @@ int			my_atoi(char *str, t_num *mynb)
 	nb *= sign;
 	if (nb > INT32_MAX || nb < INT32_MIN)
 		ft_error_nb(&mynb);
-	return ((int)nb);
+	return ((int) nb);
 }
 
-void		check_duplicate(t_num *nb, int val)
+void	check_duplicate(t_num *nb, int val)
 {
 	if (is_point_in_list(nb, val))
 		ft_error_nb(&nb);
 }
 
-t_num		*check_args(int ac, char *av[], t_num *nb)
+t_num	*check_args(int ac, char *av[], t_num *nb)
 {
-	int		i;
-	int 	j;
-	int		val;
+	int	i;
+	int	j;
+	int	val;
 
 	i = 1;
 	while (av[i])
@@ -74,4 +74,3 @@ t_num		*check_args(int ac, char *av[], t_num *nb)
 	}
 	return (nb);
 }
-

@@ -12,9 +12,9 @@
 
 #include "checker.h"
 
-t_num		*new_nb(int val)
+t_num	*new_nb(int val)
 {
-	t_num *elet;
+	t_num	*elet;
 
 	elet = malloc(sizeof(*elet));
 	if (!elet)
@@ -24,7 +24,7 @@ t_num		*new_nb(int val)
 	return (elet);
 }
 
-t_num		*last_num(t_num *elet)
+t_num	*last_num(t_num *elet)
 {
 	if (!elet)
 		return (NULL);
@@ -33,9 +33,9 @@ t_num		*last_num(t_num *elet)
 	return (elet);
 }
 
-int			list_lenght(t_num *lst)
+int	list_lenght(t_num *lst)
 {
-	int		size;
+	int	size;
 
 	size = 0;
 	if (lst)
@@ -49,9 +49,9 @@ int			list_lenght(t_num *lst)
 	return (size);
 }
 
-int			is_point_in_list(t_num *nb, int val)
+int	is_point_in_list(t_num *nb, int val)
 {
-	t_num *elet;
+	t_num	*elet;
 
 	elet = nb;
 	while (elet)

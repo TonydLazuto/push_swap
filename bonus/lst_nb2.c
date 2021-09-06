@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-t_num		*push_back(t_num *list, int val)
+t_num	*push_back(t_num *list, int val)
 {
 	t_num	*elet;
 	t_num	*tmp;
@@ -28,7 +28,7 @@ t_num		*push_back(t_num *list, int val)
 	return (list);
 }
 
-t_num		*push_front(t_num *list, int val)
+t_num	*push_front(t_num *list, int val)
 {
 	t_num	*elet;
 

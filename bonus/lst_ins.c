@@ -12,20 +12,21 @@
 
 #include "checker.h"
 
-t_ins		*new_ins(char *str)
+t_ins	*new_ins(char *str)
 {
-	t_ins *ins;
+	t_ins	*ins;
 
 	ins = malloc(sizeof(ins));
 	if (!ins)
 		return (NULL);
-	if (!(ins->str = ft_strdup(str)))
+	ins->str = ft_strdup(str);
+	if (!(ins->str))
 		return (NULL);
 	ins->next = NULL;
 	return (ins);
 }
 
-t_ins		*last_ins(t_ins *ins)
+t_ins	*last_ins(t_ins *ins)
 {
 	if (!ins)
 		return (NULL);
@@ -34,11 +35,10 @@ t_ins		*last_ins(t_ins *ins)
 	return (ins);
 }
 
-t_ins		*push_back_ins(t_ins *list, char *line)
+t_ins	*push_back_ins(t_ins *list, char *line)
 {
 	t_ins	*tmp;
 	t_ins	*elet;
-
 
 	tmp = list;
 	elet = new_ins(line);

@@ -26,9 +26,9 @@
 ** rrr = rra + rrb
 */
 
-int		check_already_sorted(t_num *stack_a)
+int	check_already_sorted(t_num *stack_a)
 {
-	t_num *cpy;
+	t_num	*cpy;
 
 	cpy = stack_a;
 	while (cpy)
@@ -39,6 +39,7 @@ int		check_already_sorted(t_num *stack_a)
 	}
 	return (1);
 }
+
 void	no_chunk(t_num **stack_a, t_num **stack_b)
 {
 	t_num	*low;
@@ -55,7 +56,7 @@ void	no_chunk(t_num **stack_a, t_num **stack_b)
 		exec_instructions(stack_a, stack_b, "pa");
 }
 
-void		pick_swap(int ac, t_num *stack_a)
+void	pick_swap(int ac, t_num *stack_a)
 {
 	t_num	*stack_b;
 
@@ -72,16 +73,16 @@ void		pick_swap(int ac, t_num *stack_a)
 		swap_five(&stack_a, &stack_b);
 	else if (ac >= 6 && ac < 30)
 		no_chunk(&stack_a, &stack_b);
-	else	
+	else
 		launch_chunk(&stack_a, &stack_b, ac);
 	ft_exit(&stack_a, &stack_b);
 }
 
-int			main(int ac, char *av[])
+int	main(int ac, char *av[])
 {
 	t_num	*lst;
 
- 	lst = NULL;
+	lst = NULL;
 	 /*
 	if (ac == 1)
     {
@@ -90,9 +91,9 @@ int			main(int ac, char *av[])
 		av[2] = NULL;
 		//return (0);
     }*/
-    if (!av[2])
+	if (!av[2])
 	{
-        av = split_args(av);
+		av = split_args(av);
 		int len = 0;
 		while (av[len])
 			len++;

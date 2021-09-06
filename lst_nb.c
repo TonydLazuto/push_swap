@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-t_num		*new_nb(int val, int num_chunk)
+t_num	*new_nb(int val, int num_chunk)
 {
-	t_num *elet;
+	t_num	*elet;
 
 	elet = (t_num *)malloc(sizeof(*elet));
 	if (!elet)
@@ -26,7 +26,7 @@ t_num		*new_nb(int val, int num_chunk)
 	return (elet);
 }
 
-t_num		*last_num(t_num *elet)
+t_num	*last_num(t_num *elet)
 {
 	if (!elet)
 		return (NULL);
@@ -35,7 +35,7 @@ t_num		*last_num(t_num *elet)
 	return (elet);
 }
 
-int			list_length(t_num *lst)
+int	list_length(t_num *lst)
 {
 	int		size;
 
@@ -51,9 +51,9 @@ int			list_length(t_num *lst)
 	return (size);
 }
 
-int			is_point_in_list(t_num *nb, int val)
+int	is_point_in_list(t_num *nb, int val)
 {
-	t_num *elet;
+	t_num	*elet;
 
 	elet = nb;
 	while (elet)

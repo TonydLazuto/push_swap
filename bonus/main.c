@@ -26,7 +26,7 @@
 ** rrr = rra + rrb
 */
 
-void		print_ins(t_ins *ins)
+void	print_ins(t_ins *ins)
 {
 	t_ins	*cpy;
 
@@ -38,7 +38,7 @@ void		print_ins(t_ins *ins)
 	}
 }
 
-void		print_nb(t_num *nb)
+void	print_nb(t_num *nb)
 {
 	t_num	*cpy;
 
@@ -50,21 +50,17 @@ void		print_nb(t_num *nb)
 	}
 }
 
-void		check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins)
+void	check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins)
 {
 	t_num	*elet;
 
 	elet = stack_a;
 	if (stack_b)
-	{
-		//printf("hey\n%d\n", stack_b->val);
 		ft_ko(&stack_a, &stack_b, ins);
-	}
 	while (elet)
 	{
 		if (elet->next)
 		{
-			//printf("elet : %d\nelet->next : %d\n", elet->val, elet->next->val);
 			if (elet->val > elet->next->val)
 				ft_ko(&stack_a, &stack_b, ins);
 		}
@@ -74,7 +70,7 @@ void		check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins)
 	ft_exit(&stack_a, &stack_b, ins);
 }
 
-int			main(int ac, char *av[])
+int	main(int ac, char *av[])
 {
 	t_num	*nb;
 	t_ins	*ins;

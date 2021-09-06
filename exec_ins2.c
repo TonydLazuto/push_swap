@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_num		*switch_nb(t_num *cur, const char *ins)
+t_num	*switch_nb(t_num *cur, const char *ins)
 {
 	int		val;
 	int		num_chunk;
@@ -31,7 +31,7 @@ t_num		*switch_nb(t_num *cur, const char *ins)
 	return (cur);
 }
 
-void		push_nb(t_num **cur, t_num **other_stack, const char *ins)
+void	push_nb(t_num **cur, t_num **other_stack, const char *ins)
 {
 	if (ins)
 		print_const(ins, 1);
@@ -39,12 +39,12 @@ void		push_nb(t_num **cur, t_num **other_stack, const char *ins)
 	{
 		*cur = push_front(*cur, (*other_stack)->val, (*other_stack)->num_chunk);
 		if (!*cur)
-			ft_error(cur, other_stack); 
+			ft_error(cur, other_stack);
 		*other_stack = pop_front(*other_stack);
 	}
 }
 
-t_num		*roll_stack(t_num *cur, t_num *other_stack, const char *ins)
+t_num	*roll_stack(t_num *cur, t_num *other_stack, const char *ins)
 {
 	if (ins)
 		print_const(ins, 1);
@@ -58,7 +58,7 @@ t_num		*roll_stack(t_num *cur, t_num *other_stack, const char *ins)
 	return (cur);
 }
 
-t_num		*reverse_roll_stack(t_num *cur, t_num *other_stack, const char *ins)
+t_num	*reverse_roll_stack(t_num *cur, t_num *other_stack, const char *ins)
 {
 	if (ins)
 		print_const(ins, 1);

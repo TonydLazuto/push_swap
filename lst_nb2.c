@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_num		*push_back(t_num *list, int val, int num_chunk)
+t_num	*push_back(t_num *list, int val, int num_chunk)
 {
 	t_num	*elet;
 	t_num	*tmp;
@@ -29,7 +29,7 @@ t_num		*push_back(t_num *list, int val, int num_chunk)
 	return (list);
 }
 
-t_num		*push_front(t_num *list, int val, int num_chunk)
+t_num	*push_front(t_num *list, int val, int num_chunk)
 {
 	t_num	*elet;
 

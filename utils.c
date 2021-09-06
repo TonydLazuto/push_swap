@@ -33,7 +33,7 @@ void	print_const(const char *s, int fd)
 	ft_putchar_fd('\n', fd);
 }
 
-void		print_nb(t_num *nb)
+void	print_nb(t_num *nb)
 {
 	t_num	*cpy;
 

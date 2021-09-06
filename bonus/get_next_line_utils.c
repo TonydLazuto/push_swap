@@ -12,15 +12,15 @@
 
 #include "get_next_line.h"
 
-void		my_free(char **s)
+void	my_free(char **s)
 {
 	free(*s);
 	*s = NULL;
 }
 
-size_t		my_strlen(const char *str)
+size_t	my_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (str != NULL)
@@ -31,13 +31,14 @@ size_t		my_strlen(const char *str)
 	return (i);
 }
 
-char		*my_strdup(char *s1)
+char	*my_strdup(char *s1)
 {
 	char	*str;
 	size_t	i;
 
 	i = 0;
-	if (!(str = (char *)malloc(my_strlen(s1) * sizeof(char) + 1)))
+	str = (char *)malloc(my_strlen(s1) * sizeof(char) + 1);
+	if (!str)
 		return (NULL);
 	while (i < my_strlen(s1))
 	{
@@ -48,7 +49,7 @@ char		*my_strdup(char *s1)
 	return (str);
 }
 
-char		*strjoinfree(char *s1, char *s2)
+char	*strjoinfree(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
@@ -57,11 +58,12 @@ char		*strjoinfree(char *s1, char *s2)
 	i = 0;
 	if (!s1)
 	{
-		if (!(str = my_substr(s2, 0, my_strlen(s2))))
+		str = my_substr(s2, 0, my_strlen(s2));
+		if (!str)
 			return (NULL);
 		return (str);
 	}
-	str = (char*)malloc(my_strlen(s1) + my_strlen(s2) + 1);
+	str = (char *)malloc(my_strlen(s1) + my_strlen(s2) + 1);
 	while (s1[i])
 	{
 		str[i] = s1[i];
@@ -77,7 +79,7 @@ char		*strjoinfree(char *s1, char *s2)
 	return (str);
 }
 
-char		*my_substr(char *s, unsigned int start, size_t len)
+char	*my_substr(char *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
@@ -86,7 +88,8 @@ char		*my_substr(char *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start >= my_strlen(s))
 		len = 0;
-	if (!(str = (char*)malloc(len + 1)))
+	str = (char *)malloc(len + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < len && s[i + start] != '\0')

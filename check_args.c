@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int			my_atoi(char *str, t_num *mynb)
+int	my_atoi(char *str, t_num *mynb)
 {
 	int			sign;
 	long long	nb;
@@ -40,16 +40,16 @@ int			my_atoi(char *str, t_num *mynb)
 	return ((int)nb);
 }
 
-void		check_duplicate(t_num *nb, int val)
+void	check_duplicate(t_num *nb, int val)
 {
 	if (is_point_in_list(nb, val))
 		ft_error(&nb, NULL);
 }
 
-t_num		*check_args(char *av[], t_num *nb)
+t_num	*check_args(char *av[], t_num *nb)
 {
 	int		i;
-	int 	j;
+	int		j;
 	int		val;
 
 	i = 1;
@@ -75,12 +75,12 @@ t_num		*check_args(char *av[], t_num *nb)
 	return (nb);
 }
 
-char        **split_args(char *av[])
+char	**split_args(char *av[])
 {
-	char    **tmp;
-	int     i;
-	int     j;
-	int     size;
+	char	**tmp;
+	int		i;
+	int		j;
+	int		size;
 
 	i = 0;
 	tmp = ft_split(av[1], ' ');
