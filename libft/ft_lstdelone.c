@@ -6,7 +6,7 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:16:28 by aderose           #+#    #+#             */
-/*   Updated: 2020/05/08 15:18:14 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:31:41 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	t_list *tmp;
-	t_list *before;
+	t_list	*tmp;
+	t_list	*before;
 
 	if (lst == NULL || !del)
 		return ;

@@ -13,12 +13,13 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char		*ft_strnew(size_t size)
+static char	*ft_strnew(size_t size)
 {
 	char	*str;
 	size_t	i;
 
-	if (!(str = (char*)malloc(size + 1)))
+	str = (char *)malloc(size + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < size)
@@ -37,12 +38,15 @@ static size_t	set_size(int n)
 	size = 1;
 	if (n < 0)
 		size++;
-	while (n /= 10)
+	while (n)
+	{
+		n /= 10;
 		size++;
+	}
 	return (size);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long	nb;
 	char	*s;
@@ -50,7 +54,8 @@ char			*ft_itoa(int n)
 
 	nb = (long)n;
 	size = set_size(n);
-	if (!(s = ft_strnew(size)))
+	s = ft_strnew(size);
+	if (!s)
 		return (NULL);
 	if (nb == 0)
 		s[0] = '0';

@@ -13,12 +13,13 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char		*ft_strnew(size_t size)
+static char	*ft_strnew(size_t size)
 {
 	char	*str;
 	size_t	i;
 
-	if (!(str = (char*)malloc(size + 1)))
+	str = (char *)malloc(size + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < size)
@@ -30,7 +31,7 @@ static char		*ft_strnew(size_t size)
 	return (str);
 }
 
-char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*fstr;
 	size_t	i;
@@ -38,7 +39,8 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s && f)
 	{
 		i = 0;
-		if (!(fstr = ft_strnew(ft_strlen((char*)s))))
+		fstr = ft_strnew(ft_strlen((char *)s));
+		if (!fstr)
 			return (NULL);
 		while (s[i] != '\0')
 		{

@@ -6,7 +6,7 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:15:39 by aderose           #+#    #+#             */
-/*   Updated: 2020/05/08 15:23:10 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:31:18 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list *lst;
+	t_list	*lst;
 
 	if (new == NULL)
 		return ;

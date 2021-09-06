@@ -6,7 +6,7 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:27:15 by aderose           #+#    #+#             */
-/*   Updated: 2020/05/02 18:23:41 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:40:49 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *str;
+	char	*str;
 
-	str = (char*)s;
+	str = (char *)s;
 	while (*str != '\0')
 	{
 		if (*str == c)

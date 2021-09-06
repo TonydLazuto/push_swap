@@ -6,7 +6,7 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:24:22 by aderose           #+#    #+#             */
-/*   Updated: 2020/05/02 18:18:38 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:37:16 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long nbr;
+	long	nbr;
 
 	nbr = (long)n;
 	if (nbr < 0)

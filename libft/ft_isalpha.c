@@ -6,11 +6,11 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:14:11 by aderose           #+#    #+#             */
-/*   Updated: 2020/05/02 17:56:08 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:29:59 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

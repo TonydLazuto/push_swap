@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int		check_set(char const *set, char c)
+static int	check_set(char const *set, char c)
 {
 	while (*set)
 	{
@@ -24,7 +24,7 @@ static int		check_set(char const *set, char c)
 	return (0);
 }
 
-char			*ft_strtrim(char const *s, char const *set)
+char	*ft_strtrim(char const *s, char const *set)
 {
 	char	*str;
 	int		i;
@@ -39,8 +39,11 @@ char			*ft_strtrim(char const *s, char const *set)
 		i++;
 	while (check_set(set, s[j]) && j)
 		j--;
-	len = j - i + 1 >= 0 ? j - i + 1 : 0;
-	if (!(str = ft_substr(s, i, len)))
+	len = j - i + 1;
+	if (len < 0)
+		len = 0;
+	str = ft_substr(s, i, len);
+	if (!str)
 		return (NULL);
 	return (str);
 }

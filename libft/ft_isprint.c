@@ -6,11 +6,11 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:14:35 by aderose           #+#    #+#             */
-/*   Updated: 2020/05/02 17:58:27 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:30:32 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')
 		return (1);

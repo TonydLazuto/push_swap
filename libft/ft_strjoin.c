@@ -13,9 +13,9 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char		*ft_strcpy(char *dst, const char *src)
+static char	*ft_strcpy(char *dst, const char *src)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < ft_strlen(src))
@@ -27,7 +27,7 @@ static char		*ft_strcpy(char *dst, const char *src)
 	return (dst);
 }
 
-char			*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	i;
@@ -35,13 +35,15 @@ char			*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 	{
-		if (!(str = (char*)malloc(1)))
+		str = (char *)malloc(1);
+		if (!str)
 			return (NULL);
 		return (str);
 	}
 	i = ft_strlen(s1);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(str = (char*)malloc(len + 1)))
+	str = (char *)malloc(len + 1);
+	if (!str)
 		return (NULL);
 	str = ft_strcpy(str, s1);
 	while (*s2)
