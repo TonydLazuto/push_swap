@@ -6,17 +6,24 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/17 17:44:19 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/09/06 19:16:38 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	check_value_exist(char *str, t_num *mynb)
+{
+	if (!ft_strlen(str))
+		ft_error_nb(&mynb);
+}
 
 int	my_atoi(char *str, t_num *mynb)
 {
 	int			sign;
 	long long	nb;
 
+	check_value_exist(str, mynb);
 	nb = 0;
 	sign = 1;
 	if (*str == '+' || *str == '-')

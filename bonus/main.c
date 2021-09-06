@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:52:41 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/17 15:46:56 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/09/06 19:01:18 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,6 @@
 ** rra = reverse rotate a - Last element is now 1st.
 ** rrr = rra + rrb
 */
-
-void	print_ins(t_ins *ins)
-{
-	t_ins	*cpy;
-
-	cpy = ins;
-	while (cpy)
-	{
-		printf("|%s|\n", cpy->str);
-		cpy = cpy->next;
-	}
-}
-
-void	print_nb(t_num *nb)
-{
-	t_num	*cpy;
-
-	cpy = nb;
-	while (cpy)
-	{
-		printf("|%d|\n", cpy->val);
-		cpy = cpy->next;
-	}
-}
 
 void	check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins)
 {

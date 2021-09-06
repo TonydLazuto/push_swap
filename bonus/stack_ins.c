@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 08:29:27 by tonyd             #+#    #+#             */
-/*   Updated: 2021/06/12 10:00:33 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/09/06 18:53:46 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_ins	*read_instructions(t_num **nb, t_ins *ins)
 
 	line = NULL;
 	res = 1;
-	while (res > 0) // voir si fuite memoire si direct si while(gnl())
+	while (res > 0)
 	{
 		res = get_next_line(1, &line);
 		if (res > 0)
