@@ -6,7 +6,7 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 12:05:16 by aderose           #+#    #+#             */
-/*   Updated: 2021/06/09 12:39:40 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/09/06 16:46:04 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ static char	*read_buf(int fd, char *cur, int *ret, char **line)
 	pos = pos_new_line(cur);
 	if (read(fd, buf, 0) < 0)
 		return (NULL);
-	while (pos == -1 && ((*ret = read(fd, buf, BUFFER_SIZE)) > 0))
+	*ret = 1;
+	while (pos == -1 && *ret > 0)
 	{
+		*ret = read(fd, buf, BUFFER_SIZE);
 		buf[*ret] = '\0';
 		cur = strjoinfree(cur, buf);
 		if (!cur)

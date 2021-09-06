@@ -6,7 +6,7 @@
 /*   By: aderose <aderose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 12:06:23 by aderose           #+#    #+#             */
-/*   Updated: 2021/06/09 12:39:38 by tonyd            ###   ########.fr       */
+/*   Updated: 2021/09/06 16:48:15 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ char	*strjoinfree(char *s1, char *s2)
 	char	*str;
 	int		i;
 
-	str = NULL;
 	i = 0;
 	if (!s1)
 	{
