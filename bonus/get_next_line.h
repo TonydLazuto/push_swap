@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <sys/stat.h>
-# define BUFFER_SIZE 500
+# define BUFFER_SIZE 50
 
 int				get_next_line(int fd, char **line);
 void			my_free(char **s);
