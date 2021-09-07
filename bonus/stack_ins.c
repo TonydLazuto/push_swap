@@ -29,6 +29,8 @@ int	check_instructions(char *line)
 			|| !ft_strncmp(line, "rr", 2))
 			return (1);
 	}
+	if (!ft_strlen(line))
+		return (1);
 	return (0);
 }
 
@@ -40,10 +42,12 @@ t_ins	*fill_stack_ins(t_ins *ins, char *line, t_num **nb)
 	elet = NULL;
 	valid = check_instructions(line);
 	if (!valid)
-		ft_error_ins(&ins, nb);
+		{printf("YO6\n");ft_error_ins(&ins, nb);}
+	if (!ft_strlen(line))
+		return (ins);
 	ins = push_back_ins(ins, line);
 	if (!ins)
-		ft_error_ins(&ins, nb);
+		{printf("YO7\n");ft_error_ins(&ins, nb);}
 	return (ins);
 }
 
@@ -58,9 +62,10 @@ t_ins	*read_instructions(t_num **nb, t_ins *ins)
 	while (res > 0)
 	{
 		res = get_next_line(1, &line);
+		printf("|%s|\n", line);
 		if (res == -1)
-			ft_error_ins(&ins, nb);
-		if (res > 0)
+			{printf("YO8\n");ft_error_ins(&ins, nb);}
+		if (res >= 0)
 			ins = fill_stack_ins(ins, line, nb);
 		free(line);
 	}
