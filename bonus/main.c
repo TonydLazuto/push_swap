@@ -26,37 +26,13 @@
 ** rrr = rra + rrb
 */
 
-void    print_ins(t_ins *ins)
-{
-        t_ins   *cpy;
-
-        cpy = ins;
-        while (cpy)
-        {
-                printf("|%s|\n", cpy->str);
-                cpy = cpy->next;
-        }
-}
-
-void    print_nb(t_num *nb)
-{
-        t_num   *cpy;
-
-        cpy = nb;
-        while (cpy)
-        {
-                printf("|%d|\n", cpy->val);
-                cpy = cpy->next;
-        }
-}
-
 void	check_stacks(t_num *stack_a, t_num *stack_b, t_ins *ins)
 {
 	t_num	*elet;
 
 	elet = stack_a;
 	if (stack_b)
-		{printf("YO100\n");ft_ko(&stack_a, &stack_b, ins);}
+		ft_ko(&stack_a, &stack_b, ins);
 	while (elet)
 	{
 		if (elet->next)

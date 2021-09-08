@@ -15,7 +15,7 @@
 void	check_value_exist(char *str, t_num *mynb)
 {
 	if (!ft_strlen(str))
-		{printf("YO1\n");ft_error_nb(&mynb);}
+		ft_error_nb(&mynb);
 }
 
 int	my_atoi(char *str, t_num *mynb)
@@ -43,14 +43,14 @@ int	my_atoi(char *str, t_num *mynb)
 	}
 	nb *= sign;
 	if (nb > INT32_MAX || nb < INT32_MIN)
-		{printf("YO2\n");ft_error_nb(&mynb);}
+		ft_error_nb(&mynb);
 	return ((int) nb);
 }
 
 void	check_duplicate(t_num *nb, int val)
 {
 	if (is_point_in_list(nb, val))
-		{printf("YO3\n");ft_error_nb(&nb);}
+		ft_error_nb(&nb);
 }
 
 t_num	*check_args(int ac, char *av[], t_num *nb)
@@ -69,14 +69,14 @@ t_num	*check_args(int ac, char *av[], t_num *nb)
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
-				{printf("YO4\n");ft_error_nb(&nb);}
+				ft_error_nb(&nb);
 			j++;
 		}
 		val = my_atoi(av[i], nb);
 		check_duplicate(nb, val);
 		nb = push_back(nb, val);
 		if (!nb)
-			{printf("YO5\n");ft_error_nb(&nb);}
+			ft_error_nb(&nb);
 		i++;
 	}
 	return (nb);
