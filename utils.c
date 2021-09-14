@@ -32,7 +32,7 @@ void	print_const(const char *s, int fd)
 	}
 	ft_putchar_fd('\n', fd);
 }
-
+/*
 void	print_nb(t_num *nb)
 {
 	t_num	*cpy;
@@ -49,3 +49,4 @@ void	print_nb(t_num *nb)
 		cpy = cpy->next;
 	}
 }
+*/

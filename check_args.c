@@ -90,6 +90,7 @@ char	**split_args(char *av[])
 		av[i + 1] = ft_strdup(tmp[i]);
 		i++;
 	}
+	av[i + 1] = NULL;
 	free(*tmp);
 	*tmp = NULL;
 	return (av);
