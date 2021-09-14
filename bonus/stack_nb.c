@@ -42,7 +42,7 @@ int	my_atoi(char *str, t_num *mynb)
 		str++;
 	}
 	nb *= sign;
-	if (nb > INT32_MAX || nb < INT32_MIN)
+	if (nb > INT_MAX || nb < INT_MIN)
 		ft_error_nb(&mynb);
 	return ((int) nb);
 }
@@ -53,7 +53,7 @@ void	check_duplicate(t_num *nb, int val)
 		ft_error_nb(&nb);
 }
 
-t_num	*check_args(int ac, char *av[], t_num *nb)
+t_num	*check_args(char *av[], t_num *nb)
 {
 	int	i;
 	int	j;

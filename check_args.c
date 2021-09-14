@@ -79,8 +79,6 @@ char	**split_args(char *av[])
 {
 	char	**tmp;
 	int		i;
-	int		j;
-	int		size;
 
 	i = 0;
 	tmp = ft_split(av[1], ' ');

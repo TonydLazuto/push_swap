@@ -69,7 +69,6 @@ t_num	*assign_chunks(t_num *stack_a, int chunks_size,
 				int nb_chunks)
 {
 	t_num	*cpy;
-	int		j;
 	int		nb_sup;
 	t_num	*tmp;
 

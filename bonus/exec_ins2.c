@@ -35,9 +35,6 @@ t_num	*switch_nb(t_num *cur, t_num *other_stack, t_ins *ins)
 
 void	push_nb(t_num **cur, t_num **other_stack, t_ins *ins)
 {
-	t_num	*elet;
-
-	elet = NULL;
 	if (*other_stack)
 	{
 		*cur = push_front(*cur, (*other_stack)->val);

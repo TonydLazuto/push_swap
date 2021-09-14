@@ -37,9 +37,7 @@ int	check_instructions(char *line)
 t_ins	*fill_stack_ins(t_ins *ins, char *line, t_num **nb)
 {
 	int		valid;
-	t_ins	*elet;
 
-	elet = NULL;
 	valid = check_instructions(line);
 	if (!valid)
 		ft_error_ins(&ins, nb);
@@ -53,7 +51,6 @@ t_ins	*fill_stack_ins(t_ins *ins, char *line, t_num **nb)
 
 t_ins	*read_instructions(t_num **nb, t_ins *ins)
 {
-	int		fd;
 	char	*line;
 	int		res;
 

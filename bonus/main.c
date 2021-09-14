@@ -56,7 +56,7 @@ int	main(int ac, char *av[])
 	if (ac == 1)
 		return (0);
 	ac -= 1;
-	nb = check_args(ac, av, nb);
+	nb = check_args(av, nb);
 	ins = read_instructions(&nb, ins);
 	nb = exec_instructions(nb, ins);
 	return (0);

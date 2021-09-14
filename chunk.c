@@ -33,7 +33,6 @@ t_roll	scan_stack_a(t_num **stack_a, int num_chunk)
 
 void	chunk(t_num **stack_a, t_num **stack_b, int nb_chunks)
 {
-	t_num	*elet;
 	t_roll	r;
 	int		num_chunk;
 

@@ -52,7 +52,7 @@ t_ins	*read_instructions(t_num **nb, t_ins *ins);
 t_ins	*last_ins(t_ins *ins);
 t_ins	*push_back_ins(t_ins *list, char *line);
 int		my_atoi(char *str, t_num *mynb);
-t_num	*check_args(int ac, char *av[], t_num *nb);
+t_num	*check_args(char *av[], t_num *nb);
 t_num	*new_nb(int val);
 t_num	*last_num(t_num *nb);
 int		is_point_in_list(t_num *nb, int val);
