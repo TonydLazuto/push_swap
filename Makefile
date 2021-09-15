@@ -58,7 +58,7 @@ $(LIB):
 $(NAME): 		$(OBJS) $(LIB)
 				$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIB_DIR) -lft
 
-bonus:			$(OBJS) $(OBJS_BONUS) $(LIB)
+bonus:			$(OBJS_BONUS) $(LIB)
 				$(CC) $(CFLAGS) -o $(CHECKER) $(OBJS_BONUS) -L$(LIB_DIR) -lft
 
 $(OBJ_DIR)/%.o:	%.c
@@ -78,10 +78,10 @@ fclean:			clean
 				$(RM) $(LIB_DIR)/libft.a
 				$(RM) $(NAME)
 
-bonusclean:		clean
+bonusclean:		libclean
 				$(RM) $(OBJS_BONUS)
 
-bonusfclean:	bonusclean fclean
+bonusfclean:	bonusclean
 				$(RM) $(CHECKER)
 				
 
