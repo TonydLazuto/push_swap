@@ -1,10 +1,10 @@
-.PHONY		= all clean fclean re bonus
+.PHONY		= all clean fclean re bonus bonusclean bonusfclean libclean libfclean
 
 NAME		= push_swap
 
 CHECKER		= checker
 
-LIB			= libft.a
+LIBA		= libft.a
 
 CC			= gcc
 
@@ -52,24 +52,22 @@ OBJS_BONUS	= $(addprefix $(BONUS_DIR)/,$(SRCS_BONUS:.c=.o))
 
 all: 			$(NAME)
 
-$(LIB):
-				$(MAKE) --silent -C $(LIB_DIR)
-
-$(NAME): 		$(OBJS) $(LIB)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIB_DIR) -lft
+$(NAME): 		$(OBJS)
+				@make --silent -C $(LIB_DIR)	
+				$(CC) $(CFLAGS) $(LIB_DIR)/libft.a -o $(NAME) $(OBJS) -L$(LIB_DIR) -lft
 
 bonus:			$(OBJS_BONUS) $(LIB)
 				$(CC) $(CFLAGS) -o $(CHECKER) $(OBJS_BONUS) -L$(LIB_DIR) -lft
 
 $(OBJ_DIR)/%.o:	%.c
-				@ $(shell mkdir -p $(OBJ_DIR))
-				$(CC) $(CFLAGS) -c $< -o $@
+				@mkdir -p $(OBJ_DIR)
+				$(CC) $(CFLAGS) -I$(LIB_DIR) -c $< -o $@
 
 libclean:		
-				$(MAKE) clean -C $(LIB_DIR)
+				@make clean -C $(LIB_DIR)
 
-libfclean:		libclean
-				$(RM) $(LIB_DIR)/$(LIB)
+libfclean:
+				@make fclean -C $(LIB_DIR)
 
 clean:			libclean
 				rm -rf $(OBJ_DIR)
@@ -82,6 +80,7 @@ bonusclean:		libclean
 				$(RM) $(OBJS_BONUS)
 
 bonusfclean:	bonusclean
+				$(RM) $(LIB_DIR)/libft.a
 				$(RM) $(CHECKER)
 				
 
