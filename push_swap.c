@@ -62,7 +62,7 @@ void	pick_swap(int ac, t_num *stack_a)
 
 	stack_b = NULL;
 	if (check_already_sorted(stack_a))
-		return ;
+		ft_exit(&stack_a, &stack_b);
 	if (ac == 2)
 		swap_two(&stack_a, &stack_b);
 	else if (ac == 3)
