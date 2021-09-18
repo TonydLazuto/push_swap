@@ -4,21 +4,21 @@ NAME		= push_swap
 
 CHECKER		= checker
 
-LIBA		= libft.a
-
 CC			= gcc
 
 CFLAGS		= -Wall -Wextra -Werror
 
 RM			= /bin/rm -f
 
-INC			= push_swap.h
-
 LIB_DIR		= libft
 
 OBJ_DIR		= obj
 
+LIBA		= $(LIB_DIR)/libft.a
+
 BONUS_DIR	= bonus
+
+INC			= -I$(BONUS_DIR) -I$(LIB_DIR)
 
 SRCS		= push_swap.c \
 			  extras.c \
@@ -46,18 +46,23 @@ SRCS_BONUS	=	exec_ins2.c \
 				stack_ins.c \
 				stack_nb.c
 
-OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
+OBJS		= $(SRCS:.c=.o)
 
-OBJS_BONUS	= $(addprefix $(BONUS_DIR)/,$(SRCS_BONUS:.c=.o))
+DIR_OBJS	= $(addprefix $(OBJ_DIR)/,$(OBJS))
+
+OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
+
+DIR_OBJS_B	= $(addprefix $(BONUS_DIR)/,$(OBJS_BONUS))
 
 all: 			$(NAME)
 
-$(NAME): 		$(OBJS)
+$(NAME): 		$(DIR_OBJS)
 				@make --silent -C $(LIB_DIR)	
-				$(CC) $(CFLAGS) $(LIB_DIR)/libft.a -o $(NAME) $(OBJS) -L$(LIB_DIR) -lft
+				$(CC) $(CFLAGS) $(INC) $(LIBA) -o $(NAME) $(DIR_OBJS) -L$(LIB_DIR) -lft
 
-bonus:			$(OBJS_BONUS) $(LIB)
-				$(CC) $(CFLAGS) -o $(CHECKER) $(OBJS_BONUS) -L$(LIB_DIR) -lft
+bonus:			$(DIR_OBJS_B)
+				@make --silent -C $(LIB_DIR)	
+				$(CC) $(CFLAGS) $(INC) $(LIBA) -o $(CHECKER) $(DIR_OBJS_B) -L$(LIB_DIR) -lft
 
 $(OBJ_DIR)/%.o:	%.c
 				@mkdir -p $(OBJ_DIR)
@@ -73,14 +78,14 @@ clean:			libclean
 				rm -rf $(OBJ_DIR)
 
 fclean:			clean
-				$(RM) $(LIB_DIR)/libft.a
+				$(RM) $(LIBA)
 				$(RM) $(NAME)
 
 bonusclean:		libclean
-				$(RM) $(OBJS_BONUS)
+				$(RM) $(DIR_OBJS_B)
 
 bonusfclean:	bonusclean
-				$(RM) $(LIB_DIR)/libft.a
+				$(RM) $(LIBA)
 				$(RM) $(CHECKER)
 				
 
