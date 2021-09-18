@@ -18,8 +18,6 @@ LIBA		= $(LIB_DIR)/libft.a
 
 BONUS_DIR	= bonus
 
-INC			= -I$(BONUS_DIR) -I$(LIB_DIR)
-
 SRCS		= push_swap.c \
 			  extras.c \
 			  check_args.c \
@@ -58,11 +56,11 @@ all: 			$(NAME)
 
 $(NAME): 		$(DIR_OBJS)
 				@make --silent -C $(LIB_DIR)	
-				$(CC) $(CFLAGS) $(INC) $(LIBA) -o $(NAME) $(DIR_OBJS) -L$(LIB_DIR) -lft
+				$(CC) $(CFLAGS) $(LIBA) -o $(NAME) $(DIR_OBJS) -L$(LIB_DIR) -lft
 
 bonus:			$(DIR_OBJS_B)
 				@make --silent -C $(LIB_DIR)	
-				$(CC) $(CFLAGS) $(INC) $(LIBA) -o $(CHECKER) $(DIR_OBJS_B) -L$(LIB_DIR) -lft
+				$(CC) $(CFLAGS) $(LIBA) -o $(CHECKER) $(DIR_OBJS_B) -L$(LIB_DIR) -lft
 
 $(OBJ_DIR)/%.o:	%.c
 				@mkdir -p $(OBJ_DIR)
