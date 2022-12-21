@@ -6,7 +6,7 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:53:10 by tonyd             #+#    #+#             */
-/*   Updated: 2021/09/06 18:54:26 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/23 13:40:30 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@
 ** rra = reverse rotate a - Last element is now 1st.
 ** rrr = rra + rrb
 */
+
+char	**clean_av(char *av[])
+{
+	int		i;
+
+	i = 1;
+	while (av[i])
+	{
+		free(av[i]);
+		av[i] = NULL;
+		i++;
+	}
+	return (av);
+}
 
 int	check_already_sorted(t_num *stack_a)
 {
@@ -85,15 +99,22 @@ int	main(int ac, char *av[])
 
 	len = 0;
 	lst = NULL;
-	if (!av[2])
+	if (ac == 2)
 	{
 		av = split_args(av);
 		while (av[len])
 			len++;
 		ac = len;
+		lst = check_args(av, lst);
+		ac -= 1;
+		pick_swap(ac, lst);
+		av = clean_av(av);
 	}
-	ac -= 1;
-	lst = check_args(av, lst);
-	pick_swap(ac, lst);
+	else
+	{
+		lst = check_args(av, lst);
+		ac -= 1;
+		pick_swap(ac, lst);
+	}
 	return (0);
 }

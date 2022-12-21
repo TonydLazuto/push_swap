@@ -6,11 +6,17 @@
 /*   By: tonyd <aderose73@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 10:57:54 by tonyd             #+#    #+#             */
-/*   Updated: 2021/07/06 20:38:09 by aderose          ###   ########.fr       */
+/*   Updated: 2021/09/23 13:37:55 by aderose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_nb_overflow(char *str, t_num *mynb)
+{
+	if (ft_strlen(str) > 10)
+		ft_error(&mynb, NULL);
+}
 
 int	my_atoi(char *str, t_num *mynb)
 {
@@ -19,6 +25,7 @@ int	my_atoi(char *str, t_num *mynb)
 
 	nb = 0;
 	sign = 1;
+	check_nb_overflow(str, mynb);
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
@@ -80,16 +87,22 @@ char	**split_args(char *av[])
 	char	**tmp;
 	int		i;
 
-	i = 0;
+	i = 1;
 	tmp = ft_split(av[1], ' ');
 	av[1] = NULL;
-	while (tmp[i])
+	while (av[i])
 	{
-		av[i + 1] = ft_strdup(tmp[i]);
+		av[i] = ft_strdup(tmp[i]);
 		i++;
 	}
-	av[i + 1] = NULL;
-	free(*tmp);
-	*tmp = NULL;
+	av[i] = NULL;
+	i = 0;
+	while (tmp[i])
+	{
+		free(tmp[i]);
+		tmp[i] = NULL;
+		i++;
+	}
+	free(tmp);
 	return (av);
 }
